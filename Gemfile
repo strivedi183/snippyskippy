@@ -1,23 +1,21 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.11'
+
+gem 'rails'
 gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
 
 group :assets do
-  gem 'sass-rails', '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
-
 group :development, :test do
-
   gem 'coffee-rails-source-maps'
   gem 'factory_girl_rails'
-
-    gem 'guard-rspec'
+  gem 'guard-rspec'
   gem 'rb-fsevent'
   gem 'rspec-rails'
   gem 'capybara'
