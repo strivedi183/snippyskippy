@@ -14,4 +14,8 @@
 #  updated_at      :datetime         not null
 #
 
-require 'spec_helper'
+class User < ActiveRecord::Base
+  attr_accessible :name, :email, :image, :password, :
+  has_secure_password
+  belongs_to :userable, :polymorphic => true
+end
