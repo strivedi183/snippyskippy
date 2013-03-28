@@ -1,18 +1,15 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+
 gem 'rails'
 gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
-gem 'geocoder'
-gem 'twilio-ruby'
 
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'zurb-foundation'
 end
 
 group :development, :test do
