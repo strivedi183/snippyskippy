@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/snippy.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;CAAA,KAAA;;CAAA,CAAM;CACJ;;CAAA,EAAiB,CAAjB,EAAC,GAAgB,KAAjB;CACS,KAAD,EAAN,KAAA;CADF,IAAiB;;CAAjB,EAGW,CAAX,EAAC,EAAD,CAAW;CACT,OAAA,IAAA,CAAA;CAAyB,CAAS,IAAR,EAAA;CADjB,OACT;CAJF,IAGW;;CAHX;;CADF;;CAAA,CAQA,GAAA,CAAwB,EAAxB,MAAA;CARA"
+}
