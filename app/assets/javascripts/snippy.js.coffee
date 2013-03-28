@@ -1,9 +1,9 @@
 class Snippy
   @document_ready: ->
-    Snippy.wookmark()
+    Snippy.wookie()
 
-  @wookmark: ->
-    $('#container').wookmark({offset: 2})
+  @wookie: ->
+    $('.mustache').wookmark({ itemWidth: 50, offset: 2, container: $('#container') })
 
 
 $(document).ready(Snippy.document_ready)
