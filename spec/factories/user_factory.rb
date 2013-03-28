@@ -16,21 +16,21 @@
 
 FactoryGirl.define do
   factory :generic_user, class: User do
-    username              'generic'
+    name                  'generic'
     email                 'generic@gmail.com'
     password              'a'
     password_confirmation 'a'
   end
 
   factory :client_user, class: User do
-    username              'client'
+    name                  'client'
     email                 'client@gmail.com'
     password              'a'
     password_confirmation 'a'
   end
 
   factory :stylist_user, class: User do
-    username              'stylist'
+    name                  'stylist'
     email                 'stylist@gmail.com'
     password              'a'
     password_confirmation 'a'

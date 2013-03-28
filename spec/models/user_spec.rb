@@ -30,13 +30,13 @@ describe User do
 
   context 'requires a valid user, client and stylist' do
     let(:user) {User.create(name: 'bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')}
-    let(:client) {FactoryGirl.create(:client)}
-    let(:stylist) {FactoryGirl.create(:stylist)}
+    let(:client) {Client.create(address: 'New York')}
+    let(:stylist) {Stylist.create}
 
     describe '#client' do
       it 'returns a Client object' do
         client.user = user
-        expect(user.client).to eq client
+        expect(user.is_client?).to be true
       end
       it 'return nil when the user is not a client' do
         stylist.user = user

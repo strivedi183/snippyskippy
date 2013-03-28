@@ -25,7 +25,7 @@ describe Client do
   end
 
   context 'the client must be present' do
-    let(:client) {Client.create(name: 'bob')}
+    let(:client) {Client.create(address: 'New York')}
 
     describe '#user' do
       it 'has a user' do
