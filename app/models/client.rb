@@ -15,4 +15,15 @@ class Client < ActiveRecord::Base
   has_one :user, :as => :userable
   has_many :favorites, :inverse_of => :client
   has_many :bookings, :inverse_of => :client
+
+  before_save :geocode
+  private
+  def geocode
+    result = Geocoder.search(self.address).first
+
+    if result.present?
+      self.latitude = result.latitude
+      self.longitude = result.longitude
+    end
+  end
 end
