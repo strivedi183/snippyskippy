@@ -4,5 +4,4 @@
 //= require 'foundation/js/vendor/custom.modernizr.js'
 //= require 'foundation/js/foundation.min.js'
 //= require 'wookmark.js'
-//= require 'woodmark-tmp.js'
 //= require 'snippy.js'
