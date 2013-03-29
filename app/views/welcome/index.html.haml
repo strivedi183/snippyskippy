@@ -11,20 +11,3 @@
 
     %p This is the paragraph textLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   .large-6.columns
-
-.row
-  .large-4.columns
-    = form_for @medium, :html => {:multipart => true}, :remote => true do |f|
-      = f.label :title
-      = f.text_field :title, :autofocus => true
-      = f.label :video
-      = f.file_field :video
-      = f.text_field :remove_video_url
-      = f.label :photo
-      = f.file_field :photo
-      = f.text_field :remove_photo_url
-      = f.number_field :cost
-      = f.label :tags
-      = text_field_tag :tags
-      = f.submit nil, :class => 'button tiny success'
-  .large-8.columns
