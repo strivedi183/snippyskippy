@@ -11,6 +11,6 @@ class StylistsController < ApplicationController
     @stylists = Stylist.all
   end
   def show
-    @stylist = Stylist.find(id)
+    @stylist = Stylist.find(params[:id])
   end
 end

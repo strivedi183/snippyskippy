@@ -1,0 +1,17 @@
+.row
+  .large-4.columns
+    = form_for @medium, :html => {:multipart => true}, :remote => true do |f|
+      = f.label :title
+      = f.text_field :title, :autofocus => true
+      = f.label :video
+      = f.file_field :video
+      = f.text_field :remove_video_url
+      = f.label :photo
+      = f.file_field :photo
+      = f.text_field :remove_photo_url
+      = f.number_field :cost
+      = f.label :tags
+      = text_field_tag :tags
+      = hidden_field_tag :stylist_id, params[:stylist_id]
+      = f.submit nil, :class => 'button tiny success'
+  .large-8.columns
