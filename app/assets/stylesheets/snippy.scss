@@ -56,6 +56,56 @@ p {
 
 /*- END TYPOGRAPHY ***************************************/
 
+
+// /*- TOP BAR OVERRIDES ***************************************/
+
+// /* Background color for the top bar */
+// $topbar-bg: #555;
+
+// /* Height and margin */
+// $topbar-height: 45px;
+// $topbar-margin-bottom: emCalc(30px);
+
+// /* Control Input height for top bar */
+// $topbar-input-height: 2.45em;
+
+// /* Controlling the styles for the title in the top bar */
+// $topbar-title-weight: bold;
+// $topbar-title-font-size: emCalc(17px);
+
+// /* Set the link colors and styles for top-level nav */
+// $topbar-link-color: #fff;
+// $topbar-link-weight: bold;
+// $topbar-link-font-size: emCalc(13px);
+
+// /* Style the top bar dropdown elements */
+// $topbar-dropdown-bg: #333;
+// $topbar-dropdown-link-color: #fff;
+// $topbar-dropdown-toggle-size: 5px;
+// $topbar-dropdown-toggle-color: #fff;
+// $topbar-dropdown-toggle-alpha: 0.5;
+// $dropdown-label-color: #555;
+
+// /* Top menu icon styles */
+// $topbar-menu-link-transform: lowercase;
+// $topbar-menu-link-font-size: emCalc(13px);
+// $topbar-menu-link-weight: bold;
+// $topbar-menu-link-color: #fff;
+// $topbar-menu-icon-color: #fff;
+// $topbar-menu-link-color-toggled: #888;
+// $topbar-menu-icon-color-toggled: #888;
+
+// /* Transitions and breakpoint styles */
+// $topbar-transition-speed: 300ms;
+// $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
+
+// /* END TOP BAR CSS  ***************************************/
+
+
+
+
+
+
 /* page utilities  ***************************************/
 .spacer {
   height: 60px;
