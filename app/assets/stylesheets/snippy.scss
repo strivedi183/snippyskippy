@@ -1,10 +1,24 @@
-/** TYPOGRAPHY **/
-/** NO TOUCHY  **/
+/* TOC                                                  */
+/* 1. COLORS                                            */
+/* 2. TYPOGRAPHY                                        */
+
+
+
+/** 1. COLORS *******************************************/
+
+
+
+/** 2. TYPOGRAPHY ***************************************/
 
 .display_type {
   font-size: 4em;
   font-family: "acta-poster-swashes";
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  opacity: .99;
 }
+
 h1 {
 font-family: "acta-display",sans-serif;
 font-style: normal;
@@ -16,8 +30,6 @@ h2, h3, h4, h5 {
   font-style: normal;
   font-weight: 700;
 }
-
-
 
 p {
   font-family: "adobe-garamond-pro",serif;
@@ -42,9 +54,22 @@ p {
   font-weight: 400;
 }
 
-/**    NO TOUCHY   **/
-/*- END TYPOGRAPHY -*/
+/*- END TYPOGRAPHY ***************************************/
 
+/* page utilities  ***************************************/
+.spacer {
+  height: 60px;
+}
+
+
+/* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
+body {
+  background: url('https://dl.dropbox.com/u/5433755/snippy/bg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 
 
