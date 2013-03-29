@@ -4,7 +4,7 @@ class Snippy
     Snippy.run_wookmark()
 
   @video_hover: ->
-    $('video').hover (->
+    $('video').prop('muted',true).hover (->
       $(this).css "opacity", "1"
       @play()
     ), ->
