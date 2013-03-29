@@ -23,7 +23,15 @@ class User < ActiveRecord::Base
     true if self.userable.is_a?(Client)
   end
 
+  def client
+    self.userable if self.userable.is_a?(Client)
+  end
+
   def is_stylist?
+    self.userable if self.userable.is_a?(Stylist)
+  end
+
+  def stylist
     self.userable if self.userable.is_a?(Stylist)
   end
 end
