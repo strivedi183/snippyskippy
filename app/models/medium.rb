@@ -16,4 +16,5 @@ class Medium < ActiveRecord::Base
   attr_accessible :title, :url, :type, :description, :stylist_id
   has_and_belongs_to_many :medium_tags
   belongs_to :stylist, :inverse_of => :media
+  mount_uploader :url, MediaUploader
 end
