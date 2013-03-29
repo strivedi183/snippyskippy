@@ -78,6 +78,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.6.0)
     formatador (0.2.4)
+    geocoder (1.1.6)
     guard (1.7.0)
       formatador (>= 0.2.4)
       listen (>= 0.6.0)
@@ -213,6 +214,7 @@ DEPENDENCIES
   coffee-rails-source-maps
   database_cleaner
   factory_girl_rails
+  geocoder
   guard-rspec
   haml
   jquery-rails
