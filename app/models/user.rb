@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def client
-    self.userable if self.userable.is_a?(Client)
+    self.userable if self.is_client?
   end
 
   def is_stylist?
@@ -32,6 +32,6 @@ class User < ActiveRecord::Base
   end
 
   def stylist
-    self.userable if self.userable.is_a?(Stylist)
+    self.userable if self.is_stylist?
   end
 end

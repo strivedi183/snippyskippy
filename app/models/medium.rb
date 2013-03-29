@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  title       :string(255)
-#  url         :text
+#  medium      :text
 #  type        :string(255)
 #  description :text
 #  stylist_id  :integer
@@ -13,7 +13,7 @@
 #
 
 class Medium < ActiveRecord::Base
-  attr_accessible :title, :url, :type, :description, :stylist_id
+  attr_accessible :title, :medium, :type, :description, :stylist_id, :remote_medium_url
   has_and_belongs_to_many :medium_tags
   belongs_to :stylist, :inverse_of => :media
   mount_uploader :url, MediaUploader
