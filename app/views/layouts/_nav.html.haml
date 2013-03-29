@@ -1,7 +1,28 @@
+/ %nav.top-bar
+/   %ul.title-area
+/     %li.name
+/       %h1
+/         = link_to('Login', login_path)
+
 %nav.top-bar
   %ul.title-area
     %li.name
       %h1
-        = link_to('ROOT-PATH', root_path)
-    %li.toggle-topbar.menu-icon
-      =link_to("<span>Menu</span>", '#')
+        = link_to('Login', '#', :'data-dropdown' => 'drop1')
+      %ul{:id => 'drop1', :class => 'f-dropdown'}
+        %li
+          = link_to('Form', '#')
+/ <a href="#" data-dropdown="drop1">Has Dropdown</a>
+/ <a href="#" data-dropdown="drop2">Has Content Dropdown</a>
+
+/ <ul id="drop1" class="f-dropdown" data-dropdown-content>
+/   <li><a href="#">This is a link</a></li>
+/   <li><a href="#">This is another</a></li>
+/   <li><a href="#">Yet another</a></li>
+/ </ul>
+
+/ <ul id="drop2" class="f-dropdown content" data-dropdown-content>
+/   <li><a href="#">This is a link</a></li>
+/   <li><a href="#">This is another</a></li>
+/   <li><a href="#">Yet another</a></li>
+/ </ul>
