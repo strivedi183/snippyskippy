@@ -21,6 +21,8 @@ $(document).click (e) ->
   e.stopPropagation()
   container = $(".f-dropdown")
   $("#drop").hide()  if container.has(e.target).length is 0
+  $("#email").val ""
+  $("#password_field").val ""
 
 # -- end -- #
 

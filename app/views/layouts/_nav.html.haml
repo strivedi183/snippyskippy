@@ -4,9 +4,32 @@
       %h1
         %a{"data-dropdown" => "drop", :href => "#"}= 'Login'
         #drop.f-dropdown.content
-          %li
+          %li#login_form
             = form_tag '/login' do
               = text_field_tag :email, nil, :autofocus => true, :placeholder => 'Email'
               = password_field_tag :password, nil, :id => 'password_field', :placeholder => 'Password'
               .login_btn
                 = submit_tag 'Login', :id => 'login_btn', :class => 'button radius success'
+    %li.name
+      %h1
+        %a{"data-reveal-id" => "register", :href => "#"}= 'Register'
+
+#register.reveal-modal
+  %h2 Info
+  %h4 More Info
+  %h5 Even More Info
+  %a{"data-reveal-id" => "stylist", :href => "#", :class => 'button radius secondary'} Stylist
+  %a{"data-reveal-id" => "client", :href => "#", :class => 'button radius secondary'} Client
+  %a.close-reveal-modal ×
+
+#stylist.reveal-modal
+  %h3
+    %ul
+      %h4 Stylist Register Form
+  %a.close-reveal-modal ×
+
+#client.reveal-modal
+  %h3
+    %ul
+      %h4 Client Register Form
+  %a.close-reveal-modal ×

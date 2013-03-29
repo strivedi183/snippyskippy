@@ -86,6 +86,13 @@ body {
 
 /* Set Login Form width */
 
+#login_form:hover { background-color: transparent; }
+
+li.name
+{
+  float: left;
+}
+
 .f-dropdown.content.open {
   width: 500px;
   opacity: .9;
