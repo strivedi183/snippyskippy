@@ -76,5 +76,26 @@ body {
 .container {
   width: 300px;
   position: relative;
+
 }
 
+
+
+
+/*- START NAV -*/
+
+/* Set Login Form width */
+
+.f-dropdown.content.open {
+  width: 500px;
+  opacity: .9;
+}
+
+#password_field {
+  margin: 10px 0px 10px 0px;
+}
+
+.login_btn {
+  text-align: center;
+}
+/*- END NAV -*/
