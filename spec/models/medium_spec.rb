@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  title       :string(255)
-#  url         :text
+#  medium      :text
 #  type        :string(255)
 #  description :text
 #  stylist_id  :integer

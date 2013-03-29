@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20130328221215) do
 
   create_table "media", :force => true do |t|
     t.string   "title"
-    t.text     "url"
+    t.text     "medium"
     t.string   "type"
     t.text     "description"
     t.integer  "stylist_id"
