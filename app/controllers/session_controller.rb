@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     if @auth.present? && @auth.authenticate(params[:password])
       session[:user_id] = @auth.id
       if @auth.is_client?
-        redirect_to root_path
+        redirect_to client_path
       elsif @auth.is_stylist?
         @stylist = Stylist.find(@auth.userable.id)
         redirect_to root_path

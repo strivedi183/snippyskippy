@@ -2,10 +2,12 @@ Snippyskippy::Application.routes.draw do
 
   root :to => 'welcome#index'
 
-  get '/test' => 'test#index'
-
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
+  resources :media, :only => [:index, :new, :create, :show]
+  resources :clients, :only => [:show, :new, :create]
+  resources :stylists
 
 end
