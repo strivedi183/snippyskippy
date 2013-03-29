@@ -39,7 +39,7 @@ describe Client do
       it 'captures a lat and long' do
         user = FactoryGirl.create(:client_user)
         client.user = user
-        result = Geocoder.search(user.userable.address).first
+        result = Geocoder.search(user.client.address).first
         expect(result.present?).to be true
       end
     end
