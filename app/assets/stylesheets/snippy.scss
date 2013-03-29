@@ -1,4 +1,47 @@
+/** TYPOGRAPHY **/
+/** NO TOUCHY  **/
+
+.display_type {
+  font-size: 4em;
+  font-family: "acta-poster-swashes";
+}
+
+h1 {
+  font-family: "acta-display",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+p {
+  font-family: "adobe-garamond-pro",serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* add class for bold type */
+
+.bold {
+  font-family: "acta-display",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* add italic style */
+
+.italic {
+  font-family: "acta-display",sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/**    NO TOUCHY   **/
+/*- END TYPOGRAPHY -*/
+
+
+
+
 .container {
   width: 300px;
   position: relative;
 }
+

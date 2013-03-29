@@ -34,5 +34,14 @@ describe Client do
         expect(client.user).to eq user
       end
     end
+
+    describe '#geocoder' do
+      it 'captures a lat and long' do
+        user = FactoryGirl.create(:client_user)
+        client.user = user
+        result = Geocoder.search(user.userable.address).first
+        expect(result.present?).to be true
+      end
+    end
   end
 end

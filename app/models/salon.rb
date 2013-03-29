@@ -14,4 +14,15 @@
 class Salon < ActiveRecord::Base
   attr_accessible :name, :address, :latitude, :longitude
   has_many :stylists, :inverse_of => :salon
+
+  before_save :geocode
+  private
+  def geocode
+    result = Geocoder.search(self.address).first
+
+    if result.present?
+      self.latitude = result.latitude
+      self.longitude = result.longitude
+    end
+  end
 end
