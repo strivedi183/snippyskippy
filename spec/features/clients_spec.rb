@@ -11,6 +11,13 @@ describe 'Client' do
     end
   end
 
+  describe 'GET /' do
+    it 'displays register link' do
+      visit root_path
+      page.should have_link('Register')
+    end
+  end
+
   describe 'POST /login' do
     let(:user) {FactoryGirl.create(:client_user)}
 

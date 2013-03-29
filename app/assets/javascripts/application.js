@@ -4,5 +4,6 @@
 //= require 'foundation/js/vendor/custom.modernizr.js'
 //= require 'foundation/js/foundation.min.js'
 //= require 'wookmark.js'
-//= require 'woodmark_init.js'
 //= require 'snippy.js'
+//= require 'foundation/js/foundation/foundation.dropdown.js'
+//= require 'foundation/js/foundation/foundation.reveal.js'
