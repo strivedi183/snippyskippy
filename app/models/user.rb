@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   belongs_to :userable, :polymorphic => true
 
   def is_client?
-    self.userable.is_a?(Client)
+    true if self.userable.is_a?(Client)
   end
 
   def client
@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def is_stylist?
-    self.userable.is_a?(Stylist)
+    true if self.userable.is_a?(Stylist)
   end
 
   def stylist
