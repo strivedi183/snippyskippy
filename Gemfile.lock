@@ -46,6 +46,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 1.0.0)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.0.9)
@@ -69,6 +72,7 @@ GEM
     debugger-ruby_core_source (1.2.0)
     diff-lcs (1.2.1)
     erubis (2.7.0)
+    excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -77,7 +81,18 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffi (1.6.0)
+    fog (1.10.0)
+      builder
+      excon (~> 0.14)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
     formatador (0.2.4)
+    geocoder (1.1.6)
     guard (1.7.0)
       formatador (>= 0.2.4)
       listen (>= 0.6.0)
@@ -110,6 +125,9 @@ GEM
     method_source (0.8.1)
     mime-types (1.21)
     multi_json (1.7.2)
+    net-scp (1.1.0)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.6)
     nokogiri (1.5.9)
     pg (0.15.0)
     polyglot (0.3.3)
@@ -155,6 +173,8 @@ GEM
     rb-fsevent (0.9.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    remotipart (1.0.5)
+    rmagick (2.13.2)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -170,6 +190,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    ruby-hmac (0.4.0)
     rubyzip (0.9.9)
     sass (3.2.7)
     sass-rails (3.2.6)
@@ -209,10 +230,13 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   capybara
+  carrierwave
   coffee-rails
   coffee-rails-source-maps
   database_cleaner
   factory_girl_rails
+  fog
+  geocoder
   guard-rspec
   haml
   jquery-rails
@@ -225,6 +249,8 @@ DEPENDENCIES
   quiet_assets
   rails
   rb-fsevent
+  remotipart
+  rmagick
   rspec-rails
   sass-rails
   uglifier

@@ -11,6 +11,80 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130328221215) do
+
+  create_table "bookings", :force => true do |t|
+    t.date     "appointment_date"
+    t.time     "appointment_time"
+    t.integer  "client_id"
+    t.integer  "medium_id"
+    t.integer  "stylist_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "favorites", :force => true do |t|
+    t.integer  "medium_id"
+    t.integer  "client_id"
+    t.integer  "rank"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "media", :force => true do |t|
+    t.string   "title"
+    t.text     "url"
+    t.string   "type"
+    t.text     "description"
+    t.integer  "stylist_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "media_medium_tags", :id => false, :force => true do |t|
+    t.integer "medium_tag_id"
+    t.integer "medium_id"
+  end
+
+  create_table "medium_tags", :force => true do |t|
+    t.string   "tag"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "salons", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "stylists", :force => true do |t|
+    t.integer  "salon_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "image"
+    t.string   "password_digest"
+    t.integer  "userable_id"
+    t.string   "userable_type"
+    t.boolean  "is_admin",        :default => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
 
 end
