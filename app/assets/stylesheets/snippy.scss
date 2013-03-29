@@ -11,31 +11,32 @@
 /** 2. TYPOGRAPHY ***************************************/
 
 .display_type {
-  font-size: 4em;
-  font-family: "acta-poster-swashes";
-  font-style: normal;
-  font-weight: 400;
+  font-size: 5em;
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  line-height: -.2em;
   -webkit-font-smoothing: antialiased;
   opacity: .99;
 }
 
 h1 {
-font-family: "acta-display",sans-serif;
-font-style: normal;
-font-weight: 800;
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }
 
 h2, h3, h4, h5 {
-  font-family: "acta-display",sans-serif;
+  font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
 p {
-  font-family: "adobe-garamond-pro",serif;
+  font-family: Georgia,serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: .9em;
 }
 
 /* add class for bold type */
@@ -44,6 +45,10 @@ p {
   font-family: "acta-display",sans-serif;
   font-style: normal;
   font-weight: 700;
+}
+
+a.button {
+  text-transform: uppercase;
 }
 
 /* add italic style */
