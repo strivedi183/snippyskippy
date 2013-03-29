@@ -1,19 +1,25 @@
+# == Schema Information
+#
+# Table name: stylists
+#
+#  id         :integer          not null, primary key
+#  salon_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Stylist do
   describe '.create' do
     it 'has an id' do
-      stylist = Stylist.create(name: 'bob')
-      expect(stylist.id).to_not be nil
-    end
-    it 'fails validation if name is not present' do
       stylist = Stylist.create
-      expect(stylist.id).to be nil
+      expect(stylist.id).to_not be nil
     end
   end
 
   context 'the stylist must be present' do
-    let(:stylist) {Stylist.create(name: 'bob')}
+    let(:stylist) {Stylist.create}
 
     describe '#user' do
       it 'has a user' do

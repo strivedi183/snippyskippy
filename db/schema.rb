@@ -86,4 +86,5 @@ ActiveRecord::Schema.define(:version => 20130328221215) do
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
   end
+
 end

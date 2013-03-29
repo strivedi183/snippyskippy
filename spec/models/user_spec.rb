@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  image           :text
+#  password_digest :string(255)
+#  userable_id     :integer
+#  userable_type   :string(255)
+#  is_admin        :boolean          default(FALSE)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 require 'spec_helper'
 
 describe User do
@@ -20,22 +36,22 @@ describe User do
     describe '#client' do
       it 'returns a Client object' do
         client.user = user
-        expect(user.client).to eq client
+        expect(user.is_client?).to be true
       end
       it 'return nil when the user is not a client' do
         stylist.user = user
-        expect(user.client).to be nil
+        expect(user.is_client?).to be nil
       end
     end
 
     describe '#stylist' do
       it 'returns a Stylist object' do
         stylist.user = user
-        expect(user.stylist).to eq stylist
+        expect(user.is_stylist?).to be true
       end
       it 'return nil when the user is not a stylist' do
         client.user = user
-        expect(user.stylist).to be nil
+        expect(user.is_stylist?).to be nil
       end
     end
   end
