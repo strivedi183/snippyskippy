@@ -5,7 +5,12 @@
 
 
 /** 1. COLORS *******************************************/
-
+$orange:  #e57113; //accent color, stylist name
+$lt_purp: #b6a6ad; //secondary BG color
+$white:   #f9fce7; //default BG color
+$blue:    #68bbde; //accent, alerts
+$amber:   #726f2b; //accent, warnings
+$black:   #4b3b3b; //text color
 
 
 /** 2. TYPOGRAPHY ***************************************/
@@ -15,6 +20,7 @@
   font-family: "brandon-grotesque",sans-serif;
   font-style: italic;
   font-weight: 100;
+  color: $black;
   line-height: -.2em;
   -webkit-font-smoothing: antialiased;
   opacity: .99;
@@ -24,6 +30,7 @@ h1 {
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-weight: 700;
+  color: $black;
   line-height: .9em;
 }
 
@@ -31,6 +38,7 @@ h2, h3, h4, h5 {
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-weight: 700;
+  color: $black;
 }
 
 p {
@@ -38,6 +46,7 @@ p {
   font-style: normal;
   font-weight: 400;
   font-size: .9em;
+  color: $black;
 }
 
 
@@ -58,7 +67,7 @@ a.button {
 // /*- TOP BAR OVERRIDES ***************************************/
 
 // /* Background color for the top bar */
-// $topbar-bg: #555;
+$topbar-bg: #555;
 
 // /* Height and margin */
 // $topbar-height: 45px;
@@ -112,7 +121,7 @@ a.button {
 
 /* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
 body {
-  background: url('https://dl.dropbox.com/u/5433755/snippy/bg.png') no-repeat center center fixed;
+  background: url('https://dl.dropbox.com/u/5433755/snippy/bg2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -136,6 +145,13 @@ body {
 
 #login_form:hover { background-color: transparent; }
 
+nav a {
+  color: $white;
+  text-transform: uppercase;
+
+}
+
+
 li.name
 {
   float: left;
@@ -153,4 +169,5 @@ li.name
 .login_btn {
   text-align: center;
 }
+
 /*- END NAV -*/
