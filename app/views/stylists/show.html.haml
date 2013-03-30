@@ -9,8 +9,15 @@
       = f.label :photo
       = f.file_field :photo
       = f.text_field :remote_photo_url
-      = f.label :tags
-      = text_field_tag :tags
+      - Tag.order(:tag).each do |tag|
+        .row
+          .large-2.columns
+            = tag.tag
+          .large-2.columns
+            = check_box_tag 'medium[tag_ids][]', tag.id, tag.in?(@medium.tags)
+            %br
+          .large-8.columns
+        %br
       = hidden_field_tag :stylist_id, params[:stylist_id]
-      = f.submit nil, :class => 'button tiny success'
+      = f.submit 'Add Photo/Video', :class => 'button tiny success'
   .large-8.columns

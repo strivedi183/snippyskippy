@@ -2,10 +2,9 @@
 
 #main{:role => 'main'}
   %ol#filters
-    %li{"data-filter" => "short"} Short
-    %li{"data-filter" => "long"} Long
-    %li{"data-filter" => "curly"} Curly
-
+    - @tags.each do |tag|
+      %li{:'data-filter' => tag}
+        = tag
 
   %ul#tiles
     - @media.each do |media|

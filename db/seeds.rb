@@ -17,3 +17,10 @@ s1.user = u3
 
 c1 = Client.create(:address => 'nyc')
 c1.user = u1
+
+t1 = Tag.create(:tag => 'blonde')
+t2 = Tag.create(:tag => 'ginger')
+t3 = Tag.create(:tag => 'short')
+t4 = Tag.create(:tag => 'punk')
+t5 = Tag.create(:tag => 'curly')
+t6 = Tag.create(:tag => 'bangs')
