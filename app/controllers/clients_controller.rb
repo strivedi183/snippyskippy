@@ -4,6 +4,7 @@ class ClientsController < ApplicationController
   def show
     @client = Client.find(params[:id])
     @media = Medium.all
+    @tags = @media.map(&:tags).flatten.uniq.map(&:tag)
   end
 
 end

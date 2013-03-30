@@ -11,6 +11,7 @@ class Snippy
       @pause()
 
 
+
 $(document).ready(Snippy.document_ready)
 
 

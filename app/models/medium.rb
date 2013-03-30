@@ -14,10 +14,11 @@
 #
 
 class Medium < ActiveRecord::Base
-  attr_accessible :title, :photo, :video, :type, :description, :stylist_id, :remote_photo_url, :remote_video_url
+  attr_accessible :title, :photo, :video, :type, :description, :stylist_id, :remote_photo_url, :remote_video_url, :tag_ids
   has_and_belongs_to_many :tags
   belongs_to :stylist, :inverse_of => :media
   mount_uploader :photo, PhotoUploader
   mount_uploader :video, VideoUploader
   validates :title, :presence => :true
+
 end

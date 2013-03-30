@@ -1,8 +1,8 @@
 #fixed_header
   #user_photo
-  #style1
-  #style2
-  #style3
+  #style1.droppable
+  #style2.droppable
+  #style3.droppable
 .row
   .large-12.columns
 
@@ -19,7 +19,7 @@
   .large-12.columns
     %ul#tiles
       %li.short
-        .tile
+        .tile.draggable
           .favorites
             %h6 Favorites
           .video= video_tag('sandip1.mov', :size => '200x283')
