@@ -6,8 +6,15 @@
 
 
   %ul#tiles
-    %li.short= video_tag('sandip1.mov', :size => '200x283')
-    %li.long=  video_tag('sandip2.mov', :size => '200x283')
+    %li.short
+      .tile
+        .favorites
+          %h6 Favorites
+        .video= video_tag('sandip1.mov', :size => '200x283')
+        .info
+          %h6 Stylist info
+    %li.long
+      .tile=  video_tag('sandip2.mov', :size => '200x283')
     %li.curly= image_tag('hair1.jpg', :size => '200x300')
     %li.curly= video_tag('sandip5.mov', :size => '200x283')
     %li.long=  video_tag('sandip3.mov', :size => '200x283')
