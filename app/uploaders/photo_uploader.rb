@@ -36,9 +36,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :scale => [50, 50]
-  # end
+  version :thumb do
+    process :scale => [200, 300]
+  end
 
   # version :med do
   #   process :scale => [250, 250]
