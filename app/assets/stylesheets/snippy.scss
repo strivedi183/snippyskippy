@@ -142,7 +142,7 @@ body {
 
 /* USER PAGE HEADER */
 #user_header {
-  position: relative;
+  // position: relative;
   margin-top: 45px;
   width: 100%;
   height: 300px;
@@ -156,7 +156,7 @@ body {
   display: inline-block;
 }
 
-#style1{
+.style1{
   width:150px;
   height: 200px;
   background-color: $orange;
@@ -164,7 +164,7 @@ body {
   margin: 20px;
 }
 
-#style2{
+.style2{
   width:150px;
   height: 200px;
   background-color: $orange;
@@ -172,7 +172,7 @@ body {
   margin: 20px;
 }
 
-#style3{
+.style3{
   width:150px;
   height: 200px;
   background-color: $orange;
