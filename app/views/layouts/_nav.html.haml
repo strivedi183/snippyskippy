@@ -1,5 +1,6 @@
 %nav.top-bar
-  %ul.title-area
+  %ul.title-area.left
+  -if !@auth.present?
     %li.name
       %h1
         %a{"data-dropdown" => "drop", :href => "#"}= 'Login'
@@ -13,6 +14,9 @@
     %li.name
       %h1
         %a{"data-reveal-id" => "register", :href => "#"}= 'Register'
+
+  %ul.title-area.right
+
 
 #register.reveal-modal
   %h2 Info

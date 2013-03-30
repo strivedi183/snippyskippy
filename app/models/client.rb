@@ -17,7 +17,6 @@ class Client < ActiveRecord::Base
   has_many :bookings, :inverse_of => :client
   validates :address, :presence => true
 
-
   before_save :geocode
   private
   def geocode
