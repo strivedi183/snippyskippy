@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: medium_tags
+# Table name: tags
 #
 #  id         :integer          not null, primary key
 #  tag        :string(255)
@@ -10,11 +10,11 @@
 
 require 'spec_helper'
 
-describe Medium_tag do
+describe Tag do
   describe '.create' do
     it 'has an id' do
-      medium_tag = Medium_tag.create
-      expect(medium_tag.id).to_not be nil
+      medium_tag = Tag.create
+      expect(tag.id).to_not be nil
     end
   end
 end

@@ -19,4 +19,5 @@ class Medium < ActiveRecord::Base
   belongs_to :stylist, :inverse_of => :media
   mount_uploader :photo, PhotoUploader
   mount_uploader :video, VideoUploader
+  validates :title, :presence => :true
 end

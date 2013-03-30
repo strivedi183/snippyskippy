@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328221215) do
+ActiveRecord::Schema.define(:version => 20130330192856) do
 
   create_table "bookings", :force => true do |t|
     t.date     "appointment_date"
@@ -50,15 +50,9 @@ ActiveRecord::Schema.define(:version => 20130328221215) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "media_medium_tags", :id => false, :force => true do |t|
-    t.integer "medium_tag_id"
+  create_table "media_tags", :id => false, :force => true do |t|
+    t.integer "tag_id"
     t.integer "medium_id"
-  end
-
-  create_table "medium_tags", :force => true do |t|
-    t.string   "tag"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "salons", :force => true do |t|
@@ -72,6 +66,12 @@ ActiveRecord::Schema.define(:version => 20130328221215) do
 
   create_table "stylists", :force => true do |t|
     t.integer  "salon_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "tag"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

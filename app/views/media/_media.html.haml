@@ -10,6 +10,6 @@
   %ul#tiles
     - @media.each do |media|
       - if media.photo?
-        %li.curly= image_tag(media.photo, :size => '200x320')
+        %li.curly= image_tag(media.photo.thumb, :size => '200x320')
       - if media.video?
         %li.short= video_tag(media.video, :size => '200x283')
