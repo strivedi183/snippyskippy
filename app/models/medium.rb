@@ -15,7 +15,7 @@
 
 class Medium < ActiveRecord::Base
   attr_accessible :title, :photo, :video, :type, :description, :stylist_id, :remote_photo_url, :remote_video_url
-  has_and_belongs_to_many :medium_tags
+  has_and_belongs_to_many :tags
   belongs_to :stylist, :inverse_of => :media
   mount_uploader :photo, PhotoUploader
   mount_uploader :video, VideoUploader
