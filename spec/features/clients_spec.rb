@@ -23,7 +23,7 @@ describe 'Client' do
 
     it 'logs the user into the system if credentials are correct' do
       login_to_system(user)
-      page.find('#login_btn').visible? != true
+      page.should_not have_text('Login')
     end
 
     it 'does not log the user into the system if credentials are incorrect' do
@@ -36,18 +36,16 @@ describe 'Client' do
     end
   end
 
-  # describe 'DELETE /login' do
-  #   it 'logs the user off the system' do
-  #     client = FactoryGirl.create(:client)
-  #     login_to_system(client.user)
-  #     click_link('Logout')
-  #     page.should_not have_link('Logout')
-  #     page.should have_link('Login')
-  #     visit root_path
-  #     page.should_not have_link('Logout')
-  #     page.should have_link('Login')
-  #   end
-  # end
+  describe 'DELETE /login' do
+    it 'logs the user off the system' do
+      client = FactoryGirl.create(:client)
+      login_to_system(client.user)
+      click_link('client | Logout')
+      page.should have_link('Login')
+      visit root_path
+      page.should have_link('Login')
+    end
+  end
 
   describe 'close login form drop down' do
     it 'removes the login form' do

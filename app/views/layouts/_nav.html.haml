@@ -1,5 +1,9 @@
 %nav.top-bar
   %ul.title-area.left
+  -if @auth.present?
+    %li.name
+      %h1
+        %a= link_to(@auth.name + ' | Logout', '/login', :method => :delete, :id => 'logout_btn')
   -if !@auth.present?
     %li.name
       %h1
@@ -15,7 +19,6 @@
       %h1
         %a{"data-reveal-id" => "register", :href => "#"}= 'Register'
 
-  %ul.title-area.right
 
 
 #register.reveal-modal
@@ -37,3 +40,6 @@
     %ul
       %h4 Client Register Form
   %a.close-reveal-modal ×
+
+
+
