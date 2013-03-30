@@ -12,4 +12,5 @@ class Stylist < ActiveRecord::Base
   attr_accessible :salon_id
   has_one :user, :as => :userable
   belongs_to :salon, :inverse_of => :stylists
+  has_many :media, :inverse_of => :stylist
 end
