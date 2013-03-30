@@ -1,7 +1,7 @@
 /* TOC                                                  */
 /* 1. COLORS                                            */
 /* 2. TYPOGRAPHY                                        */
-
+/* 3. Positioning                                       */
 
 
 /** 1. COLORS *******************************************/
@@ -11,7 +11,7 @@
 /** 2. TYPOGRAPHY ***************************************/
 
 .display_type {
-  font-size: 5em;
+  font-size: 6em;
   font-family: "brandon-grotesque",sans-serif;
   font-style: italic;
   font-weight: 100;
@@ -24,6 +24,7 @@ h1 {
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-weight: 700;
+  line-height: .9em;
 }
 
 h2, h3, h4, h5 {
@@ -39,6 +40,8 @@ p {
   font-size: .9em;
 }
 
+
+
 /* add class for bold type */
 
 
@@ -46,10 +49,10 @@ p {
 a.button {
   text-transform: uppercase;
 }
-
-
-
 /*- END TYPOGRAPHY ***************************************/
+
+/* 3. Positioning   **************************************/
+
 
 
 // /*- TOP BAR OVERRIDES ***************************************/
