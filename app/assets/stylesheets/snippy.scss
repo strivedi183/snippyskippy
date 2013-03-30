@@ -142,7 +142,7 @@ body {
 
 /* USER PAGE HEADER */
 #fixed_header {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 300px;
   background-color: rgba($black, .9)
