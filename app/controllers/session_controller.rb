@@ -3,7 +3,6 @@ class SessionController < ApplicationController
   end
 
   def create
-    binding.pry
     @auth = User.where(:email => params[:email]).first
     if @auth.present? && @auth.authenticate(params[:password])
       session[:user_id] = @auth.id
