@@ -1,6 +1,5 @@
 %h1 Media index
 
-
 #main{:role => 'main'}
   %ol#filters
     %li{"data-filter" => "short"} Short
@@ -9,9 +8,8 @@
 
 
   %ul#tiles
-    %li.short= video_tag('sandip1.mov', :size => '200x283')
-    %li.long= video_tag('sandip2.mov', :size => '200x283')
-    %li.long= video_tag('sandip3.mov', :size => '200x283')
-    %li.curly= video_tag('sandip4.mov', :size => '200x283')
-    %li.curly= video_tag('sandip5.mov', :size => '200x283')
-    %li.short= video_tag('sandip6.mov', :size => '200x283')
+    - @media.each do |media|
+      - if media.photo?
+        %li.curly= image_tag(media.photo, :size => '200x320')
+      - if media.video?
+        %li.short= video_tag(media.video, :size => '200x283')

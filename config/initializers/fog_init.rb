@@ -3,7 +3,7 @@ CarrierWave.configure do |config|
     :provider               => 'AWS',                               # required
     :aws_access_key_id      => ENV['AWSKEY'],                       # required
     :aws_secret_access_key  => ENV['AWSSEC'],                       # required
-    :region                 => 'us-west-2'                          # optional, defaults to 'us-east-1'
+    :region                 => 'us-east-1'                          # optional, defaults to 'us-east-1'
   }
   # config.fog_directory  = 'temp-cm'                               # required
   config.fog_public     = false                                     # optional, defaults to true
@@ -11,6 +11,6 @@ CarrierWave.configure do |config|
   # config.asset_host   = 'https://assets.example.com'              # optional, defaults to nil
 end
 
-CarrierWave.configure {|config| config.fog_directory = 'albm-st-regular'} if Rails.env.development?
-CarrierWave.configure {|config| config.fog_directory = 'albm-st-test'} if Rails.env.test?
-CarrierWave.configure {|config| config.fog_directory = 'albm-st-regular'} if Rails.env.production?
+CarrierWave.configure {|config| config.fog_directory = 'hair-test'} if Rails.env.development?
+CarrierWave.configure {|config| config.fog_directory = 'hair-test'} if Rails.env.test?
+CarrierWave.configure {|config| config.fog_directory = 'hair-prod'} if Rails.env.production?
