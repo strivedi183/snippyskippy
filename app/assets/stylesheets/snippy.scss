@@ -141,8 +141,9 @@ body {
 }
 
 /* USER PAGE HEADER */
-#fixed_header {
+#user_header {
   position: relative;
+  margin-top: 45px;
   width: 100%;
   height: 300px;
   background-color: rgba($black, .9)

@@ -1,8 +1,9 @@
-#fixed_header
-  #user_photo
-  #style1.droppable
-  #style2.droppable
-  #style3.droppable
+.fixed
+  #user_header
+    #user_photo
+    #style1.droppable
+    #style2.droppable
+    #style3.droppable
 .row
   .large-12.columns
 
@@ -24,14 +25,40 @@
             %h6 Favorites
           .video= video_tag('sandip1.mov', :size => '200x283')
           .info
-            %h5 cut by
-            %span.stylist Vincenzo
-            <h5>cut by<span class="stylist">Vincenzo</span></h5>
+            %h5 cut by <span class="stylist">Vincenzo</span>
+
       %li.long
-        .tile=  video_tag('sandip2.mov', :size => '200x283')
-      %li.curly= image_tag('hair1.jpg', :size => '200x300')
-      %li.curly= video_tag('sandip5.mov', :size => '200x283')
-      %li.long=  video_tag('sandip3.mov', :size => '200x283')
+        .tile.draggable
+          .favorites
+            %h6 Favorites
+          .video= video_tag('sandip2.mov', :size => '200x283')
+          .info
+            %h5 cut by <span class="stylist">Vincenzo</span>
+
+      %li.curly
+        .tile.draggable
+          .favorites
+            %h6 Favorites
+          .video= image_tag('hair1.jpg', :size => '200x283')
+          .info
+            %h5 cut by <span class="stylist">Vincenzo</span>
+
+      %li.curly
+        .tile.draggable
+          .favorites
+            %h6 Favorites
+          .video= video_tag('sandip5.mov', :size => '200x283')
+          .info
+            %h5 cut by <span class="stylist">Vincenzo</span>
+
+      %li.long
+        .tile.draggable
+          .favorites
+            %h6 Favorites
+          .video= video_tag('sandip3.mov', :size => '200x283')
+          .info
+            %h5 cut by <span class="stylist">Vincenzo</span>
+
       %li.curly= image_tag('hair2.jpg', :size => '200x300')
       %li.curly= video_tag('sandip5.mov', :size => '200x283')
       %li.long=  video_tag('hop1.mov', :size => '200x283')
