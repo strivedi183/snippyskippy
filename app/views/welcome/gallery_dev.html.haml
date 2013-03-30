@@ -1,26 +1,40 @@
-#main{:role => 'main'}
-  %ol#filters
-    %li{"data-filter" => "short"} Short
-    %li{"data-filter" => "long"} Long
-    %li{"data-filter" => "curly"} Curly
+#fixed_header
+  #user_photo
+  #style1
+  #style2
+  #style3
+.row
+  .large-12.columns
 
 
-  %ul#tiles
-    %li.short
-      .tile
-        .favorites
-          %h6 Favorites
-        .video= video_tag('sandip1.mov', :size => '200x283')
-        .info
-          %h6 Stylist info
-    %li.long
-      .tile=  video_tag('sandip2.mov', :size => '200x283')
-    %li.curly= image_tag('hair1.jpg', :size => '200x300')
-    %li.curly= video_tag('sandip5.mov', :size => '200x283')
-    %li.long=  video_tag('sandip3.mov', :size => '200x283')
-    %li.curly= image_tag('hair2.jpg', :size => '200x300')
-    %li.curly= video_tag('sandip5.mov', :size => '200x283')
-    %li.long=  video_tag('hop1.mov', :size => '200x283')
-    %li.long=  video_tag('hop2.mov', :size => '200x283')
-    %li.curly= image_tag('hair3.jpg', :size => '200x300')
+.row
+  .large-12.columns
+    #main{:role => 'main'}
+      %ol#filters
+        %li{"data-filter" => "short"} Short
+        %li{"data-filter" => "long"} Long
+        %li{"data-filter" => "curly"} Curly
+
+.row
+  .large-12.columns
+    %ul#tiles
+      %li.short
+        .tile
+          .favorites
+            %h6 Favorites
+          .video= video_tag('sandip1.mov', :size => '200x283')
+          .info
+            %h5 cut by
+            %span.stylist Vincenzo
+            <h5>cut by<span class="stylist">Vincenzo</span></h5>
+      %li.long
+        .tile=  video_tag('sandip2.mov', :size => '200x283')
+      %li.curly= image_tag('hair1.jpg', :size => '200x300')
+      %li.curly= video_tag('sandip5.mov', :size => '200x283')
+      %li.long=  video_tag('sandip3.mov', :size => '200x283')
+      %li.curly= image_tag('hair2.jpg', :size => '200x300')
+      %li.curly= video_tag('sandip5.mov', :size => '200x283')
+      %li.long=  video_tag('hop1.mov', :size => '200x283')
+      %li.long=  video_tag('hop2.mov', :size => '200x283')
+      %li.curly= image_tag('hair3.jpg', :size => '200x300')
 
