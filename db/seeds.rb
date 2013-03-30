@@ -14,3 +14,6 @@ u3 = User.create(:name => 'Snippy', :email => 'snip@gmail.com', :password => 'a'
 
 s1 = Stylist.create
 s1.user = u3
+
+c1 = Client.create(:address => 'nyc')
+c1.user = u1
