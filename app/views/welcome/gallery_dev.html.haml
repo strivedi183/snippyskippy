@@ -1,0 +1,17 @@
+#main{:role => 'main'}
+  %ol#filters
+    %li{"data-filter" => "short"} Short
+    %li{"data-filter" => "long"} Long
+    %li{"data-filter" => "curly"} Curly
+
+
+  %ul#tiles
+    %li.short= video_tag('sandip1.mov', :size => '200x283')
+    %li.long= video_tag('sandip2.mov', :size => '200x283')
+    %li.curly= image_tag('hair1.jpg', :size => '200x300')
+    %li.curly= video_tag('sandip5.mov', :size => '200x283')
+    %li.long= video_tag('sandip3.mov', :size => '200x283')
+    %li.curly= image_tag('hair2.jpg', :size => '200x300')
+    %li.curly= video_tag('sandip5.mov', :size => '200x283')
+    %li.curly= image_tag('hair3.jpg', :size => '200x300')
+
