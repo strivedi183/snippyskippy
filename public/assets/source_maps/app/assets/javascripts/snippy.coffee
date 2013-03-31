@@ -2,8 +2,8 @@ class Snippy
   @document_ready: ->
     Snippy.video_hover()
     $(".draggable").draggable({snap: ".style", zIndex: 9999, revert: "invalid", opacity: 0.5, drag: Snippy.get_draggable_info})
-    $(".droppable").droppable({drop: Snippy.tile_droppable})
-    $(".style").on('drop', Snippy.update_rank)
+    $(".droppable").droppable({drop: Snippy.update_rank})
+    # $(".style").on('drop', Snippy.update_rank)
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
 
   @get_draggable_info: (e, ui) ->
