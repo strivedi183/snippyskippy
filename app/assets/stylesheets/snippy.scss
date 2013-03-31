@@ -227,6 +227,7 @@ li.name {
   margin: 0 auto;
   float: center;
   border-radius: 25px;
+  padding-bottom: -10px;
 }
 
 .reg_btns {
@@ -249,6 +250,17 @@ legend {
 .login_btn {
   text-align: center;
 }
+
+.client_form
+{
+  height: 275px;
+}
+
+.stylist_form
+{
+  height: 225px;
+}
+
 
 /*- END NAV -*/
 

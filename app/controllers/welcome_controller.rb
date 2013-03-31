@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def gallery_dev
+    @user = User.new
   end
 
 end

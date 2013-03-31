@@ -3,15 +3,10 @@
     %legend Client Registration
     .five.columns.client_form
       = form_for @user do |f|
-        = f.label :name
-        = f.text_field :name, :id => 'client_name', :autofocus => true
-        = f.label :email
-        = f.text_field :email, :id => 'client_email'
-        = label_tag :address
-        = text_field_tag :address
-        = f.label :password
-        = f.password_field :password, :id => 'client_password'
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation, :id => 'client_password_confirmation'
+        = f.text_field :name, :id => 'client_name', :placeholder => 'Name'
+        = f.text_field :email, :id => 'client_email', :placeholder => 'Email'
+        = text_field_tag :address, nil, :placeholder => 'Address'
+        = f.password_field :password, :id => 'client_password', :placeholder => 'Password'
+        = f.password_field :password_confirmation, :id => 'client_password_confirmation', :placeholder => 'Password Confirmation'
         = f.submit 'Join', :class => 'button radius success'
     .seven.columns

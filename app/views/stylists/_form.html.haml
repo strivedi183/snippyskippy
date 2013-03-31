@@ -1,7 +1,7 @@
 .row
   %fieldset.forms
     %legend Stylist Registion
-    .five.columns
+    .five.columns.stylist_form
       = form_for @user do |f|
         = f.text_field :name, :placeholder => 'Name'
         = f.text_field :email, :placeholder => 'Email'
@@ -9,3 +9,4 @@
         = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
         = f.submit 'Create Account', :class => 'button radius success'
     .seven.columns
+
