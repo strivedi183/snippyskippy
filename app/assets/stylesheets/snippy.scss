@@ -166,6 +166,16 @@ body {
   height: 300px;
   background-color: rgba($black, .9)
 }
+
+#user_head_gradient {
+  width: 100%;
+  height: 30px;
+  background: -moz-linear-gradient(top,  rgba(75,59,59,1) 0%, rgba(75,59,59,1) 1%, rgba(75,59,59,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(75,59,59,1)), color-stop(1%,rgba(75,59,59,1)), color-stop(100%,rgba(75,59,59,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,rgba(75,59,59,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,rgba(75,59,59,0) 100%); /* W3C */
+}
+
 #user_photo {
   width: 200px;
   height: 260px;
