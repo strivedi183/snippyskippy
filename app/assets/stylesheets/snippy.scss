@@ -88,11 +88,16 @@ a.button {
 
 /* 3. Positioning   **************************************/
 .box{
-  background-color: rgba($white,0.9);
+  position: fixed;
+  width: 100%;
+  background-color: rgba($blue,0.9);
   border: 1px solid #dedede;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+  z-index: 9999;
+  margin-top: -45px;
+  padding: 5px;
 }
 
 
@@ -160,6 +165,7 @@ $topbar-bg: #777;
 
 .screen {
   background-color: rgba($black, .7);
+  padding: 10px;
 }
 
 .screen_light {
@@ -173,6 +179,20 @@ $topbar-bg: #777;
 /* page utilities  ***************************************/
 .spacer {
   height: 60px;
+}
+
+.big_spacer{
+  margin-top: 325px;
+}
+.tiny_spacer{
+  height: 10px;
+}
+.small_photo{
+  width: auto;
+  height:200px;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
 }
 .center {
   text-align: center;
@@ -202,9 +222,6 @@ body {
   background-color: rgba($black, .9)
 }
 
-.big_spacer{
-  margin-top: 325px;
-}
 
 .relative {
   position: relative;
@@ -327,15 +344,22 @@ legend {
 #media_dashboard {
   margin-top: 50px;
 }
+
 .media_label.title
 {
   float: left;
   margin-left: 20px;
 }
 
-#add_media_btn {
-  margin-right: 10px;
+.tags {
+  color: blue;
 }
+
+.photo {
+  float: left;
+  margin: 10px;
+}
+
 
 /*- END NAV -*/
 

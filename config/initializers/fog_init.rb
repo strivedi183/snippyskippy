@@ -15,3 +15,4 @@ CarrierWave.configure {|config| config.fog_directory = 'albm-st-regular'} if Rai
 CarrierWave.configure {|config| config.fog_directory = ''} if Rails.env.test?
 CarrierWave.configure {|config| config.fog_directory = ''} if Rails.env.production?
 
+
