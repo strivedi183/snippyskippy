@@ -1,7 +1,7 @@
 class Snippy
   @document_ready: ->
     Snippy.video_hover()
-    $(".draggable").draggable(snap: ".style")
+    $(".draggable").draggable({snap: ".style", zIndex: 9999})
     $(".droppable").droppable({drop: Snippy.tile_droppable})
 
   @tile_droppable: (e, ui) ->
