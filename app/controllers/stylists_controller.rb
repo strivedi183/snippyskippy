@@ -15,7 +15,7 @@ class StylistsController < ApplicationController
   def show
     @user = User.new
     @medium = Medium.new
-    @stylist = Stylist.first
+    @stylist = Stylist.find(params[:id])
     @salon = Salon.new
   end
 end

@@ -1,7 +1,7 @@
 class Snippy
   @document_ready: ->
     Snippy.video_hover()
-    $(".draggable").draggable({snap: ".style", zIndex: 9999, revert: "invalid", opacity: 0.5, drag: Snippy.get_draggable_info})
+    $(".draggable").draggable({snap: ".style", zIndex: 9999, revert: "valid", opacity: 0.5, drag: Snippy.get_draggable_info})
     $(".droppable").droppable({drop: Snippy.update_rank})
     # $(".style").on('drop', Snippy.update_rank)
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
@@ -9,7 +9,7 @@ class Snippy
   @get_draggable_info: (e, ui) ->
     Snippy.medium_id = $(this).data('medium-id')
     console.log("The Medium ID is #{Snippy.medium_id}")
-    ui.helper.addClass('drag_size')
+    # ui.helper.addClass('drag_size')
 
   @update_rank: ->
     console.log("Update Dashboard Called")
