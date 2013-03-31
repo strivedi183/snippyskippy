@@ -14,18 +14,18 @@ class Snippy
     console.log("Update Dashboard Called")
     token = $('input[name=authenticity_token]').val()
     console.log(token)
-    Snippy.medium_id
+    medium_id = Snippy.medium_id
     console.log(Snippy.medium_id)
     client_id = $('#client_id').val()
     console.log(client_id)
     rank = $(this).data('rank')
     console.log(rank)
-    # settings =
-    #   dataType: 'script'
-    #   type: 'post'
-    #   url: "/clients/#{:client_id}/update_rank"
-    #   data: {authenticity_token: token, medium_id:medium_id, rank:rank}
-    # $.ajax(Settings)
+    settings =
+      dataType: 'script'
+      type: 'post'
+      url: "/clients/#{client_id}/update_rank"
+      data: {authenticity_token: token, medium_id:medium_id, rank:rank}
+    $.ajax(settings)
 
   @tile_droppable: (e, ui) ->
     $(this).addClass("background-yellow")
@@ -39,12 +39,7 @@ class Snippy
       console.log("The Medium ID is #{medium_id}")
       client_id = $('#client_id').val()
       console.log(client_id)
-      # settings =
-      #   dataType: 'script'
-      #   type: 'post'
-      #   url: "/clients/#{:client_id}/update_favorites"
-      #   data: {authenticity_token: token, medium_id:medium_id}
-      # $.ajax(Settings)
+
       $(this).children().first().removeClass('favorite_off').addClass('favorite_on')
     else
       console.log("Add to Favorites")
@@ -54,13 +49,13 @@ class Snippy
       console.log("The Medium ID is #{medium_id}")
       client_id = $('#client_id').val()
       console.log(client_id)
-      # settings =
-      #   dataType: 'script'
-      #   type: 'post'
-      #   url: "/clients/#{:client_id}/update_favorites"
-      #   data: {authenticity_token: token, medium_id:medium_id}
-      # $.ajax(Settings)
       $(this).children().first().removeClass('favorite_on').addClass('favorite_off')
+    settings =
+      dataType: 'script'
+      type: 'post'
+      url: "/clients/#{client_id}/update_favorites"
+      data: {authenticity_token: token, medium_id:medium_id}
+    $.ajax(settings)
 
   @video_hover: ->
     $('video').prop('muted',true).hover (->

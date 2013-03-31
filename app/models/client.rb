@@ -20,8 +20,8 @@ class Client < ActiveRecord::Base
   before_save :geocode
 
   def rank_1
-    media = Medium.find(self.favorites.where(:rank => 1 ).first.medium_id)
-    if media.present?
+    if !self.favorites.where(:rank => 1).empty?
+      media = Medium.find(self.favorites.where(:rank => 1 ).first.medium_id)
       media
     end
   end
