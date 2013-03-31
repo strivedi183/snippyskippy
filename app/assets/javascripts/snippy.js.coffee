@@ -9,6 +9,7 @@ class Snippy
   @get_draggable_info: (e, ui) ->
     Snippy.medium_id = $(this).data('medium-id')
     console.log("The Medium ID is #{Snippy.medium_id}")
+    ui.helper.addClass('drag_size')
 
   @update_rank: ->
     console.log("Update Dashboard Called")
@@ -28,8 +29,6 @@ class Snippy
     $.ajax(settings)
 
   @tile_droppable: (e, ui) ->
-    $(this).addClass("background-yellow")
-    ui.helper.addClass('drag_size')
 
   @update_favorite: ->
     if $(this).children().first().hasClass('favorite_off')
