@@ -1,0 +1,43 @@
+<div id="user_dashboard">
+  <%= render(:partial => 'clients/dashboard') %>
+</div>
+
+<div id="main" role="main">
+
+  <div class="row">
+    <div class="large-12.columns">
+      <ol id="filters">
+        <% @tags.each do |tag| %>
+        <li data-filter='<%= tag %>'><%= tag %></li>
+        <% end %>
+      </ol>
+    </div>
+  </div> <!-- end filter row -->
+
+
+  <div class="row">
+    <div class="large-12.columns">
+      <ul id="tiles">
+        <% @media.each do |media| %>
+          <li class="<%=media.tags.map(&:tag).join('.') %>">
+            <div class="tile draggable">
+            <h6>Favorites</h6>
+              <% if media.photo? %>
+                <%= image_tag(media.photo.thumb, :size => '200x320', :class => 'video') %>
+              <% elsif media.video? %>
+                <%= video_tag(media.video, :size => '200x283', :class => 'video') %>
+              <% end %>
+          <div class="info">
+            <h5>cut by <span class="stylyst">Vincenzo</span></h5>
+          </div>
+          </div>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+
+
+</div> <!-- end main -->
+
+

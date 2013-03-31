@@ -204,16 +204,16 @@ body {
 
 /* Set Login Form width */
 
-#login_form:hover { background-color: transparent; }
+#login_form:hover {
+  background-color: transparent;
+}
 
 nav a {
   color: $white;
   text-transform: uppercase;
 }
 
-
-li.name
-{
+li.name {
   float: left;
 }
 

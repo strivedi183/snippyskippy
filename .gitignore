@@ -17,4 +17,4 @@
 # Ignore the database.yml file
 /config/database.yml
 config/database.yml
-public/assets/source_maps/
+/public/assets/source_maps/*
