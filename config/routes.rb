@@ -18,4 +18,6 @@ Snippyskippy::Application.routes.draw do
   resources :salons, :only => [:new, :create]
 
   get 'gallery_dev' => 'welcome#gallery_dev'
+
+  resources :m, :only => [:index]
 end

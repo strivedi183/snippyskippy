@@ -13,17 +13,33 @@ $blue:    #68bbde; //accent, alerts
 $amber:   #726f2b; //accent, warnings
 $black:   #4b3b3b; //text color
 
+.orange { color: $orange; }
+.lt_purp{ color: $lt_purp; }
+.white { color: $white; }
+.blue   { color: $blue; }
+.amber  { color: $amber; }
+.black  { color: $black; }
+
 /** 2. TYPOGRAPHY ***************************************/
 
-.display_type {
-  font-size: 6em;
+
+* {
   font-family: "brandon-grotesque",sans-serif;
-  font-style: italic;
+}
+
+
+.display_type {
+  font-size: 4em;
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: normal;
   font-weight: 100;
-  color: $black;
+  color: $white;
   line-height: -.2em;
   -webkit-font-smoothing: antialiased;
   opacity: .99;
+}
+.subhed{
+  font-size: 2em;
 }
 
 h1 {
@@ -31,7 +47,7 @@ h1 {
   font-style: normal;
   font-weight: 700;
   color: $black;
-  line-height: .9em;
+  line-height: 1em;
 }
 
 h2, h3, h4, h5 {
@@ -58,7 +74,11 @@ p {
 
 /* add class for bold type */
 
-
+.button {
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
 
 a.button {
   text-transform: uppercase;
@@ -131,7 +151,9 @@ $topbar-bg: #777;
 
 // /* END TOP BAR CSS  ***************************************/
 
-
+.screen {
+  background-color: rgba($black, .7);
+}
 
 
 
@@ -140,7 +162,9 @@ $topbar-bg: #777;
 .spacer {
   height: 60px;
 }
-
+.center {
+  text-align: center;
+}
 
 /* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
 body {
@@ -166,6 +190,16 @@ body {
   height: 300px;
   background-color: rgba($black, .9)
 }
+
+#user_head_gradient {
+  width: 100%;
+  height: 30px;
+  background: -moz-linear-gradient(top,  rgba(75,59,59,1) 0%, rgba(75,59,59,1) 1%, rgba(75,59,59,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(75,59,59,1)), color-stop(1%,rgba(75,59,59,1)), color-stop(100%,rgba(75,59,59,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,rgba(75,59,59,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,rgba(75,59,59,0) 100%); /* W3C */
+}
+
 #user_photo {
   width: 200px;
   height: 260px;
@@ -274,6 +308,11 @@ legend {
 }
 
 /*- END NAV -*/
+
+
+
+
+
 
 /*- TEST CLASSES -*/
 
