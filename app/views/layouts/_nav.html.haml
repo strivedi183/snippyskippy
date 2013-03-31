@@ -4,7 +4,7 @@
     -if @auth.present?
       %li.name
         %h1
-          %a= link_to(@auth.name + ' | Logout', '/login', :method => :delete, :id => 'logout_btn')
+          %a= link_to(@auth.name + ' - ' + @auth.userable_type + ' | Logout', '/login', :method => :delete, :id => 'logout_btn')
     -if !@auth.present?
       %li.name
         %h1
