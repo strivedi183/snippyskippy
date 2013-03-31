@@ -29,8 +29,8 @@ describe 'Session' do
     it 'does not log the user into the system if credentials are incorrect' do
       visit root_path
       click_link('Login')
-      fill_in('Email', :with => user.email)
-      fill_in('Password', :with => 'b')
+      fill_in('email_field', :with => user.email)
+      fill_in('password_field', :with => 'b')
       click_button('Login')
       page.should have_button('Login')
     end
@@ -38,9 +38,9 @@ describe 'Session' do
 
   describe 'DELETE /login' do
     it 'logs the user off the system' do
-      client = FactoryGirl.create(:client)
-      login_to_system(client.user)
-      click_link('client | Logout')
+      user = FactoryGirl.create(:generic_user)
+      login_to_system(user)
+      click_link('generic | Logout')
       page.should have_link('Login')
       visit root_path
       page.should have_link('Login')
