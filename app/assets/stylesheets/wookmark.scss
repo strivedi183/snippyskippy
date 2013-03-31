@@ -48,19 +48,20 @@ margin: 0 5% 0 5%;
 }
 
 #filters li {
-font-size: 12px;
-float: left;
-padding: 6px 0 4px 0;
-cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 6px 0 4px 0;
+  cursor: pointer;
   -webkit-transition: all 0.15s ease-out;
-     -moz-transition: all 0.15s ease-out;
-       -o-transition: all 0.15s ease-out;
-          transition: all 0.15s ease-out;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-border-radius: 3px;
-margin: 0 1% 0 1%;
-width: 8%;
+  -moz-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin: 0 1% 0 1%;
+  width: 8%;
+
 }
 
 #filters li:hover {
