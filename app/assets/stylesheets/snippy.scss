@@ -82,3 +82,227 @@ font-size: 13px;
 color: #777;
 margin: 0;
 }
+=======
+/* TOC                                                  */
+/* 1. COLORS                                            */
+/* 2. TYPOGRAPHY                                        */
+/* 3. Positioning                                       */
+
+
+/** 1. COLORS *******************************************/
+
+$orange:  #e57113; //accent color, stylist name
+$lt_purp: #b6a6ad; //secondary BG color
+$white:   #f9fce7; //default BG color
+$blue:    #68bbde; //accent, alerts
+$amber:   #726f2b; //accent, warnings
+$black:   #4b3b3b; //text color
+
+/** 2. TYPOGRAPHY ***************************************/
+
+.display_type {
+  font-size: 6em;
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  color: $black;
+  line-height: -.2em;
+  -webkit-font-smoothing: antialiased;
+  opacity: .99;
+}
+
+h1 {
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: $black;
+  line-height: .9em;
+}
+
+h2, h3, h4, h5 {
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: $black;
+}
+
+p {
+  font-family: Georgia,serif;
+  font-style: normal;
+  font-size: .9em;
+  color: $black;
+}
+.stylist{
+  color: $orange;
+  font-family: "brandon-grotesque",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+
+/* add class for bold type */
+
+
+
+a.button {
+  text-transform: uppercase;
+}
+/*- END TYPOGRAPHY ***************************************/
+
+/* 3. Positioning   **************************************/
+
+
+
+// /*- TOP BAR OVERRIDES ***************************************/
+
+// /* Background color for the top bar */
+$topbar-bg: #777;
+
+// /* Height and margin */
+// $topbar-height: 45px;
+// $topbar-margin-bottom: emCalc(30px);
+
+// /* Control Input height for top bar */
+// $topbar-input-height: 2.45em;
+
+// /* Controlling the styles for the title in the top bar */
+// $topbar-title-weight: bold;
+// $topbar-title-font-size: emCalc(17px);
+
+// /* Set the link colors and styles for top-level nav */
+// $topbar-link-color: #fff;
+// $topbar-link-weight: bold;
+// $topbar-link-font-size: emCalc(13px);
+
+// /* Style the top bar dropdown elements */
+// $topbar-dropdown-bg: #333;
+// $topbar-dropdown-link-color: #fff;
+// $topbar-dropdown-toggle-size: 5px;
+// $topbar-dropdown-toggle-color: #fff;
+// $topbar-dropdown-toggle-alpha: 0.5;
+// $dropdown-label-color: #555;
+
+// /* Top menu icon styles */
+// $topbar-menu-link-transform: lowercase;
+// $topbar-menu-link-font-size: emCalc(13px);
+// $topbar-menu-link-weight: bold;
+// $topbar-menu-link-color: #fff;
+// $topbar-menu-icon-color: #fff;
+// $topbar-menu-link-color-toggled: #888;
+// $topbar-menu-icon-color-toggled: #888;
+
+// /* Transitions and breakpoint styles */
+// $topbar-transition-speed: 300ms;
+// $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
+
+// /* END TOP BAR CSS  ***************************************/
+
+
+
+
+
+
+/* page utilities  ***************************************/
+.spacer {
+  height: 60px;
+}
+
+
+/* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
+body {
+  background: url('https://dl.dropbox.com/u/5433755/snippy/bg2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+.container {
+  width: 300px;
+  position: relative;
+}
+
+/* USER PAGE HEADER */
+#user_header {
+  // position: relative;
+  margin-top: 45px;
+  width: 100%;
+  height: 300px;
+  background-color: rgba($black, .9)
+}
+#user_photo {
+  width: 200px;
+  height: 260px;
+  background-color: $orange;
+  margin: 20px;
+  display: inline-block;
+}
+
+.style1{
+  width:150px;
+  height: 200px;
+  background-color: $orange;
+  display: inline-block;
+  margin: 20px;
+}
+
+.style2{
+  width:150px;
+  height: 200px;
+  background-color: $orange;
+  display: inline-block;
+  margin: 20px;
+}
+
+.style3{
+  width:150px;
+  height: 200px;
+  background-color: $orange;
+  display: inline-block;
+  margin: 20px;
+}
+
+
+
+/*- START NAV -*/
+
+/* Set Login Form width */
+
+#login_form:hover {
+  background-color: transparent;
+}
+
+nav a {
+  color: $white;
+  text-transform: uppercase;
+}
+
+li.name {
+  float: left;
+}
+
+.f-dropdown.content.open {
+  width: 500px;
+  opacity: .9;
+}
+
+#password_field {
+  margin: 10px 0px 10px 0px;
+}
+
+.login_btn {
+  text-align: center;
+}
+
+/*- END NAV -*/
+
+/*- TEST CLASSES -*/
+
+.background-yellow {
+  background-color: yellow;
+}
+
+/*- EMD TEST CLASSES -*/
