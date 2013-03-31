@@ -3,8 +3,8 @@
  * Grid container
  */
 #tiles {
-list-style-type: none;
-position: relative; /** Needed to ensure items are laid out relative to this container **/
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
 }
 
 /**
@@ -32,19 +32,18 @@ padding: 10px;
 }
 
 #tiles li img {
-display: block;
+  display: block;
 }
 
 #tiles li video {
-display: block;
+  display: block;
 }
 
 
 #filters {
-list-style-type: none;
-text-align: center;
-height: 50px;
-margin: 0 5% 0 5%;
+  list-style-type: none;
+  text-align: center;
+  margin: 0 5% 0 5%;
 }
 
 #filters li {
