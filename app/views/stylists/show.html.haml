@@ -1,16 +1,14 @@
-%nav.top-bar
-  %ul.title-area.left
-    %ul
-    -if @stylist.present?
-      %li
-        %div= image_tag(@auth.image)
-      %li
-        %a{"data-reveal-id" => "media_form", :href => "#", :class => 'links'}= 'Add Media'
-      %li
-        %a{"data-reveal-id" => "salon_form", :href => "#", :class => 'links'}= 'Add Salon'
-    -if @client.present?
-      %li
-        / %div= image_tag(@auth.image)
+%ul
+-if @stylist.present?
+  %li.name
+    %div= image_tag(@auth.image)
+  %li.name
+    %a{"data-reveal-id" => "media_form", :href => "#", :id => 'links'}= 'Add Media'
+  %li.name
+    %a{"data-reveal-id" => "salon_form", :href => "#", :id => 'links'}= 'Add Salon'
+-if @client.present?
+  %li
+    / %div= image_tag(@auth.image)
 
 #modals
   #media_form.reveal-modal

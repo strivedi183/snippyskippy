@@ -87,7 +87,13 @@ a.button {
 /*- END TYPOGRAPHY ***************************************/
 
 /* 3. Positioning   **************************************/
-
+.box{
+  background-color: rgba($white,0.9);
+  border: 1px solid #dedede;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
 
 
 /* 4. ICONS **********************************************/
@@ -156,8 +162,13 @@ $topbar-bg: #777;
   background-color: rgba($black, .7);
 }
 
-
-
+.screen_light {
+  background-color: rgba($lt_purp, .7);
+  padding: 10px;
+}
+.filter_type{
+  font-size: 3em;
+}
 
 /* page utilities  ***************************************/
 .spacer {
@@ -185,11 +196,18 @@ body {
 
 /* USER PAGE HEADER */
 #user_header {
-  // position: relative;
-  margin-top: 45px;
+  position: relative;
   width: 100%;
   height: 300px;
   background-color: rgba($black, .9)
+}
+
+.big_spacer{
+  margin-top: 325px;
+}
+
+.relative {
+  position: relative;
 }
 
 #user_head_gradient {
@@ -244,6 +262,10 @@ li.name {
   list-style: none;
 }
 
+.links {
+  color: blue;
+}
+
 #modals {
   z-index: 1;
   opacity: .9;
@@ -254,6 +276,10 @@ li.name {
   float: center;
   border-radius: 25px;
   padding-bottom: -10px;
+}
+
+#add_media_btn {
+  position: relative;
 }
 
 .reg_btns {
@@ -298,14 +324,17 @@ legend {
   font-size: 18px;
 }
 
+#media_dashboard {
+  margin-top: 50px;
+}
 .media_label.title
 {
   float: left;
   margin-left: 20px;
 }
 
-.links {
-  color: black;
+#add_media_btn {
+  margin-right: 10px;
 }
 
 /*- END NAV -*/
