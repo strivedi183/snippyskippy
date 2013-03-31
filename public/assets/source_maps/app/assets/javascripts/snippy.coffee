@@ -29,6 +29,7 @@ class Snippy
 
   @tile_droppable: (e, ui) ->
     $(this).addClass("background-yellow")
+    ui.helper.addClass('drag_size')
 
   @update_favorite: ->
     if $(this).children().first().hasClass('favorite_off')

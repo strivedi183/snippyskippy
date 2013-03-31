@@ -40,6 +40,7 @@ $black:   #4b3b3b; //text color
 }
 .subhed{
   font-size: 2em;
+
 }
 
 h1 {
@@ -53,7 +54,7 @@ h1 {
 h2, h3, h4, h5 {
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 100;
   color: $black;
 }
 
@@ -324,4 +325,8 @@ legend {
   background-color: yellow;
 }
 
+.drag_size{
+  width:150px;
+  height: 200px;
+}
 /*- EMD TEST CLASSES -*/
