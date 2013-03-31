@@ -1,6 +1,11 @@
 class Snippy
   @document_ready: ->
     Snippy.video_hover()
+    $(".draggable").draggable({snap: ".style", zIndex: 9999})
+    $(".droppable").droppable({drop: Snippy.tile_droppable})
+
+  @tile_droppable: (e, ui) ->
+    $(this).addClass("background-yellow")
 
   @video_hover: ->
     $('video').prop('muted',true).hover (->
@@ -9,6 +14,8 @@ class Snippy
     ), ->
       $(this).css "opacity", "1"
       @pause()
+
+
 
 
 $(document).ready(Snippy.document_ready)
