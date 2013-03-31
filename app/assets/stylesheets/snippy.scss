@@ -2,7 +2,7 @@
 /* 1. COLORS                                            */
 /* 2. TYPOGRAPHY                                        */
 /* 3. Positioning                                       */
-
+/* 4. Icons                                             */
 
 /** 1. COLORS *******************************************/
 
@@ -67,6 +67,24 @@ a.button {
 
 /* 3. Positioning   **************************************/
 
+
+
+/* 4. ICONS **********************************************/
+.favorite_on{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background: url('favorite_icon.png');
+  margin: 5px;
+}
+.favorite_off {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background: url('favorite_icon.png');
+  background-position: 40px 0px;
+  margin: 5px;
+}
 
 
 // /*- TOP BAR OVERRIDES ***************************************/
