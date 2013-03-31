@@ -3,7 +3,7 @@
     = form_for @medium, :html => {:multipart => true}, :remote => true do |f|
       = f.label 'Media Dashboard', :class => 'media_label', :id => 'media_dashboard'
       %p
-      = f.text_field :title, :autofocus => true, :placeholder => 'Title'
+      = f.text_field :title, :autofocus => true, :value => 'New Media File'
       = f.label 'Videos', :class => 'media_label title'
       = f.file_field :video
       %p
