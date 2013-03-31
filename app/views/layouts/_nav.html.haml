@@ -1,4 +1,3 @@
-
 .fixed
   %nav.top-bar
     %ul.title-area.left
@@ -21,27 +20,21 @@
         %h1
           %a{"data-reveal-id" => "register", :href => "#"}= 'Register'
 
-
-
+#modals
   #register.reveal-modal
     %h2 Info
     %h4 More Info
     %h5 Even More Info
     %a{"data-reveal-id" => "stylist", :href => "#", :class => 'button radius secondary'} Stylist
     %a{"data-reveal-id" => "client", :href => "#", :class => 'button radius secondary'} Client
-    %a.close-reveal-modal ×
+    %a.close-reveal-modal X
 
   #stylist.reveal-modal
-    %h3
-      %ul
-        %h4 Stylist Register Form
-    %a.close-reveal-modal ×
+    = render(:partial => 'stylists/form')
+    %a.close-reveal-modal X
 
   #client.reveal-modal
-    %h3
-      %ul
-        %h4 Client Register Form
-    %a.close-reveal-modal ×
-
+    = render(:partial => 'clients/form')
+    %a.close-reveal-modal X
 
 

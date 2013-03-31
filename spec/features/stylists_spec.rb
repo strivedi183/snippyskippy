@@ -18,6 +18,41 @@ describe 'Stylist' do
     end
   end
 
+  describe 'GET /users/new' do
+    it 'displays register link' do
+      visit root_path
+      page.should have_link('Register')
+    end
+
+    it 'shows the registration form when the Registration link is clicked' do
+      visit root_path
+      click_link('Register')
+      page.should have_link('Stylist')
+    end
+
+    it 'clears the form when the X button is clicked' do
+      visit root_path
+      click_link('Register')
+      page.should have_link('Stylist')
+      click_link('Register')
+      page.find('#stylist').visible? != true
+    end
+  end
+
+  describe 'POST /users/create' do
+    it 'creates a new stylist' do
+      visit root_path
+      click_link('Login')
+      fill_in('user_name', :with => 'bob')
+      fill_in('user_email', :with => 'bob@gmail.com')
+      fill_in('user_password', :with => 'a')
+      fill_in('user_password_confirmation', :with => 'a')
+      click_button('Create Account')
+      page.should have_link('Login')
+      expect(User.first.name).to eq 'bob'
+    end
+  end
+
   describe 'POST /login' do
     let(:user) {FactoryGirl.create(:stylist_user)}
 
@@ -29,8 +64,8 @@ describe 'Stylist' do
     it 'does not log the user into the system if credentials are incorrect' do
       visit root_path
       click_link('Login')
-      fill_in('Email', :with => user.email)
-      fill_in('Password', :with => 'b')
+      fill_in('email_field', :with => user.email)
+      fill_in('password_field', :with => 'b')
       click_button('Login')
       page.should have_button('Login')
     end
@@ -38,8 +73,8 @@ describe 'Stylist' do
 
   describe 'DELETE /login' do
     it 'logs the user off the system' do
-      client = FactoryGirl.create(:stylist)
-      login_to_system(client.user)
+      stylist = FactoryGirl.create(:stylist)
+      login_to_system(stylist.user)
       click_link('stylist | Logout')
       page.should have_link('Login')
       visit root_path
