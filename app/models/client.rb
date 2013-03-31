@@ -27,4 +27,19 @@ class Client < ActiveRecord::Base
       self.longitude = result.longitude
     end
   end
+
+  # def ranks
+  #   favorites = Favorites.where(:client_id => self.id)
+  #   @ranks = []
+  #   @ranks[0] = favorities.where(:rank => 1).reverse.first
+  #   @ranks[1] = favorities.where(:rank => 2).reverse.first
+  #   @ranks[2] = favorities.where(:rank => 3).reverse.first
+  #   @ranks
+  # end
+
+  # def favorites
+  #   favorites = Favorites.where(:client_id => self.id)
+  #   @client_favorites = favorites.where(:is_favorite => true)
+  #   @client_favorites
+  # end
 end
