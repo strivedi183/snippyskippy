@@ -28,18 +28,18 @@ class Client < ActiveRecord::Base
     end
   end
 
-  def latest_ranks
-    favorites = Favorites.where(:client_id => self.id)
-    @ranks = []
-    @ranks[0] = favorities.where(:rank => 1).order(:created_at).reverse.first
-    @ranks[1] = favorities.where(:rank => 2).order(:created_at).reverse.first
-    @ranks[2] = favorities.where(:rank => 3).order(:created_at).reverse.first
-    @ranks
-  end
+  # def ranks
+  #   favorites = Favorites.where(:client_id => self.id)
+  #   @ranks = []
+  #   @ranks[0] = favorities.where(:rank => 1).reverse.first
+  #   @ranks[1] = favorities.where(:rank => 2).reverse.first
+  #   @ranks[2] = favorities.where(:rank => 3).reverse.first
+  #   @ranks
+  # end
 
-  def latest_favorities
-    favorites = Favorites.where(:client_id => self.id)
-    @client_favorites = favorites.where(:is_favorite => true)
-    @client_favorites
-  end
+  # def favorites
+  #   favorites = Favorites.where(:client_id => self.id)
+  #   @client_favorites = favorites.where(:is_favorite => true)
+  #   @client_favorites
+  # end
 end
