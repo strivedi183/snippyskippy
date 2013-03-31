@@ -1,3 +1,6 @@
+= form_tag '/' do
+  = hidden_field_tag :client_id, @auth.client.id
+
 #user_dashboard
   = render(:partial => 'clients/dashboard')
 
