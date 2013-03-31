@@ -29,6 +29,7 @@ class Snippy
 
   @tile_droppable: (e, ui) ->
     $(this).addClass("background-yellow")
+    ui.helper.addClass('drag_size')
 
   @update_favorite: ->
     if $(this).children().first().hasClass('favorite_off')
@@ -49,15 +50,6 @@ class Snippy
       console.log("The Medium ID is #{medium_id}")
       client_id = $('#client_id').val()
       console.log(client_id)
-<<<<<<< HEAD
-      # settings =
-      #   dataType: 'script'
-      #   type: 'post'
-      #   url: "/clients/#{:client_id}/update_favorites"
-      #   data: {authenticity_token: token, medium_id:medium_id}
-      # $.ajax(Settings)
-=======
->>>>>>> a951f776936ff7bcec7faee0cbe77081d1478327
       $(this).children().first().removeClass('favorite_on').addClass('favorite_off')
     settings =
       dataType: 'script'
