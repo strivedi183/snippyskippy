@@ -1,7 +1,3 @@
-<div id="user_dashboard">
-  <%= render(:partial => 'clients/dashboard') %>
-</div>
-
 <div id="main" role="main">
 
   <div class="row">
@@ -20,8 +16,14 @@
       <ul id="tiles">
         <% @media.each do |media| %>
           <li class="<%=media.tags.map(&:tag).join('.') %>">
-            <div class="tile draggable">
-            <h6>Favorites</h6>
+            <div class="tile draggable" data-medium-id='<%= media.id  %>'>
+              <div class="favorites">
+                <% if media.id.in?(@auth.client.favorites.map(&:medium_id)) %>
+                 <div class="favorite_on"></div>
+                 <% else %>
+                 <div class="favorite_off"></div>
+                 <% end %>
+              </div>
               <% if media.photo? %>
                 <%= image_tag(media.photo.thumb, :size => '200x320', :class => 'video') %>
               <% elsif media.video? %>
