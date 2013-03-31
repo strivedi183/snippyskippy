@@ -58,7 +58,7 @@ class Snippy
       #   dataType: 'script'
       #   type: 'post'
       #   url: "/clients/#{:client_id}/update_favorites"
-      #   data: {_method: delete, authenticity_token: token, medium_id:medium_id}
+      #   data: {authenticity_token: token, medium_id:medium_id}
       # $.ajax(Settings)
       $(this).children().first().removeClass('favorite_on').addClass('favorite_off')
 
