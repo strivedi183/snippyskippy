@@ -15,6 +15,7 @@ Snippyskippy::Application.routes.draw do
   end
   resources :stylists
   resources :users, :only => [:new, :create]
+  resources :salons, :only => [:new, :create]
 
   get 'gallery_dev' => 'welcome#gallery_dev'
 end

@@ -5,6 +5,7 @@
       = form_for @user do |f|
         = f.text_field :name, :id => 'client_name', :placeholder => 'Name'
         = f.text_field :email, :id => 'client_email', :placeholder => 'Email'
+        = f.text_field :image, :id => 'client_image', :placeholder => 'Image'
         = text_field_tag :address, nil, :placeholder => 'Address'
         = f.password_field :password, :id => 'client_password', :placeholder => 'Password'
         = f.password_field :password_confirmation, :id => 'client_password_confirmation', :placeholder => 'Password Confirmation'

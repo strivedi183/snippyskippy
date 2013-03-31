@@ -1,7 +1,6 @@
 class StylistsController < ApplicationController
   before_filter :check_if_logged_in
 
-
   def new
   end
   def create
@@ -17,5 +16,6 @@ class StylistsController < ApplicationController
     @user = User.new
     @medium = Medium.new
     @stylist = Stylist.first
+    @salon = Salon.new
   end
 end
