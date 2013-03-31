@@ -22,20 +22,24 @@ $black:   #4b3b3b; //text color
 
 /** 2. TYPOGRAPHY ***************************************/
 
+
 * {
   font-family: "brandon-grotesque",sans-serif;
 }
 
 
 .display_type {
-  font-size: 6em;
+  font-size: 4em;
   font-family: "brandon-grotesque",sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 100;
-  color: $black;
+  color: $white;
   line-height: -.2em;
   -webkit-font-smoothing: antialiased;
   opacity: .99;
+}
+.subhed{
+  font-size: 2em;
 }
 
 h1 {
@@ -43,7 +47,7 @@ h1 {
   font-style: normal;
   font-weight: 700;
   color: $black;
-  line-height: .9em;
+  line-height: 1em;
 }
 
 h2, h3, h4, h5 {
@@ -70,7 +74,11 @@ p {
 
 /* add class for bold type */
 
-
+.button {
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
 
 a.button {
   text-transform: uppercase;
@@ -143,7 +151,9 @@ $topbar-bg: #777;
 
 // /* END TOP BAR CSS  ***************************************/
 
-
+.screen {
+  background-color: rgba($black, .7);
+}
 
 
 
@@ -152,7 +162,9 @@ $topbar-bg: #777;
 .spacer {
   height: 60px;
 }
-
+.center {
+  text-align: center;
+}
 
 /* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
 body {
@@ -249,7 +261,6 @@ li.name {
 
 legend {
   text-align: left;
-
 }
 
 .f-dropdown.content.open {
@@ -267,16 +278,41 @@ legend {
 
 .client_form
 {
-  height: 275px;
+  height: 320px;
 }
 
 .stylist_form
 {
-  height: 225px;
+  height: 275px;
 }
 
+.salon_form
+{
+  height: 130px;
+}
+
+.media_label
+{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.media_label.title
+{
+  float: left;
+  margin-left: 20px;
+}
+
+.links {
+  color: black;
+}
 
 /*- END NAV -*/
+
+
+
+
+
 
 /*- TEST CLASSES -*/
 

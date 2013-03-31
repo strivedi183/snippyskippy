@@ -1,23 +1,23 @@
-.row
-  .large-4.columns
-    = form_for @medium, :html => {:multipart => true}, :remote => true do |f|
-      = f.label :title
-      = f.text_field :title, :autofocus => true
-      = f.label :video
-      = f.file_field :video
-      = f.text_field :remote_video_url
-      = f.label :photo
-      = f.file_field :photo
-      = f.text_field :remote_photo_url
-      - Tag.order(:tag).each do |tag|
-        .row
-          .large-2.columns
-            = tag.tag
-          .large-2.columns
-            = check_box_tag 'medium[tag_ids][]', tag.id, tag.in?(@medium.tags)
-            %br
-          .large-8.columns
-        %br
-      = hidden_field_tag :stylist_id, params[:stylist_id]
-      = f.submit 'Add Photo/Video', :class => 'button tiny success'
-  .large-8.columns
+%nav.top-bar
+  %ul.title-area.left
+    %ul
+    -if @stylist.present?
+      %li
+        %div= image_tag(@auth.image)
+      %li
+        %a{"data-reveal-id" => "media_form", :href => "#", :class => 'links'}= 'Add Media'
+      %li
+        %a{"data-reveal-id" => "salon_form", :href => "#", :class => 'links'}= 'Add Salon'
+    -if @client.present?
+      %li
+        / %div= image_tag(@auth.image)
+
+#modals
+  #media_form.reveal-modal
+    = render(:partial => 'media_form')
+    %a.close-reveal-modal X
+
+#modals
+  #salon_form.reveal-modal
+    = render(:partial => 'salon_form')
+    %a.close-reveal-modal X

@@ -1,0 +1,9 @@
+.row
+  %fieldset.forms
+    %legend New Salon
+    .five.columns.salon_form
+      = form_for @salon do |f|
+        = f.text_field :name, :placeholder => 'Name'
+        = f.text_field :address, :placeholder => 'Address'
+        = f.submit 'Add Salon', :class => 'button radius success'
+    .seven.columns
