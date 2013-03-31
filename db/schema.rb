@@ -50,15 +50,9 @@ ActiveRecord::Schema.define(:version => 20130330192856) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "media_medium_tags", :id => false, :force => true do |t|
-    t.integer "medium_tag_id"
+  create_table "media_tags", :id => false, :force => true do |t|
+    t.integer "tag_id"
     t.integer "medium_id"
-  end
-
-  create_table "medium_tags", :force => true do |t|
-    t.string   "tag"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "salons", :force => true do |t|

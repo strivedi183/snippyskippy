@@ -12,7 +12,7 @@
           #drop.f-dropdown.content
             %li#login_form
               = form_tag '/login' do
-                = text_field_tag :email, nil, :autofocus => true, :placeholder => 'Email'
+                = text_field_tag :email, nil, :autofocus => true, :id => 'email_field', :placeholder => 'Email'
                 = password_field_tag :password, nil, :id => 'password_field', :placeholder => 'Password'
                 .login_btn
                   = submit_tag 'Login', :id => 'login_btn', :class => 'button radius success'
@@ -20,13 +20,14 @@
         %h1
           %a{"data-reveal-id" => "register", :href => "#"}= 'Register'
 
+
 #modals
   #register.reveal-modal
     %h2 Info
     %h4 More Info
     %h5 Even More Info
-    %a{"data-reveal-id" => "stylist", :href => "#", :class => 'button radius secondary'} Stylist
-    %a{"data-reveal-id" => "client", :href => "#", :class => 'button radius secondary'} Client
+    %a.reg_btns{"data-reveal-id" => "stylist", :href => "#", :class => 'button radius secondary'} Stylist
+    %a.reg_btns{"data-reveal-id" => "client", :href => "#", :class => 'button radius secondary'} Client
     %a.close-reveal-modal X
 
   #stylist.reveal-modal
@@ -36,5 +37,6 @@
   #client.reveal-modal
     = render(:partial => 'clients/form')
     %a.close-reveal-modal X
+
 
 
