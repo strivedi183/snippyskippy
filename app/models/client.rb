@@ -18,6 +18,28 @@ class Client < ActiveRecord::Base
   validates :address, :presence => true
 
   before_save :geocode
+
+  def rank_1
+    if !self.favorites.where(:rank => 1).empty?
+      media = Medium.find(self.favorites.where(:rank => 1 ).first.medium_id)
+      media
+    end
+  end
+
+  def rank_2
+    if !self.favorites.where(:rank => 2).empty?
+      media = Medium.find(self.favorites.where(:rank => 2 ).first.medium_id)
+      media
+    end
+  end
+
+  def rank_3
+    if !self.favorites.where(:rank => 3).empty?
+      media = Medium.find(self.favorites.where(:rank => 3 ).first.medium_id)
+      media
+    end
+  end
+
   private
   def geocode
     result = Geocoder.search(self.address).first
@@ -27,6 +49,8 @@ class Client < ActiveRecord::Base
       self.longitude = result.longitude
     end
   end
+
+
 
   # def ranks
   #   favorites = Favorites.where(:client_id => self.id)

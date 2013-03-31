@@ -17,4 +17,6 @@ Snippyskippy::Application.routes.draw do
   resources :users, :only => [:new, :create]
 
   get 'gallery_dev' => 'welcome#gallery_dev'
+
+  resources :m, :only => [:index]
 end

@@ -18,3 +18,4 @@
 /config/database.yml
 config/database.yml
 /public/assets/source_maps/*
+/public/uploads/tmp/*
