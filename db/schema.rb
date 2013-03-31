@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(:version => 20130330192856) do
     t.integer  "medium_id"
     t.integer  "client_id"
     t.integer  "rank"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "is_favorite"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "media", :force => true do |t|

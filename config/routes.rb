@@ -7,7 +7,12 @@ Snippyskippy::Application.routes.draw do
   delete '/login' => 'session#destroy'
 
   resources :media, :only => [:index, :new, :create, :show]
-  resources :clients, :only => [:show, :new, :create]
+  resources :clients, :only => [:show, :new, :create] do
+    member do
+      post 'update_rank'
+      post 'update_favorites'
+    end
+  end
   resources :stylists
   resources :users, :only => [:new, :create]
 

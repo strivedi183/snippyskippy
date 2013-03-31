@@ -1,3 +1,7 @@
+= form_tag '/' do
+  = hidden_field_tag :client_id, @auth.client.id
+
+
 #user_dashboard
   = render(:partial => 'clients/dashboard')
 
@@ -14,9 +18,9 @@
   .large-12.columns
     %ul#tiles
       %li.short
-        .tile.draggable
+        .tile.draggable{:'data-medium-id' => 10 }
           .favorites
-            .favorite_on
+            .favorite_off
           .video= video_tag('sandip1.mov', :size => '200x283')
           .info
             %h5 cut by <span class="stylist">Vincenzo</span>

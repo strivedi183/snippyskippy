@@ -4,6 +4,7 @@ class AddFavoritesTables < ActiveRecord::Migration
       t.integer :medium_id
       t.integer :client_id
       t.integer :rank
+      t.boolean :is_favorite
       t.timestamps
     end
   end
