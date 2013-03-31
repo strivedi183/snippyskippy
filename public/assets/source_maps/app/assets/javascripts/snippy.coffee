@@ -5,11 +5,12 @@ class Snippy
     $(".droppable").droppable({drop: Snippy.update_rank})
     # $(".style").on('drop', Snippy.update_rank)
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
+    Handler.woodmark()
 
   @get_draggable_info: (e, ui) ->
     Snippy.medium_id = $(this).data('medium-id')
     console.log("The Medium ID is #{Snippy.medium_id}")
-    ui.helper.addClass('drag_size')
+    # ui.helper.addClass('drag_size')
 
   @update_rank: ->
     console.log("Update Dashboard Called")
@@ -54,6 +55,7 @@ class Snippy
       dataType: 'script'
       type: 'post'
       url: "/clients/#{client_id}/update_favorites"
+      success: "Good job"
       data: {authenticity_token: token, medium_id:medium_id}
     $.ajax(settings)
 
