@@ -141,8 +141,9 @@ body {
 }
 
 /* USER PAGE HEADER */
-#fixed_header {
-  position: fixed;
+#user_header {
+  // position: relative;
+  margin-top: 45px;
   width: 100%;
   height: 300px;
   background-color: rgba($black, .9)
@@ -155,7 +156,7 @@ body {
   display: inline-block;
 }
 
-#style1{
+.style1{
   width:150px;
   height: 200px;
   background-color: $orange;
@@ -163,7 +164,7 @@ body {
   margin: 20px;
 }
 
-#style2{
+.style2{
   width:150px;
   height: 200px;
   background-color: $orange;
@@ -171,7 +172,7 @@ body {
   margin: 20px;
 }
 
-#style3{
+.style3{
   width:150px;
   height: 200px;
   background-color: $orange;
@@ -212,3 +213,11 @@ li.name
 }
 
 /*- END NAV -*/
+
+/*- TEST CLASSES -*/
+
+.background-yellow {
+  background-color: yellow;
+}
+
+/*- EMD TEST CLASSES -*/
