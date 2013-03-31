@@ -20,3 +20,4 @@ config/database.yml
 /public/assets/source_maps/*
 /public/uploads/tmp/*
 config/initializers/fog_init.rb
+/config/initializers/fog_init.rb
