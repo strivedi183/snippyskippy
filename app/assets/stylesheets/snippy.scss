@@ -344,15 +344,22 @@ legend {
 #media_dashboard {
   margin-top: 50px;
 }
+
 .media_label.title
 {
   float: left;
   margin-left: 20px;
 }
 
-#add_media_btn {
-  margin-right: 10px;
+.tags {
+  color: blue;
 }
+
+.photo {
+  float: left;
+  margin: 10px;
+}
+
 
 /*- END NAV -*/
 
