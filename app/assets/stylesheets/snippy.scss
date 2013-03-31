@@ -260,6 +260,10 @@ li.name {
   padding-bottom: -10px;
 }
 
+#add_media_btn {
+  position: relative;
+}
+
 .reg_btns {
   margin: 0 10px 0 10px;
 }
@@ -302,14 +306,17 @@ legend {
   font-size: 18px;
 }
 
+#media_dashboard {
+  margin-top: 50px;
+}
 .media_label.title
 {
   float: left;
   margin-left: 20px;
 }
 
-.links {
-  color: black;
+#add_media_btn {
+  margin-right: 10px;
 }
 
 /*- END NAV -*/
