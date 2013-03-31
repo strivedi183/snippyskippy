@@ -15,6 +15,11 @@ $black:   #4b3b3b; //text color
 
 /** 2. TYPOGRAPHY ***************************************/
 
+* {
+  font-family: "brandon-grotesque",sans-serif;
+}
+
+
 .display_type {
   font-size: 6em;
   font-family: "brandon-grotesque",sans-serif;
@@ -237,6 +242,7 @@ li.name {
 
 legend {
   text-align: left;
+
 }
 
 .f-dropdown.content.open {
