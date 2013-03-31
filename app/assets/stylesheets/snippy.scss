@@ -262,6 +262,10 @@ li.name {
   list-style: none;
 }
 
+.links {
+  color: blue;
+}
+
 #modals {
   z-index: 1;
   opacity: .9;
@@ -272,6 +276,10 @@ li.name {
   float: center;
   border-radius: 25px;
   padding-bottom: -10px;
+}
+
+#add_media_btn {
+  position: relative;
 }
 
 .reg_btns {
@@ -316,14 +324,17 @@ legend {
   font-size: 18px;
 }
 
+#media_dashboard {
+  margin-top: 50px;
+}
 .media_label.title
 {
   float: left;
   margin-left: 20px;
 }
 
-.links {
-  color: black;
+#add_media_btn {
+  margin-right: 10px;
 }
 
 /*- END NAV -*/
