@@ -5,7 +5,6 @@
 #tiles {
 list-style-type: none;
 position: relative; /** Needed to ensure items are laid out relative to this container **/
-margin: 0;
 }
 
 /**
@@ -13,14 +12,14 @@ margin: 0;
  */
 #tiles li {
 width: 220px;
-background-color: #ffffff;
+background-color: rgba(255,255,255,0.9);
 border: 1px solid #dedede;
 -moz-border-radius: 2px;
 -webkit-border-radius: 2px;
 border-radius: 2px;
 display: none; /** Hide items initially to avoid a flicker effect **/
   cursor: pointer;
-padding: 4px;
+padding: 10px;
   -webkit-transition: all 0.3s ease-out;
      -moz-transition: all 0.3s ease-out;
        -o-transition: all 0.3s ease-out;
