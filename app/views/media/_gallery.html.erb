@@ -30,7 +30,7 @@
                 <%= video_tag(media.video, :size => '200x283', :class => 'video') %>
               <% end %>
           <div class="info">
-            <h5>cut by <span class="stylyst">Vincenzo</span></h5>
+            <h5>cut by <span class="stylist"><%= link_to(media.stylist.user.name, "/stylists/#{media.stylist.id}") %></span></h5>
           </div>
           </div>
         <% end %>
