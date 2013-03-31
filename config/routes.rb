@@ -9,5 +9,6 @@ Snippyskippy::Application.routes.draw do
   resources :media, :only => [:index, :new, :create, :show]
   resources :clients, :only => [:show, :new, :create]
   resources :stylists
+  resources :users, :only => [:new, :create]
 
 end

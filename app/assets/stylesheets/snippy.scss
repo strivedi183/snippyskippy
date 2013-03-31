@@ -134,10 +134,11 @@ body {
 
 /* Set Login Form width */
 
-#login_form:hover { background-color: transparent; }
+#login_form:hover {
+  background-color: transparent;
+}
 
-li.name
-{
+li.name {
   float: left;
 }
 

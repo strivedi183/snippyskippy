@@ -6,5 +6,8 @@ class ClientsController < ApplicationController
     @media = Medium.all
   end
 
+  def create
+  end
+
 end
 

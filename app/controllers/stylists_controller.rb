@@ -14,6 +14,7 @@ class StylistsController < ApplicationController
     @stylists = Stylist.all
   end
   def show
+    @user = User.new
     @medium = Medium.new
     @stylist = Stylist.first
   end
