@@ -3,7 +3,10 @@
   #user_header
     #user_photo
     #style1.style.droppable{:'data-rank' => 1}
+      = @auth.client.favorites.where(:rank => 1).first.find()
     #style2.style.droppable{:'data-rank' => 2}
+      = @auth.client.favorites.where(:rank => 2).first
     #style3.style.droppable{:'data-rank' => 3}
+      = @auth.client.favorites.where(:rank => 3).first
 .row
   .large-12.columns
