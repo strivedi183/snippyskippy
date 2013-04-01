@@ -13,12 +13,12 @@
       Uploading successful
 
 .row
-  -if @stylist.present?
+  -if @auth.is_stylist? && (@auth.stylist == @stylist)
     %div= image_tag(@auth.image)
-  .row
+    .row
     %a{"data-reveal-id" => "media_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Media'
     %a{"data-reveal-id" => "salon_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Salon'
-  -if @client.present?
+  -else
     %div= image_tag(@stylist.user.image)
 .row
   #stylist_galery

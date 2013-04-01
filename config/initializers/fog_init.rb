@@ -15,3 +15,4 @@ CarrierWave.configure {|config| config.fog_directory = 'snippy-test'} if Rails.e
 CarrierWave.configure {|config| config.fog_directory = 'snippy-test'} if Rails.env.test?
 CarrierWave.configure {|config| config.fog_directory = 'snippy-test'} if Rails.env.production?
 
+

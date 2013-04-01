@@ -11,7 +11,7 @@ u2 = User.create(:name => 'God', :email => 'god@gmail.com', :password => 'a', :p
 u2.is_admin = true
 u2.save
 u3 = User.create(:name => 'Snippy', :email => 'snip@gmail.com', :image => 'https://s3.amazonaws.com/uploads.hipchat.com/38251/267262/4lo1rvydwdr6l9r/mads2.jpg', :password => 'a', :password_confirmation => 'a')
-u4 = User.create(:name => 'Vincenzo', :email => 'v@gmail.com', :image => 'http://www.beautycollectivesalon.com/_wp/wp-content/uploads/2012/08/Beauty-Collective-Hair-Salon-Tarek-Makki.jpg' )
+u4 = User.create(:name => 'Vincenzo', :email => 'v@gmail.com', :image => 'http://www.beautycollectivesalon.com/_wp/wp-content/uploads/2012/08/Beauty-Collective-Hair-Salon-Tarek-Makki.jpg', :password => 'a', :password_confirmation => 'a')
 
 s1 = Stylist.create
 s1.user = u3
