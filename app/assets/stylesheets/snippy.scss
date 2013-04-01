@@ -168,15 +168,33 @@ a.button {
 
 /* 6. Foundation Overrides  *********************************/
 
-.success{
-  color: $orange;
+
+
+.button.success {
+  background-color: $blue;
+  border-color: darken( $blue, 30% );
+  color: #fff;
+  font-weight: 700;
+}
+.button.success:hover {
+  background-color: darken($blue, 10%);
+  border-color: $blue;
+  color: #fff;
+  font-weight: 700;
 }
 
-
-
-
-
-
+.button.alert {
+  background-color: $lt_purp;
+  border-color: darken( $lt_purp, 30% );
+  color: $black;
+  font-weight: 700;
+}
+.button.alert:hover {
+  background-color: darken($lt_purp, 10%);
+  border-color: $lt_purp;
+  color: $black;
+  font-weight: 700;
+}
 
 
 
