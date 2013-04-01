@@ -6,11 +6,13 @@
   #salon_form.reveal-modal
     = render(:partial => 'salon_form')
     %a.close-reveal-modal X
-
 .row
-  #confirm_upload_msg.hide
-    .alert-box.success.round
-      Uploading successful
+  .large-12.columns.tiny_spacer
+.row
+  .large-4.large-centered.columns
+    #confirm_upload_msg.hide
+      .alert-box.success.round
+        Uploading successful
 
 .row
   -if @auth.is_stylist? && (@auth.stylist == @stylist)
@@ -29,8 +31,9 @@
     %script
       display_map(40.7316, -73.9901, 12);
       = "add_client_marker(#{@auth.client.latitude}, #{@auth.client.longitude}, '#{@auth.name}');"
-      = "add_salon_marker(#{@stylist.salon.latitude}, #{@stylist.salon.longitude}, '#{@stylist.salon.name}');"
-      = "add_path(#{@auth.client.latitude},#{@auth.client.longitude}, #{@stylist.salon.latitude},#{@stylist.salon.longitude});"
+      = "add_salon_marker(#{@stylist.salon.latitude}, #{@stylist.salon.longitude}, '#{@stylist.salon.name}');" if @stylist.salon.present?
+      = "add_path(#{@auth.client.latitude},#{@auth.client.longitude}, #{@stylist.salon.latitude},#{@stylist.salon.longitude});"  if @stylist.salon.present?
+
 .row
   #stylist_galery
     = render :partial => 'gallery'

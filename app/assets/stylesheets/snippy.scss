@@ -3,7 +3,8 @@
 /* 2. TYPOGRAPHY                                        */
 /* 3. Positioning                                       */
 /* 4. Icons                                             */
-
+/* 5. Page Utilities                                    */
+/* 6. Foundation Overrides                              */
 /** 1. COLORS *******************************************/
 
 $orange:  #e57113; //accent color, stylist name
@@ -19,6 +20,14 @@ $black:   #4b3b3b; //text color
 .blue   { color: $blue; }
 .amber  { color: $amber; }
 .black  { color: $black; }
+
+
+.orange_bg { background-color: $orange; }
+.lt_purp_bg { background-color: $lt_purp; }
+.white_bg { background-color: $white; }
+.blue_bg   { background-color: $blue; }
+.amber_bg  { background-color: $amber; }
+.black_bg  { background-color: $black; }
 
 /** 2. TYPOGRAPHY ***************************************/
 
@@ -117,6 +126,62 @@ a.button {
   margin: 5px;
 }
 
+/* 5. PAGE UTILITIES  ***************************************/
+.spacer {
+  height: 60px;
+}
+
+.big_spacer{
+  margin-top: 325px;
+}
+.tiny_spacer{
+  height: 10px;
+}
+.small_photo{
+  width: auto;
+  height:200px;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.center {
+  text-align: center;
+}
+
+.inline{
+  display: inline-block;
+}
+
+
+.float-left{
+  float: left;
+}
+
+
+.column2 {
+  -moz-column-count:2; /* Firefox */
+  -webkit-column-count:2; /* Safari and Chrome */
+  column-count:2;
+  height: 400px;
+}
+
+
+/* 6. Foundation Overrides  *********************************/
+
+.success{
+  color: $orange;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // /*- TOP BAR OVERRIDES ***************************************/
 
@@ -175,27 +240,7 @@ $topbar-bg: #777;
   font-size: 3em;
 }
 
-/* page utilities  ***************************************/
-.spacer {
-  height: 60px;
-}
 
-.big_spacer{
-  margin-top: 325px;
-}
-.tiny_spacer{
-  height: 10px;
-}
-.small_photo{
-  width: auto;
-  height:200px;
-  display: inline-block;
-  margin-right: auto;
-  margin-left: auto;
-}
-.center {
-  text-align: center;
-}
 
 /* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
 body {
@@ -259,6 +304,16 @@ body {
   display: inline-block;
   margin: 20px;
 }
+
+
+#stylist_photo{
+  width: 300px;
+  border: 10px solid $lt_purp;
+  box-shadow: 5px 5px 20px #111;
+}
+
+
+
 
 /*- START NAV -*/
 

@@ -1,27 +1,26 @@
 .fixed
   %nav.top-bar
     %ul.title-area.left
-    -if @auth.present?
-      %li.name
-        %h1
-          %a= link_to(@auth.name + ' | Logout', '/login', :method => :delete, :id => 'logout_btn')
-      %li.name
-        %h1.userable
-          = @auth.userable_type
-    -if !@auth.present?
-      %li.name
-        %h1
-          %a{"data-dropdown" => "drop", :href => "#"}= 'Login'
-          #drop.f-dropdown.content
-            %li#login_form
-              = form_tag '/login' do
-                = text_field_tag :email, nil, :autofocus => true, :id => 'email_field', :placeholder => 'Email'
-                = password_field_tag :password, nil, :id => 'password_field', :placeholder => 'Password'
-                .login_btn
-                  = submit_tag 'Login', :id => 'login_btn', :class => 'button radius success'
-      %li.name
-        %h1
-          %a{"data-reveal-id" => "register", :href => "#"}= 'Register'
+      = login_nav.html_safe
+
+    / -if @auth.present?
+    /   %li.name
+    /     %h1
+    /       %a= link_to(@auth.name + ' - ' + @auth.userable_type + ' | Logout', '/login', :method => :delete, :id => 'logout_btn')
+    / -if !@auth.present?
+    /   %li.name
+    /     %h1
+    /       %a{"data-dropdown" => "drop", :href => "#"}= 'Login'
+    /       #drop.f-dropdown.content
+    /         %li#login_form
+    /           = form_tag '/login' do
+    /             = text_field_tag :email, nil, :autofocus => true, :id => 'email_field', :placeholder => 'Email'
+    /             = password_field_tag :password, nil, :id => 'password_field', :placeholder => 'Password'
+    /             .login_btn
+    /               = submit_tag 'Login', :id => 'login_btn', :class => 'button radius success'
+    /   %li.name
+    /     %h1
+    /       %a{"data-reveal-id" => "register", :href => "#"}= 'Register'
 
 
 #modals
@@ -39,6 +38,3 @@
   #client.reveal-modal
     = render(:partial => 'clients/form')
     %a.close-reveal-modal X
-
-
-
