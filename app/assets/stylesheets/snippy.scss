@@ -168,15 +168,33 @@ a.button {
 
 /* 6. Foundation Overrides  *********************************/
 
-.success{
-  color: $orange;
+
+
+.button.success {
+  background-color: $blue;
+  border-color: darken( $blue, 30% );
+  color: #fff;
+  font-weight: 700;
+}
+.button.success:hover {
+  background-color: darken($blue, 10%);
+  border-color: $blue;
+  color: #fff;
+  font-weight: 700;
 }
 
-
-
-
-
-
+.button.alert {
+  background-color: $lt_purp;
+  border-color: darken( $lt_purp, 30% );
+  color: $black;
+  font-weight: 700;
+}
+.button.alert:hover {
+  background-color: darken($lt_purp, 10%);
+  border-color: $lt_purp;
+  color: $black;
+  font-weight: 700;
+}
 
 
 
@@ -300,16 +318,11 @@ body {
 .style{
   width:150px;
   height: 200px;
-  background-color: $orange;
+  // background-color: $orange;
+  background: url('superlike.png') no-repeat;
   display: inline-block;
   margin: 20px;
-}
-
-
-#stylist_photo{
-  width: 300px;
-  border: 10px solid $lt_purp;
-  box-shadow: 5px 5px 20px #111;
+  overflow: hidden;
 }
 
 
@@ -421,14 +434,15 @@ legend {
 
 .bio_container {
   border: 5px solid red;
-  height: 300px;
-  width: 500px;
-  float: left;
+  width: 100%;
+
   background-color: rgba(255,0,0,0.3);
 }
 
-.stylist_photo {
-  float: left;
+.stylist_photo{
+
+  border: 10px solid $lt_purp;
+  box-shadow: 5px 5px 20px #111;
 }
 
 #map_canvas
@@ -460,16 +474,7 @@ legend {
 
 
 /*- STYLIST INDEX CAROUSEL -*/
-.index_photos {
-  height: 150px;
-  background: #E01B49;
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  line-height: 200%;
-}
+
 
 div.carousel {
   overflow: hidden;

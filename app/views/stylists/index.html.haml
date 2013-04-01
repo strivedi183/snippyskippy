@@ -3,20 +3,10 @@
 /   = stylist.user.name
 /   = link_to(image_tag(stylist.user.image, :size => '200x230'), stylist_path(stylist))
 
-.fixed
-  .row
-    .carousel{"data-jkit" => "[carousel:autoplay=no]"}
-      .carousel-item
-        %div DIV 1 ...
-      .carousel-item
-        %div DIV 2 ...
-      .carousel-item
-        %div DIV 3 ...
-      .carousel-item
-        %div DIV 4 ...
-      .carousel-item
-        %div DIV 5 ...
-      .carousel-item
-        %div DIV 6 ...
-      .carousel-item
-        %div DIV 7 ...
+
+.row
+  .carousel{"data-jkit" => "[carousel:autoplay=no]"}
+  - @stylists.each do |stylist|
+    .carousel-item
+      %div= link_to(image_tag(stylist.user.image, :size => '200x230'), stylist_path(stylist))
+      %div= stylist.user.name

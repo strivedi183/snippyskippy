@@ -5,10 +5,16 @@ class Snippy
     $(".droppable").droppable({drop: Snippy.update_rank})
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
-    $('#login_form').on('click', 'a[data-clear-form]', Home.clear_form)
+    # $('#user_header').hide()
+    $(window).load(Snippy.refresh)
+    $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
+
+  @refresh: ->
+    $('#main').trigger('refreshWookmark')
 
   @clear_form: (e) ->
     e.preventDefault()
+    console.log('hiding')
     $('#login_form').addClass('hide')
 
   @show_login_form: ->
@@ -18,6 +24,16 @@ class Snippy
     Snippy.medium_id = $(this).data('medium-id')
     console.log("The Medium ID is #{Snippy.medium_id}")
     # ui.helper.addClass('drag_size')
+
+  @clear_all_ranks: ->
+    client_id = $('#client_id').val()
+    token = $('input[name=authenticity_token]').val()
+    settings =
+      dataType: 'script'
+      type: 'post'
+      url: "/clients/#{client_id}/clear_ranks"
+      data: {authenticity_token: token}
+    $.ajax(settings)
 
   @update_rank: (e, ui) ->
     console.log("Update Dashboard Called")
@@ -75,10 +91,13 @@ class Snippy
       $(this).css "opacity", "1"
       @pause()
 
+  @easter_egg_video: ->
+    $('video').each (index, element) =>
+      element.play()
+
 window.Snippy = Snippy
 
 $(document).ready(Snippy.document_ready)
-
 # # -- closes drop down menu by clicking outside the field -- #
 
 # $(document).click (e) ->
