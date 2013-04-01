@@ -82,26 +82,27 @@ margin: 7px 0 0 7px;
 }
 
 /**
- * Some extra styles to randomize heights of grid items.
- */
-#tiles a li:nth-child(3n) {
-height: 175px;
-}
+//  * Some extra styles to randomize heights of grid items.
+//  */
+// #tiles a li:nth-child(3n) {
+// height: 175px;
+// }
 
-#tiles a li:nth-child(4n-3) {
-padding-bottom: 30px;
-}
+// #tiles a li:nth-child(4n-3) {
+// padding-bottom: 30px;
+// }
 
-#tiles a li:nth-child(5n) {
-height: 250px;
-}
+// #tiles a li:nth-child(5n) {
+// height: 250px;
+// }
 
 /** General page styling **/
 
 
 
 #main {
-padding: 30px 0 30px 0;
+padding: 30px 30px 30px 0;
+margin-right: 90px;
 }
 
 header h1 {
