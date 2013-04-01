@@ -324,11 +324,6 @@ body {
 }
 
 
-#stylist_photo{
-  width: 300px;
-  border: 10px solid $lt_purp;
-  box-shadow: 5px 5px 20px #111;
-}
 
 
 
@@ -439,14 +434,15 @@ legend {
 
 .bio_container {
   border: 5px solid red;
-  height: 300px;
-  width: 500px;
-  float: left;
+  width: 100%;
+
   background-color: rgba(255,0,0,0.3);
 }
 
-.stylist_photo {
-  float: left;
+.stylist_photo{
+
+  border: 10px solid $lt_purp;
+  box-shadow: 5px 5px 20px #111;
 }
 
 #map_canvas
