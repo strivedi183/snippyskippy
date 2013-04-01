@@ -300,9 +300,11 @@ body {
 .style{
   width:150px;
   height: 200px;
-  background-color: $orange;
+  // background-color: $orange;
+  background: url('superlike.png') no-repeat;
   display: inline-block;
   margin: 20px;
+  overflow: hidden;
 }
 
 
