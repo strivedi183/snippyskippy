@@ -19,8 +19,7 @@ Snippyskippy::Application.routes.draw do
 
   get 'gallery_dev' => 'welcome#gallery_dev'
 
-  resources :m, :only => [:index]
-  get '/m_upload' => 'm#upload'
+  resources :m, :only => [:index, :create, :new]
 
 
   get '/m_login' => 'session#m_new'

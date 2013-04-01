@@ -1,0 +1,13 @@
+= form_for @media, :html => {:multipart => true} do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.label :video, 'Video'
+  = f.file_field :video
+  = f.label :photo, 'Photo'
+  = f.file_field :photo
+  = f.label :tags
+  - Tag.order(:tag).each do |tag|
+    = tag.tag
+    = check_box_tag 'media[tag_ids][]', tag.id, tag.in?(@media.tags)
+  = hidden_field_tag :stylist_id, @stylist.id
+  = f.submit 'Add Photo/Video'

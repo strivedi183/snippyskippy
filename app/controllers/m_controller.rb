@@ -5,9 +5,11 @@ class MController < ApplicationController
   def index
   end
 
-  def upload
+  def new
     @media = Medium.new
+    @stylist = Stylist.find(@auth.stylist.id)
   end
+
 
 
 end
