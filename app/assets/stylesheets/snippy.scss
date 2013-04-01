@@ -169,7 +169,9 @@ a.button {
   column-count:2;
   height: 400px;
 }
-
+.upcase {
+  text-transform: uppercase;
+}
 
 /* 6. Foundation Overrides  *********************************/
 
@@ -256,7 +258,7 @@ $topbar-bg: #777;
 }
 
 .screen_light {
-  background-color: rgba($lt_purp, .7);
+  background-color: rgba($white, .7);
   padding: 10px;
 }
 .filter_type{
@@ -330,7 +332,10 @@ body {
   overflow: hidden;
 }
 
-
+.salon_box {
+  height: 100%;
+  width: 100%;
+}
 
 
 /*- START NAV -*/
@@ -437,12 +442,7 @@ legend {
   color: white;
 }
 
-.bio_container {
-  border: 5px solid red;
-  width: 100%;
 
-  background-color: rgba(255,0,0,0.3);
-}
 
 .stylist_photo{
 
@@ -452,9 +452,16 @@ legend {
 
 #map_canvas
 {
-  width: 900px;
-  height: 300px;
+  width: 303px;
+  height: 200px;
   border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.bio_container
+{
+  width: 100%;
+  height: 414px;
   margin-bottom: 15px;
 }
 /*- END NAV -*/

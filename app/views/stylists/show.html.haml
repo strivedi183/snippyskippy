@@ -19,29 +19,47 @@
     .large-4.columns
       .stylist_photo= image_tag(@auth.image)
     .large-4.columns
-      .bio_container
+      .bio_container.screen
+        %h1.orange.upcase= @stylist.user.name
+        %p.white= @stylist.user.name + ' has been cutting hair for over 10 years. He has worked with a range of very important celebrities and people of great import. Lorem ipsum Sunt cupidatat non sunt non consequat ex id ut laborum consequat anim quis mollit aliqua veniam sunt reprehenderit Excepteur.'
     .large-4.columns
       %a{"data-reveal-id" => "media_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Media'
       %a{"data-reveal-id" => "salon_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Salon'
-  -else
+  -elsif @auth.is_client?
     .large-4.columns
       .stylist_photo= image_tag(@stylist.user.image)
     .large-4.columns
-      .bio_container
+      .bio_container.screen
+        %h1.orange.upcase= @stylist.user.name
+        %h5.white= @stylist.user.name + ' has been cutting hair for over 10 years. He has worked with a range of very important celebrities and people of great import. Lorem ipsum Sunt cupidatat non sunt non consequat ex id ut laborum consequat anim quis mollit aliqua veniam sunt reprehenderit Excepteur.'
     .large-4.columns
-
-.row
-  .large-12.columns.tiny_spacer
-
--if @auth.is_client?
-  .row
-    .large-6.columns
       #map_canvas
       %script
         display_map(40.7316, -73.9901, 12);
         = "add_client_marker(#{@auth.client.latitude}, #{@auth.client.longitude}, '#{@auth.name}');"
         = "add_salon_marker(#{@stylist.salon.latitude}, #{@stylist.salon.longitude}, '#{@stylist.salon.name}');" if @stylist.salon.present?
         = "add_path(#{@auth.client.latitude},#{@auth.client.longitude}, #{@stylist.salon.latitude},#{@stylist.salon.longitude});"  if @stylist.salon.present?
+      .salon_box.screen_light
+        %h2.black= @stylist.salon.name
+        %h3.black= @stylist.salon.address
+  -else
+    .large-4.columns
+      .stylist_photo= image_tag(@stylist.user.image)
+    .large-4.columns
+      .bio_container.screen
+        %h1.orange.upcase= @stylist.user.name
+        %h3.white= @stylist.user.name + ' has been cutting hair for over 10 years. He has worked with a range of very important celebrities and people of great import. Lorem ipsum Sunt cupidatat non sunt non consequat ex id ut laborum consequat anim quis mollit aliqua veniam sunt reprehenderit Excepteur.'
+    .large-4.columns
+      #map_canvas
+      %script
+        display_map(40.7316, -73.9901, 12);
+        = "add_salon_marker(#{@stylist.salon.latitude}, #{@stylist.salon.longitude}, '#{@stylist.salon.name}');" if @stylist.salon.present?
+      .salon_box.screen_light
+        %h2.black= @stylist.salon.name
+        %h3.black= @stylist.salon.address
+
+.row
+  .large-12.columns.tiny_spacer
 
 .row
   #stylist_galery
