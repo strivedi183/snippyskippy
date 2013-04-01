@@ -20,6 +20,16 @@ class Snippy
     console.log("The Medium ID is #{Snippy.medium_id}")
     # ui.helper.addClass('drag_size')
 
+  @clear_all_ranks: ->
+    client_id = $('#client_id').val()
+    token = $('input[name=authenticity_token]').val()
+    settings =
+      dataType: 'script'
+      type: 'post'
+      url: "/clients/#{client_id}/clear_ranks"
+      data: {authenticity_token: token}
+    $.ajax(settings)
+
   @update_rank: (e, ui) ->
     console.log("Update Dashboard Called")
     token = $('input[name=authenticity_token]').val()
@@ -75,6 +85,10 @@ class Snippy
     ), ->
       $(this).css "opacity", "1"
       @pause()
+
+  @easter_egg_video: ->
+    $('video').each (index, element) =>
+      element.play()
 
 window.Snippy = Snippy
 

@@ -10,6 +10,7 @@ Snippyskippy::Application.routes.draw do
   resources :clients, :only => [:show, :new, :create] do
     member do
       post 'update_rank'
+      post 'clear_ranks'
       post 'update_favorites'
     end
   end
