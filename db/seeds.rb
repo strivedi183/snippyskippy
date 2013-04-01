@@ -35,3 +35,8 @@ t11 = Tag.create(:tag => 'bob')
 t12 = Tag.create(:tag => 'punk')
 t13 = Tag.create(:tag => 'preppie')
 
+n1 = Salon.create(:name => 'Snippy Salon', :address => 'Chelsea, NY')
+n2 = Salon.create(:name => 'Vincenzo Salon', :address => 'Midtown, NY')
+
+n1.stylists << s1
+n2.stylists << s2

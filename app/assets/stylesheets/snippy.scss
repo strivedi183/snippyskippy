@@ -432,7 +432,30 @@ legend {
   margin: 10px;
 }
 
+.userable {
+  float: right;
+  color: white;
+}
 
+.bio_container {
+  border: 5px solid red;
+  height: 300px;
+  width: 500px;
+  float: left;
+  background-color: rgba(255,0,0,0.3);
+}
+
+.stylist_photo {
+  float: left;
+}
+
+#map_canvas
+{
+  width: 900px;
+  height: 300px;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
 /*- END NAV -*/
 
 
