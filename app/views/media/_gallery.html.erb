@@ -1,12 +1,14 @@
 <div id="main" role="main">
 
   <div class="row">
-    <div class="large-8.columns box">
-      <ol id="filters" class="filter_type">
-        <% @tags.each do |tag| %>
-        <li data-filter='<%= tag %>'><%= tag %></li>
-        <% end %>
-      </ol>
+    <div class="large-8.columns">
+      <div class='box'>
+        <ol id="filters" class="filter_type" >
+          <% @tags.each do |tag| %>
+          <li data-filter='<%= tag %>'><%= tag %></li>
+          <% end %>
+        </ol>
+      </div>
     </div>
   </div> <!-- end filter row -->
 

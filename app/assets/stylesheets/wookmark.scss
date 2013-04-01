@@ -11,7 +11,7 @@
  * Grid items
  */
 #tiles li {
-width: 220px;
+width: 210px;
 background-color: rgba(255,255,255,0.9);
 border: 1px solid #dedede;
 -moz-border-radius: 2px;
@@ -84,15 +84,15 @@ margin: 7px 0 0 7px;
 /**
  * Some extra styles to randomize heights of grid items.
  */
-#tiles ali:nth-child(3n) {
+#tiles a li:nth-child(3n) {
 height: 175px;
 }
 
-#tiles ali:nth-child(4n-3) {
+#tiles a li:nth-child(4n-3) {
 padding-bottom: 30px;
 }
 
-#tiles ali:nth-child(5n) {
+#tiles a li:nth-child(5n) {
 height: 250px;
 }
 
