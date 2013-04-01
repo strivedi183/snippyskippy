@@ -1,0 +1,4 @@
+= form_tag '/m_login' do
+  = text_field_tag :email, nil, :autofocus => true, :id => 'email_field', :placeholder => 'Email'
+  = password_field_tag :password, nil, :id => 'password_field', :placeholder => 'Password'
+  = submit_tag 'Log in', :'data-role' => 'button'

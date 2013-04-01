@@ -1,0 +1,5 @@
+= form_for @medium, :html => {:multipart => true}, :remote => true do |f|
+  = f.text_field :title, :autofocus => true, :placeholder => 'Title'
+  = f.label 'Videos', :class => 'media_label title'
+  = f.file_field :video
+  = f.submit 'Add Photo/Video'
