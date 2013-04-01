@@ -5,7 +5,7 @@
       <div class='box'>
         <ol id="filters" class="filter_type" >
           <li data-filter='favorite'>favorite</li>
-          <% @tags.each do |tag| %>
+          <% @tags.uniq.each do |tag| %>
           <li data-filter='<%= tag %>'><%= tag %></li>
           <% end %>
         </ol>
