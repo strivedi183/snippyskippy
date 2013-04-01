@@ -8,6 +8,7 @@ class Snippy
     # $('#user_header').hide()
     $(window).load(Snippy.refresh)
     $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
+    $('#carousel').jKit('carousel', { 'autoplay': 'yes', 'interval': '3000', 'limit': '' })
 
   @refresh: ->
     $('#main').trigger('refreshWookmark')
@@ -98,7 +99,6 @@ class Snippy
 window.Snippy = Snippy
 
 $(document).ready(Snippy.document_ready)
-
 # # -- closes drop down menu by clicking outside the field -- #
 
 # $(document).click (e) ->
