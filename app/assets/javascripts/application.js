@@ -11,3 +11,4 @@
 //= require 'foundation/js/foundation/foundation.dropdown.js'
 //= require 'foundation/js/foundation/foundation.reveal.js'
 //= require 'foundation/js/foundation/foundation.alerts.js'
+//= require 'map.js'

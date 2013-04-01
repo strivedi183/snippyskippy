@@ -1,4 +1,4 @@
 %h1 Index Page
 - @stylists.each do |stylist|
   = stylist.user.name
-  = link_to(image_tag(stylist.user.image, :size => '200x230'), stylist_path(stylist))
+  = link_to(image_tag(stylist.user.image, :size => '200x200'), stylist_path(stylist))
