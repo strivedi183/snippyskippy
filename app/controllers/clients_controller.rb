@@ -1,5 +1,4 @@
 class ClientsController < ApplicationController
-  layout 'clientshowpage'
   before_filter :check_if_logged_in
 
   def show
