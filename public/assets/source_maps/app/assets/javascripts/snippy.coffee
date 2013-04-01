@@ -5,21 +5,17 @@ class Snippy
     $(".droppable").droppable({drop: Snippy.update_rank})
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
-<<<<<<< HEAD
     # $('#user_header').hide()
     $(window).load(Snippy.refresh)
-
+    $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
 
   @refresh: ->
     $('#main').trigger('refreshWookmark')
-=======
-    $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
 
   @clear_form: (e) ->
     e.preventDefault()
     console.log('hiding')
     $('#login_form').addClass('hide')
->>>>>>> f445a4d6f1856c656cc845b7be4a506ab7e10f3f
 
   @show_login_form: ->
     $('#login_form').removeClass('hide')
