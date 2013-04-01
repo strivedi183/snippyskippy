@@ -7,10 +7,15 @@ class Snippy
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
     # $('#user_header').hide()
     $(window).load(Snippy.refresh)
-
+    $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
 
   @refresh: ->
     $('#main').trigger('refreshWookmark')
+
+  @clear_form: (e) ->
+    e.preventDefault()
+    console.log('hiding')
+    $('#login_form').addClass('hide')
 
   @show_login_form: ->
     $('#login_form').removeClass('hide')

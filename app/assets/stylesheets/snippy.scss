@@ -168,15 +168,33 @@ a.button {
 
 /* 6. Foundation Overrides  *********************************/
 
-.success{
-  color: $orange;
+
+
+.button.success {
+  background-color: $blue;
+  border-color: darken( $blue, 30% );
+  color: #fff;
+  font-weight: 700;
+}
+.button.success:hover {
+  background-color: darken($blue, 10%);
+  border-color: $blue;
+  color: #fff;
+  font-weight: 700;
 }
 
-
-
-
-
-
+.button.alert {
+  background-color: $lt_purp;
+  border-color: darken( $lt_purp, 30% );
+  color: $black;
+  font-weight: 700;
+}
+.button.alert:hover {
+  background-color: darken($lt_purp, 10%);
+  border-color: $lt_purp;
+  color: $black;
+  font-weight: 700;
+}
 
 
 
@@ -308,11 +326,6 @@ body {
 }
 
 
-#stylist_photo{
-  width: 300px;
-  border: 10px solid $lt_purp;
-  box-shadow: 5px 5px 20px #111;
-}
 
 
 /*- START NAV -*/
@@ -414,7 +427,31 @@ legend {
   margin: 10px;
 }
 
+.userable {
+  float: right;
+  color: white;
+}
 
+.bio_container {
+  border: 5px solid red;
+  width: 100%;
+
+  background-color: rgba(255,0,0,0.3);
+}
+
+.stylist_photo{
+
+  border: 10px solid $lt_purp;
+  box-shadow: 5px 5px 20px #111;
+}
+
+#map_canvas
+{
+  width: 900px;
+  height: 300px;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
 /*- END NAV -*/
 
 
