@@ -54,6 +54,7 @@ class Snippy
       dataType: 'script'
       type: 'post'
       url: "/clients/#{client_id}/update_favorites"
+      success: "Good job"
       data: {authenticity_token: token, medium_id:medium_id}
     $.ajax(settings)
 

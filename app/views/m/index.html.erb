@@ -1,13 +1,4 @@
-<link href='/assets/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css' media='all' rel='stylesheet'>
-
-<script src='/assets/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js' type='text/javascript'>
-
-<div data-role="page">
-  <div data-role="header">
-    <h1>My Title</h1>
-  </div>
-<div data-role="content">
-  <p>Hello world</p>
-</div>
-
-</div>
+<ul data-role="listview" data-inset="true" data-divider-theme="b">
+     <li><%= link_to('Login', m_login_path) %></li>
+     <li><a href="/m/bookings">Bookings</a></li>
+</ul>
