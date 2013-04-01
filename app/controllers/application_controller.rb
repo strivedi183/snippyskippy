@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
 
   def prepend_view_path_if_mobile
     append_view_path Rails.root + 'app' + 'views' + 'm'
-    binding.pry
   end
 
 
