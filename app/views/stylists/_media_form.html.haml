@@ -4,12 +4,12 @@
       = f.label 'Media Dashboard', :class => 'media_label', :id => 'media_dashboard'
       %p
       = f.text_field :title, :autofocus => true, :value => 'New Media File'
-      = f.label 'Videos', :class => 'media_label title'
+      = f.label 'Video', :class => 'media_label title'
       = f.file_field :video
       %p
       = f.text_field :remote_video_url, :placeholder => 'Video URL'
       %p
-      = f.label 'Photos', :class => 'media_label title'
+      = f.label 'Photo', :class => 'media_label title'
       = f.file_field :photo
       %p
       = f.text_field :remote_photo_url, :placeholder => 'Photo URL'
@@ -25,6 +25,6 @@
             %br
           .large-8.columns
         %br
-      = hidden_field_tag :stylist_id, params[:stylist_id]
+      = hidden_field_tag :stylist_id, @stylist.id
       = f.submit 'Add Photo/Video', :class => 'button radius success', :id => 'add_media_btn'
   .seven.columns
