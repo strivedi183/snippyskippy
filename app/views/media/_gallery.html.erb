@@ -4,6 +4,7 @@
     <div class="large-8.columns">
       <div class='box'>
         <ol id="filters" class="filter_type" >
+          <li data-filter='favorite'>favorite</li>
           <% @tags.each do |tag| %>
           <li data-filter='<%= tag %>'><%= tag %></li>
           <% end %>
@@ -17,7 +18,7 @@
     <div class="large-12.columns">
       <ul id="tiles">
         <% @media.each do |media| %>
-          <li class="<%=media.tags.map(&:tag).join('.') %>">
+          <li class="<%=media.tags.map(&:tag).join('.') %> <%= 'favorite' if media.id.in?(@auth.client.favorites.map(&:medium_id)) %>">
             <div class="tile draggable" data-medium-id='<%= media.id  %>'>
               <div class="favorites">
                 <% if media.id.in?(@auth.client.favorites.map(&:medium_id)) %>
