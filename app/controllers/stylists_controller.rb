@@ -10,6 +10,7 @@ class StylistsController < ApplicationController
   def update
   end
   def index
+    @user = User.new
     @stylists = Stylist.all
   end
   def show
