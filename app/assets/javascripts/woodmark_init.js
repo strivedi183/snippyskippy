@@ -8,7 +8,7 @@ $(document).ready( function() {
         autoResize: true, // This will auto-update the layout when the browser window is resized.
         container: $('#main'), // Optional, used for some extra CSS styling
         offset: 2, // Optional, the distance between grid items
-        itemWidth: 210 // Optional, the width of a grid item
+        itemWidth: 240 // Optional, the width of a grid item
       };
 
       // This function filters the grid when a change is made.

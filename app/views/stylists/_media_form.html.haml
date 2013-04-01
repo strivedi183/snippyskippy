@@ -1,30 +1,30 @@
-.row
-  .five.columns.media_form
-    = form_for @medium, :html => {:multipart => true}, :remote => true do |f|
-      = f.label 'Media Dashboard', :class => 'media_label', :id => 'media_dashboard'
-      %p
-      = f.text_field :title, :autofocus => true, :value => 'New Media File'
-      = f.label 'Video', :class => 'media_label title'
-      = f.file_field :video
-      %p
-      = f.text_field :remote_video_url, :placeholder => 'Video URL'
-      %p
-      = f.label 'Photo', :class => 'media_label title'
-      = f.file_field :photo
-      %p
-      = f.text_field :remote_photo_url, :placeholder => 'Photo URL'
-      %p
-      = f.label 'Please Tag your media', :class => 'media_label'
-      %p
-      - Tag.order(:tag).each do |tag|
+.white_bg
+  .row
+    .five.columns.media_form
+      = form_for @medium, :html => {:multipart => true}, :remote => true do |f|
+        = f.label 'Media Dashboard', :class => 'media_label', :id => 'media_dashboard'
+        %p
+        = f.text_field :title, :autofocus => true, :value => 'New Media File'
+        = f.label 'Video', :class => 'media_label title'
+        = f.file_field :video
+        %p
+        = f.text_field :remote_video_url, :placeholder => 'Video URL'
+        %p
+        = f.label 'Photo', :class => 'media_label title'
+        = f.file_field :photo
+        %p
+        = f.text_field :remote_photo_url, :placeholder => 'Photo URL'
+        %p
+        = f.label 'Please Tag your media', :class => 'media_label'
+        %p
         .row
-          .large-2.columns
-            = tag.tag
-          .large-2.columns
-            = check_box_tag 'medium[tag_ids][]', tag.id, tag.in?(@medium.tags)
-            %br
-          .large-8.columns
+          .large-5.large-centered.columns
+            - Tag.order(:tag).each do |tag|
+              .checkbox
+                .left= tag.tag
+                .right= check_box_tag 'medium[tag_ids][]', tag.id, tag.in?(@medium.tags)
+                %br
         %br
-      = hidden_field_tag :stylist_id, @stylist.id
-      = f.submit 'Add Photo/Video', :class => 'button radius success', :id => 'add_media_btn'
-  .seven.columns
+        = hidden_field_tag :stylist_id, @stylist.id
+        = f.submit 'Add Photo/Video', :class => 'button small radius success', :id => 'add_media_btn'
+    .seven.columns
