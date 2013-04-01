@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+
   def new
   end
 
@@ -27,4 +28,18 @@ class SessionController < ApplicationController
     authenticate
     redirect_to root_path
   end
+
+def m_new
+  render :layout => 'mobile'
+end
+
+def m_create
+    user = User.where(:email => params[:email]).first
+    if user.present? && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to m_upload_path
+    else
+  end
+end
+
 end
