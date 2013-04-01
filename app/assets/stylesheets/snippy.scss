@@ -97,15 +97,20 @@ a.button {
 
 /* 3. Positioning   **************************************/
 .box{
-  position: fixed;
+  // position: fixed;
   width: 1000px;
+  height: 50px;
   background-color: rgba($blue,0.8);
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  z-index: 9999;
-  margin-top: -45px;
+  // z-index: 9999;
+  // margin-top: -45px;
   padding: 5px;
+}
+
+.clear {
+  clear: both;
 }
 
 
@@ -473,8 +478,8 @@ legend {
 }
 
 .drag_size{
-  width:150px;
-  height: 200px;
+  width: 100px;
+  height: 125px;
 }
 /*- EMD TEST CLASSES -*/
 
@@ -482,6 +487,11 @@ legend {
 
 /*- STYLIST INDEX CAROUSEL -*/
 
+.index_pics {
+  height: 250px;
+  width: 200px;
+  float: left;
+}
 
 div.carousel {
   overflow: hidden;
