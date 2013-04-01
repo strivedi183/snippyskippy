@@ -6,20 +6,23 @@
   #salon_form.reveal-modal
     = render(:partial => 'salon_form')
     %a.close-reveal-modal X
+.row
+  .large-12.columns.tiny_spacer
+.row
+  .large-4.large-centered.columns
+    #confirm_upload_msg.hide
+      .alert-box.success.round
+        Uploading successful
 
 .row
-  #confirm_upload_msg.hide
-    .alert-box.success.round
-      Uploading successful
-
-.row
-  -if @auth.is_stylist? && (@auth.stylist == @stylist)
-    %div= image_tag(@auth.image)
-    .row
-    %a{"data-reveal-id" => "media_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Media'
-    %a{"data-reveal-id" => "salon_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Salon'
-  -else
-    %div= image_tag(@stylist.user.image)
+  .large-6.columns
+    -if @auth.is_stylist? && (@auth.stylist == @stylist)
+      #stylist_photo= image_tag(@auth.image)
+      .left
+        %a{"data-reveal-id" => "media_form", :href => "#", :id => 'links', :class => 'button small radius'}= 'Add Media'
+        %a{"data-reveal-id" => "salon_form", :href => "#", :id => 'links', :class => 'button small radius'}= 'Add Salon'
+    -else
+      %div= image_tag(@stylist.user.image)
 .row
   #stylist_galery
     = render :partial => 'gallery'

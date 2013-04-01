@@ -1,10 +1,13 @@
 class Snippy
   @document_ready: ->
     Snippy.video_hover()
-    $(".draggable").draggable({snap: ".style", zIndex: 9999, revert: "valid", opacity: 0.5, drag: Snippy.get_draggable_info})
+    $(".draggable").draggable({snap: ".style", zIndex: 9999, revert: true, opacity: 0.5, drag: Snippy.get_draggable_info})
     $(".droppable").droppable({drop: Snippy.update_rank})
-    # $(".style").on('drop', Snippy.update_rank)
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
+    $('body').on('click', '#login-form-btn', Snippy.show_login_form)
+
+  @show_login_form: ->
+    $('#login_form').removeClass('hide')
 
   @get_draggable_info: (e, ui) ->
     Snippy.medium_id = $(this).data('medium-id')
@@ -28,9 +31,9 @@ class Snippy
       data: {authenticity_token: token, medium_id:medium_id, rank:rank}
     $.ajax(settings)
 
-  @tile_droppable: (e, ui) ->
-
   @update_favorite: ->
+    x = $(this).parent().hasClass('favorite')
+    console.log(x)
     if $(this).children().first().hasClass('favorite_off')
       console.log("Add to Favorites")
       token = $('input[name=authenticity_token]').val()
@@ -39,7 +42,7 @@ class Snippy
       console.log("The Medium ID is #{medium_id}")
       client_id = $('#client_id').val()
       console.log(client_id)
-
+      $(this).parent().parent().addClass('favorite')
       $(this).children().first().removeClass('favorite_off').addClass('favorite_on')
     else
       console.log("Add to Favorites")
@@ -49,6 +52,7 @@ class Snippy
       console.log("The Medium ID is #{medium_id}")
       client_id = $('#client_id').val()
       console.log(client_id)
+      $(this).parent().parent().removeClass('favorite')
       $(this).children().first().removeClass('favorite_on').addClass('favorite_off')
     settings =
       dataType: 'script'
@@ -70,14 +74,14 @@ window.Snippy = Snippy
 
 $(document).ready(Snippy.document_ready)
 
-# -- closes drop down menu by clicking outside the field -- #
+# # -- closes drop down menu by clicking outside the field -- #
 
-$(document).click (e) ->
-  e.stopPropagation()
-  container = $(".f-dropdown")
-  $("#drop").hide()  if container.has(e.target).length is 0
-  # $("#email").val ""
-  # $("#password_field").val ""
+# $(document).click (e) ->
+#   e.stopPropagation()
+#   container = $(".f-dropdown")
+#   $("#drop").hide()  if container.has(e.target).length is 0
+#   # $("#email").val ""
+#   # $("#password_field").val ""
 
-# -- end -- #
+# # -- end -- #
 

@@ -4,7 +4,8 @@
     <div class="large-8.columns">
       <div class='box'>
         <ol id="filters" class="filter_type" >
-          <% @tags.each do |tag| %>
+          <li data-filter='favorite'>favorite</li>
+          <% @tags.uniq.each do |tag| %>
           <li data-filter='<%= tag %>'><%= tag %></li>
           <% end %>
         </ol>
@@ -17,7 +18,7 @@
     <div class="large-12.columns">
       <ul id="tiles">
         <% @media.each do |media| %>
-          <li class="<%=media.tags.map(&:tag).join('.') %>">
+          <li class="<%=media.tags.map(&:tag).join('.') %> <%= 'favorite' if media.id.in?(@auth.client.favorites.map(&:medium_id)) %>">
             <div class="tile draggable" data-medium-id='<%= media.id  %>'>
               <div class="favorites">
                 <% if media.id.in?(@auth.client.favorites.map(&:medium_id)) %>
@@ -26,11 +27,13 @@
                  <div class="favorite_off"></div>
                  <% end %>
               </div>
-              <% if media.photo? %>
-                <%= image_tag(media.photo.thumb, :size => '200x320', :class => 'video') %>
-              <% elsif media.video? %>
-                <%= video_tag(media.video, :size => '200x283', :class => 'video') %>
-              <% end %>
+              <div>
+                <% if media.photo? %>
+                  <%= image_tag(media.photo.thumb, :size => '200x320', :class => 'video') %>
+                <% elsif media.video? %>
+                  <%= video_tag(media.video, :width => '190', :class => 'video') %>
+                <% end %>
+              </div>
           <div class="info">
             <h5>cut by <span class="stylist"><%= link_to(media.stylist.user.name, "/stylists/#{media.stylist.id}") %></span></h5>
           </div>
