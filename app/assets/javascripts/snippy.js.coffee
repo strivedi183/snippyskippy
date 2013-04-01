@@ -11,7 +11,7 @@ class Snippy
     console.log("The Medium ID is #{Snippy.medium_id}")
     # ui.helper.addClass('drag_size')
 
-  @update_rank: ->
+  @update_rank: (e, ui) ->
     console.log("Update Dashboard Called")
     token = $('input[name=authenticity_token]').val()
     console.log(token)
@@ -65,6 +65,8 @@ class Snippy
     ), ->
       $(this).css "opacity", "1"
       @pause()
+
+window.Snippy = Snippy
 
 $(document).ready(Snippy.document_ready)
 
