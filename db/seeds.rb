@@ -33,5 +33,5 @@ t9 =  Tag.create(:tag => 'wavy')
 t10 = Tag.create(:tag => 'bangs')
 t11 = Tag.create(:tag => 'bob')
 t12 = Tag.create(:tag => 'punk')
-t13 = Tag.create(:tag => 'punk')
-t14 = Tag.create(:tag => 'preppie')
+t13 = Tag.create(:tag => 'preppie')
+
