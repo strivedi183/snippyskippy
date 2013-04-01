@@ -5,7 +5,7 @@ class Snippy
     $(".droppable").droppable({drop: Snippy.update_rank})
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
-    $('#login_form').on('click', 'a[data-clear-form]', Home.clear_form)
+    $('#login_form').on('click', 'a[data-clear-form]', Snippy .clear_form)
 
   @clear_form: (e) ->
     e.preventDefault()
