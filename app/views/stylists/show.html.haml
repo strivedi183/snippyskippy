@@ -1,3 +1,17 @@
+#modals
+  #media_form.reveal-modal
+    = render(:partial => 'media_form')
+    %a.close-reveal-modal X
+
+  #salon_form.reveal-modal
+    = render(:partial => 'salon_form')
+    %a.close-reveal-modal X
+
+.row
+  #confirm_upload_msg.hide
+    .alert-box.success.round
+      Uploading successful
+
 .row
   -if @stylist.present?
     %div= image_tag(@auth.image)
@@ -10,11 +24,3 @@
   #stylist_galery
     = render :partial => 'gallery'
 
-#modals
-  #media_form.reveal-modal
-    = render(:partial => 'media_form')
-    %a.close-reveal-modal X
-
-  #salon_form.reveal-modal
-    = render(:partial => 'salon_form')
-    %a.close-reveal-modal X

@@ -5,7 +5,6 @@ class Snippy
     $(".droppable").droppable({drop: Snippy.update_rank})
     # $(".style").on('drop', Snippy.update_rank)
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
-    Handler.woodmark()
 
   @get_draggable_info: (e, ui) ->
     Snippy.medium_id = $(this).data('medium-id')
