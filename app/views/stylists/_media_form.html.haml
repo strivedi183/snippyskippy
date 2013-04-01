@@ -1,9 +1,9 @@
 .row
   .five.columns.media_form
     = form_for @medium, :html => {:multipart => true}, :remote => true do |f|
-      = f.label 'Media Dashboard', :class => 'media_label'
+      = f.label 'Media Dashboard', :class => 'media_label', :id => 'media_dashboard'
       %p
-      = f.text_field :title, :autofocus => true, :placeholder => 'Title'
+      = f.text_field :title, :autofocus => true, :value => 'New Media File'
       = f.label 'Videos', :class => 'media_label title'
       = f.file_field :video
       %p
@@ -26,5 +26,5 @@
           .large-8.columns
         %br
       = hidden_field_tag :stylist_id, params[:stylist_id]
-      = f.submit 'Add Photo/Video', :class => 'button radius success'
+      = f.submit 'Add Photo/Video', :class => 'button radius success', :id => 'add_media_btn'
   .seven.columns

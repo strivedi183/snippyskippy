@@ -1,0 +1,5 @@
+- @auth.stylist.media.each do |media|
+  - if media.photo?
+    .photo= image_tag(media.photo.thumb, :size => '200x320', :class => 'video')
+  - elsif media.video?
+    .photo= video_tag(media.video, :size => '200x283', :class => 'video')

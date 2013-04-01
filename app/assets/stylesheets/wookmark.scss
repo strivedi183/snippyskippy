@@ -3,8 +3,8 @@
  * Grid container
  */
 #tiles {
-list-style-type: none;
-position: relative; /** Needed to ensure items are laid out relative to this container **/
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
 }
 
 /**
@@ -32,35 +32,35 @@ padding: 10px;
 }
 
 #tiles li img {
-display: block;
+  display: block;
 }
 
 #tiles li video {
-display: block;
+  display: block;
 }
 
 
 #filters {
-list-style-type: none;
-text-align: center;
-height: 50px;
-margin: 0 5% 0 5%;
+  list-style-type: none;
+  text-align: center;
+  margin: 0 5% 0 5%;
 }
 
 #filters li {
-font-size: 12px;
-float: left;
-padding: 6px 0 4px 0;
-cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 6px 0 4px 0;
+  cursor: pointer;
   -webkit-transition: all 0.15s ease-out;
-     -moz-transition: all 0.15s ease-out;
-       -o-transition: all 0.15s ease-out;
-          transition: all 0.15s ease-out;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-border-radius: 3px;
-margin: 0 1% 0 1%;
-width: 8%;
+  -moz-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin: 0 1% 0 1%;
+  width: 8%;
+
 }
 
 #filters li:hover {

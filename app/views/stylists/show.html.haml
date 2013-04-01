@@ -1,23 +1,26 @@
-%nav.top-bar
-  %ul.title-area.left
-    %ul
-    -if @stylist.present?
-      %li
-        %div= image_tag(@auth.image)
-      %li
-        %a{"data-reveal-id" => "media_form", :href => "#", :class => 'links'}= 'Add Media'
-      %li
-        %a{"data-reveal-id" => "salon_form", :href => "#", :class => 'links'}= 'Add Salon'
-    -if @client.present?
-      %li
-        / %div= image_tag(@auth.image)
-
 #modals
   #media_form.reveal-modal
     = render(:partial => 'media_form')
     %a.close-reveal-modal X
 
-#modals
   #salon_form.reveal-modal
     = render(:partial => 'salon_form')
     %a.close-reveal-modal X
+
+.row
+  #confirm_upload_msg.hide
+    .alert-box.success.round
+      Uploading successful
+
+.row
+  -if @stylist.present?
+    %div= image_tag(@auth.image)
+  .row
+    %a{"data-reveal-id" => "media_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Media'
+    %a{"data-reveal-id" => "salon_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Salon'
+  -if @client.present?
+    %div= image_tag(@stylist.image)
+.row
+  #stylist_galery
+    = render :partial => 'gallery'
+
