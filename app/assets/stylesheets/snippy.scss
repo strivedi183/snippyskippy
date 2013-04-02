@@ -507,9 +507,9 @@ legend {
 /*- STYLIST INDEX CAROUSEL -*/
 
 .index_pics {
-  height: 250px;
+  height: 225px;
   width: 200px;
-  float: left;
+  float: center;
 }
 
 div.carousel {
@@ -517,14 +517,13 @@ div.carousel {
   pointer-events: none;
   text-align: center;
   width: 100%;
-  height: 150px;
+  height: 225px;
 }
 
 div.carousel-item {
   float: left;
   width: 20%;
-  height: 150px;
-  background: #E01B49;
+  height: 225px;
   margin: 0px;
   padding: 0px;
   text-align: center;
@@ -534,9 +533,8 @@ div.carousel-item {
 }
 
 div.carousel-item div {
-  padding: 20px;
   border: 1px #fff solid;
-  height: 110px;
+  height: 250px;
 }
 
 a.jkit-carousel-prev, a.jkit-carousel-next {
@@ -559,10 +557,12 @@ a.jkit-carousel-prev:hover, a.jkit-carousel-next:hover {
 }
 
 a.jkit-carousel-prev {
+
   float: left;
 }
 
 a.jkit-carousel-next {
+
   float: right;
 }
 /*- END STYLIST INDEX CAROUSEL -*/
