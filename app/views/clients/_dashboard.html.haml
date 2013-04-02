@@ -1,5 +1,6 @@
 #user_header.hide
   #user_photo
+    = image_tag(@auth.image, :size => '200x260')
   #style1.style.ui-droppable.droppable{:'data-rank' => 1}
     - if @auth.client.rank_1.present?
       - if @auth.client.rank_1.photo?
