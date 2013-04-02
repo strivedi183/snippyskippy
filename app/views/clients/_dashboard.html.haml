@@ -1,5 +1,6 @@
 #user_header.hide
   #user_photo
+    = image_tag(@auth.image, :size => '200x260')
   #style1.style.ui-droppable.droppable{:'data-rank' => 1}
     - if @auth.client.rank_1.present?
       - if @auth.client.rank_1.photo?
@@ -20,5 +21,5 @@
         = video_tag(@auth.client.rank_3.video, :size => '150x230')
 
   #clear_ranks.inline.float-right
-    = link_to('Clear All Ranks', clear_ranks_client_path , :class => 'button orange', :method => 'post', :remote => true, :'data-clear-ranks' => true)
+    = link_to('Clear All Ranks', clear_ranks_client_path , :class => 'button small orange', :method => 'post', :remote => true, :'data-clear-ranks' => true)
 

@@ -295,8 +295,9 @@ $topbar-bg: #777;
   font-size: 3em;
 }
 
-
-
+#clear_ranks{
+  margin: 20px;
+}
 /* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
 // body {
 //   background: url('bg2.jpg') no-repeat center center fixed;
@@ -331,14 +332,14 @@ $topbar-bg: #777;
   height: 30px;
   background: -moz-linear-gradient(top,  rgba(75,59,59,1) 0%, rgba(75,59,59,1) 1%, rgba(75,59,59,0) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(75,59,59,1)), color-stop(1%,rgba(75,59,59,1)), color-stop(100%,rgba(75,59,59,0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,rgba(75,59,59,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,  rgba(75,59,59,0) 100%); /* Chrome10+,Safari5.1+ */
   background: linear-gradient(to bottom,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,rgba(75,59,59,0) 100%); /* W3C */
 }
 
 #user_photo {
   width: 200px;
   height: 260px;
-  background-color: $orange;
+  // background-color: $orange;
   margin: 20px;
   display: inline-block;
 }
@@ -465,13 +466,15 @@ legend {
 }
 
 .photo {
-  width: 150px;
-  border-top: 10px solid $white;
-  border-left: 10px solid $white;
-  border-right: 10px solid $white;
-  border-bottom: 30px solid $white;
+  width: 200px;
+  // border-top: 10px solid $white;
+  // border-left: 10px solid $white;
+  // border-right: 10px solid $white;
+  // border-bottom: 30px solid $white;
   float: left;
   margin: 10px;
+  overflow: hidden;
+  display: block;
 }
 
 .userable {

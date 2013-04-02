@@ -3,9 +3,9 @@ module ApplicationHelper
     nav = ""
     if @auth.present?
       nav += "<li>#{link_to(@auth.name + ' - ' + @auth.userable_type + ' | Logout', '/login', :method => :delete, :id => 'logout_btn')}</li>"
-      nav += "<ul class='right'><li class='name'><a href='/stylists' id='stylists_index'>Find a Stylist</a></li></ul>"
-      nav += "<ul class='right'><li class='name'><a href='#' id='dashboard_show'>Show Dashboard</a></li></ul>"
-      nav += "<ul class='right'><li class='name'><a href='#' id='dashboard_hide'>Hide Dashboard</a></li></ul>"
+      nav += "<ul class='right'><li class='name'><a href='/stylists' id='stylists_index'>Find a Stylist</a></li></ul>" if @auth.client.present?
+      nav += "<ul class='right'><li class='name'><a href='#' id='dashboard_show'>Show Dashboard</a></li></ul>" if !@auth.stylist.present?
+      nav += "<ul class='right'><li class='name'><a href='#' id='dashboard_hide'>Hide Dashboard</a></li></ul>" if !@auth.stylist.present?
     else
       nav += "<li class='name'><h1>#{link_to('Login', '#', :id => 'login-form-btn', :'data-dropdown' => 'drop')}</h1></li>"
       nav += "<li class='name'><h1>#{link_to('Register','#', :'data-reveal-id' => 'register' )}</h1></li>"
