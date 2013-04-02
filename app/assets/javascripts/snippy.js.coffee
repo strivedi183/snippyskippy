@@ -6,6 +6,7 @@ class Snippy
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
     $(window).load(Snippy.refresh)
+    $('#carousel').jKit('carousel', { 'autoplay': 'yes', 'interval': '3000', 'limit': '' })
     $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
     $('#dashboard_show').click(Snippy.show_dashboard)
     $('#dashboard_hide').click(Snippy.hide_dashboard)
@@ -112,7 +113,6 @@ class Snippy
 window.Snippy = Snippy
 
 $(document).ready(Snippy.document_ready)
-
 # # -- closes drop down menu by clicking outside the field -- #
 
 # $(document).click (e) ->
