@@ -11,6 +11,7 @@ class Snippy
     $('#dashboard_show').click(Snippy.show_dashboard)
     $('#dashboard_hide').click(Snippy.hide_dashboard)
     $('#dashboard_hide').hide()
+    $('body').on('keypress', Snippy.easter_egg_video)
 
   @show_dashboard: ->
     $('#user_header').slideDown('slow')
@@ -109,9 +110,14 @@ class Snippy
       $(this).css "opacity", "1"
       @pause()
 
-  @easter_egg_video: ->
-    $('video').each (index, element) =>
-      element.play()
+  @easter_egg_video: (e) ->
+    console.log('rotate!')
+    console.log(e)
+    console.log(e.which)
+    if e.which == 114
+      console.log('event is pressed')
+      $('video').each (index, element) =>
+        element.play()
 
 window.Snippy = Snippy
 

@@ -5,8 +5,21 @@
     <title>Bobs and Bangs</title>
     <script type="text/javascript" src="/assets/foundation/js/vendor/jquery.js"></script>
     <link rel="stylesheet" href="/assets/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" />
+    <link rel="stylesheet" href="/assets/photoswipe.css" />
     <script type="text/javascript" src="/assets/jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" src="/assets/klass.min.js"></script>
+    <script type="text/javascript" src="/assets/code.photoswipe.jquery-3.0.5.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript">
+    (function(window, $, PhotoSwipe){
+      $(document).ready(function(){
+        var options = {};
+        $("#Gallery a").photoSwipe(options);
+      });
+    }(window, window.jQuery, window.Code.PhotoSwipe));
+  </script>
+
 </head>
 
  <body>
@@ -25,5 +38,7 @@
     <p>B&B mobile</p>
    </div> -->
  </div>
+
+
  </body>
  </html>

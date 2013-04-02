@@ -1,1 +1,11 @@
-%h2 Coming soon!
+#MainContent
+  .page-content
+    %ul#Gallery.gallery
+      - @media.each do |medium|
+        - if medium.photo.present?
+          %li
+            %a{:href => medium.photo}
+              %img{:src => medium.photo.thumb}
+
+
+

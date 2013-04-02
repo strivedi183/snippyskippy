@@ -18,7 +18,7 @@ class MController < ApplicationController
   end
 
   def gallery
-    @medium = Medium.all
+    @media = Medium.all
   end
 
 end
