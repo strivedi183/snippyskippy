@@ -216,6 +216,18 @@ a.button {
   font-weight: 700;
 }
 
+.button.orange {
+  background-color: $orange;
+  border-color: darken( $orange, 30% );
+  color: $black;
+  font-weight: 700;
+}
+.button.orange:hover {
+  background-color: darken($orange, 10%);
+  border-color: $orange;
+  color: $black;
+  font-weight: 700;
+}
 
 
 

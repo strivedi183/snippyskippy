@@ -18,3 +18,7 @@
         = image_tag(@auth.client.rank_3.photo.thumb, :size => '150x200')
       - elsif @auth.client.rank_3.video?
         = video_tag(@auth.client.rank_3.video, :size => '150x230')
+
+  #clear_ranks
+    = link_to('Clear All Ranks', clear_ranks_client_path , :class => 'button orange', :method => 'post', :remote => true, :'data-clear-ranks' => true)
+
