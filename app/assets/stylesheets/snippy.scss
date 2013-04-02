@@ -175,19 +175,32 @@ a.button {
 
 /* 6. Foundation Overrides  *********************************/
 
-
+.button {
+  background-color: $lt_purp;
+  border-color: darken( $lt_purp, 30% );
+  color: $black;
+  font-weight: 700;
+}
+.button:hover {
+  background-color: darken($lt_purp, 10%);
+  border-color: $lt_purp;
+  color: $black;
+  font-weight: 700;
+}
 
 .button.success {
   background-color: $blue;
   border-color: darken( $blue, 30% );
   color: #fff;
   font-weight: 700;
+
 }
 .button.success:hover {
   background-color: darken($blue, 10%);
   border-color: $blue;
   color: #fff;
   font-weight: 700;
+
 }
 
 .button.alert {
@@ -202,6 +215,8 @@ a.button {
   color: $black;
   font-weight: 700;
 }
+
+
 
 
 
@@ -268,13 +283,13 @@ $topbar-bg: #777;
 
 
 /* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
-body {
-  background: url('bg2.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+// body {
+//   background: url('bg2.jpg') no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
 
 
 
@@ -433,6 +448,11 @@ legend {
 }
 
 .photo {
+  width: 150px;
+  border-top: 10px solid $white;
+  border-left: 10px solid $white;
+  border-right: 10px solid $white;
+  border-bottom: 30px solid $white;
   float: left;
   margin: 10px;
 }
@@ -445,7 +465,6 @@ legend {
 
 
 .stylist_photo{
-
   border: 10px solid $lt_purp;
   box-shadow: 5px 5px 20px #111;
 }

@@ -1,3 +1,5 @@
+%h4.lt_purp_bg.upcase= 'Some of ' + @stylist.user.name + 's current clients:'
+
 - @stylist.media.each do |media|
   - if media.photo?
     .photo= image_tag(media.photo.thumb, :size => '200x320', :class => 'video')
