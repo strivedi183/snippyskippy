@@ -5,10 +5,24 @@ class Snippy
     $(".droppable").droppable({drop: Snippy.update_rank})
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
-    # $('#user_header').hide()
     $(window).load(Snippy.refresh)
-    $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
     $('#carousel').jKit('carousel', { 'autoplay': 'yes', 'interval': '3000', 'limit': '' })
+    $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
+    $('#dashboard_show').click(Snippy.show_dashboard)
+    $('#dashboard_hide').click(Snippy.hide_dashboard)
+    $('#dashboard_hide').hide()
+
+  @show_dashboard: ->
+    $('#user_header').slideDown('slow')
+    $('#user_header').removeClass('hide')
+    $('#dashboard_show').hide()
+    $('#dashboard_hide').show()
+
+  @hide_dashboard: ->
+    $('#user_header').slideUp('slow')
+    $('#dashboard_hide').hide()
+    $('#dashboard_show').show()
+
 
   @refresh: ->
     $('#main').trigger('refreshWookmark')
