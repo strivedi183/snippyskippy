@@ -466,13 +466,15 @@ legend {
 }
 
 .photo {
-  width: 150px;
-  border-top: 10px solid $white;
-  border-left: 10px solid $white;
-  border-right: 10px solid $white;
-  border-bottom: 30px solid $white;
+  width: 200px;
+  // border-top: 10px solid $white;
+  // border-left: 10px solid $white;
+  // border-right: 10px solid $white;
+  // border-bottom: 30px solid $white;
   float: left;
   margin: 10px;
+  overflow: hidden;
+  display: block;
 }
 
 .userable {
