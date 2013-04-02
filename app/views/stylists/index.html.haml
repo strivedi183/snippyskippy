@@ -1,20 +1,9 @@
-
-- @stylists.each do |stylist|
-  %div= link_to(image_tag(stylist.user.image, :class => 'index_pics'), stylist_path(stylist))
+/ - @stylists.each do |stylist|
+/   %div= link_to(image_tag(stylist.user.image, :class => 'index_pics'), stylist_path(stylist))
 
 .row
   #carousel
-    .carousel-item
-      %div DIV 1 ...
-    .carousel-item
-      %div DIV 2 ...
-    .carousel-item
-      %div DIV 3 ...
-    .carousel-item
-      %div DIV 4 ...
-    .carousel-item
-      %div DIV 5 ...
-    .carousel-item
-      %div DIV 6 ...
-    .carousel-item
-      %div DIV 7 ...
+    - @stylists.each do |stylist|
+      .carousel-item
+        %div
+          = link_to(image_tag(stylist.user.image, :class => 'index_pics'), stylist_path(stylist))
