@@ -13,7 +13,8 @@
     #confirm_upload_msg.hide
       .alert-box.success.round
         Uploading successful
-
+.row
+  .large-12.columns.spacer
 .row
   -if @auth.is_stylist? && (@auth.stylist == @stylist)
     .large-4.columns
@@ -64,4 +65,8 @@
 .row
   #stylist_galery
     = render :partial => 'gallery'
+
+:javascript
+  $.backstretch("https://dl.dropbox.com/u/5433755/snippy/the-klinik-hair-salon-interior-design-09.jpg");
+
 

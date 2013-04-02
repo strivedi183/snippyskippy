@@ -8,6 +8,7 @@
 //= require 'woodmark_init.js'
 //= require 'snippy.js'
 //= require 'tiles.js'
+//= require 'backstretch.js'
 //= require 'foundation/js/foundation/foundation.dropdown.js'
 //= require 'foundation/js/foundation/foundation.reveal.js'
 //= require 'foundation/js/foundation/foundation.alerts.js'
