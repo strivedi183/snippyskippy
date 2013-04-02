@@ -6,7 +6,7 @@ Salon.delete_all
 Stylist.delete_all
 User.delete_all
 
-u1 = User.create(:name => 'Joan Osborne', :email => 'j@gmail.com', :password => 'a', :password_confirmation => 'a')
+u1 = User.create(:name => 'Joan Osborne', :email => 'j@gmail.com', :password => 'a', :password_confirmation => 'a', :image => 'http://www.bendbulletin.com/apps/pbcsi.dll/bilde?Site=BB&Date=20110909&Category=NEWS0107&ArtNo=109090321&Ref=AR&MaxW=321')
 u2 = User.create(:name => 'God', :email => 'god@gmail.com', :password => 'a', :password_confirmation => 'a')
 u2.is_admin = true
 u2.save
