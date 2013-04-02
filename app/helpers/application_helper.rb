@@ -3,6 +3,7 @@ module ApplicationHelper
     nav = ""
     if @auth.present?
       nav += "<li>#{link_to(@auth.name + ' - ' + @auth.userable_type + ' | Logout', '/login', :method => :delete, :id => 'logout_btn')}</li>"
+      nav += "<ul class='right'><li class='name'><a href='/stylists' id='stylists_index'>Find a Stylist</a></li></ul>" if @auth.client.present?
       nav += "<ul class='right'><li class='name'><a href='#' id='dashboard_show'>Show Dashboard</a></li></ul>" if !@auth.stylist.present?
       nav += "<ul class='right'><li class='name'><a href='#' id='dashboard_hide'>Hide Dashboard</a></li></ul>" if !@auth.stylist.present?
     else
