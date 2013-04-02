@@ -5,10 +5,24 @@ class Snippy
     $(".droppable").droppable({drop: Snippy.update_rank})
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
-    # $('#user_header').hide()
     $(window).load(Snippy.refresh)
+    $('#carousel').jKit('carousel', { 'autoplay': 'yes', 'interval': '3000', 'limit': '' })
     $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
-    $('#carousel').jKit('carousel', { 'autoplay': 'yes', 'interval': '3000' })
+    $('#dashboard_show').click(Snippy.show_dashboard)
+    $('#dashboard_hide').click(Snippy.hide_dashboard)
+    $('#dashboard_hide').hide()
+
+  @show_dashboard: ->
+    $('#user_header').slideDown('slow')
+    $('#user_header').removeClass('hide')
+    $('#dashboard_show').hide()
+    $('#dashboard_hide').show()
+
+  @hide_dashboard: ->
+    $('#user_header').slideUp('slow')
+    $('#dashboard_hide').hide()
+    $('#dashboard_show').show()
+
 
   @refresh: ->
     $('#main').trigger('refreshWookmark')
@@ -51,7 +65,10 @@ class Snippy
       type: 'post'
       url: "/clients/#{client_id}/update_rank"
       data: {authenticity_token: token, medium_id:medium_id, rank:rank}
-    $.ajax(settings)
+    $.ajax(settings).done(Snippy.update_rank_response())
+
+  @update_rank_response: ->
+    console.log("This works")
 
   @update_favorite: ->
     x = $(this).parent().hasClass('favorite')

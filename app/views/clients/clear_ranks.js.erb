@@ -1,3 +1,9 @@
-$('#user_dashboard').empty().append('<%=j render(:partial => 'dashboard') %>');
+$('#user_dashboard').empty().append('<%=j render(:partial => 'dashboard') %>').ready(function(){
+  $('#user_header').show()
+  $('#user_header').removeClass('hide')
+  $('#dashboard_show').hide()
+  $('#dashboard_hide').show()
+  Snippy.document_ready();
+});
 handler.wookmark();
 $('#gallery').empty().append('<%=j render(:partial => 'media/gallery' ) %>');

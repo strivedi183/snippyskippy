@@ -18,7 +18,3 @@
         = image_tag(@auth.client.rank_3.photo.thumb, :size => '150x200')
       - elsif @auth.client.rank_3.video?
         = video_tag(@auth.client.rank_3.video, :size => '150x230')
-
-
-%script
-  Snippy.document_ready();

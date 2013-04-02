@@ -1,5 +1,10 @@
-$('#user_dashboard').empty().append('<%=j render(:partial => 'dashboard') %>');
+$('#nav').empty().append('<%=j render :partial => 'layouts/nav' %>');
+$('#user_dashboard').empty().append('<%=j render(:partial => 'dashboard') %>').ready(function(){
+  $('#user_header').show()
+  $('#user_header').removeClass('hide')
+  $('#dashboard_show').hide()
+  $('#dashboard_hide').show()
+  Snippy.document_ready();
+});
 handler.wookmark();
 $('#gallery').empty().append('<%=j render(:partial => 'media/gallery' ) %>');
-Snippy.show_dashboard();
-console.log("THis fired off")
