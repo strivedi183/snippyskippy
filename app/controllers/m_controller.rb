@@ -17,4 +17,8 @@ class MController < ApplicationController
     @medium = Medium.new
   end
 
+  def gallery
+    @medium = Medium.all
+  end
+
 end
