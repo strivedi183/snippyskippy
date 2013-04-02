@@ -12,6 +12,7 @@ class StylistsController < ApplicationController
   def index
     @user = User.new
     @stylists = Stylist.all
+    @salons = Salon.all
   end
   def show
     @user = User.new

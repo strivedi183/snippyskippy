@@ -579,13 +579,20 @@ a.jkit-carousel-prev:hover, a.jkit-carousel-next:hover {
 }
 
 a.jkit-carousel-prev {
-
   float: left;
 }
 
 a.jkit-carousel-next {
-
   float: right;
 }
+
+#map_canvas.index {
+  top: 50px;
+  width: 900px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
 /*- END STYLIST INDEX CAROUSEL -*/
 
