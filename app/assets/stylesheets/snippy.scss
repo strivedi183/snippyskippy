@@ -344,19 +344,21 @@ $topbar-bg: #777;
 }
 
 #style1{
+  background: url('superlike1.png') no-repeat;
 }
 
 #style2{
+  background: url('superlike2.png') no-repeat;
 }
 
 #style3{
+  background: url('superlike3.png') no-repeat;
 }
 
 .style{
   width:150px;
   height: 200px;
   // background-color: $orange;
-  background: url('superlike.png') no-repeat;
   display: inline-block;
   margin: 20px;
   overflow: hidden;
