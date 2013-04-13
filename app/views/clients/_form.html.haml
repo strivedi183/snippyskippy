@@ -1,13 +1,14 @@
 .row
-  %fieldset.forms
-    %legend Client Registration
-    .five.columns.client_form
-      = form_for @user do |f|
-        = f.text_field :name, :id => 'client_name', :placeholder => 'Name'
-        = f.text_field :email, :id => 'client_email', :placeholder => 'Email'
-        = f.text_field :image, :id => 'client_image', :placeholder => 'Image'
-        = text_field_tag :address, nil, :placeholder => 'Address'
-        = f.password_field :password, :id => 'client_password', :placeholder => 'Password'
-        = f.password_field :password_confirmation, :id => 'client_password_confirmation', :placeholder => 'Password Confirmation'
-        = f.submit 'Join', :class => 'button radius success'
-    .seven.columns
+  %legend Client Registration
+  .five.columns.client_form
+    = form_for @user, :html => {:multipart => true} do |f|
+      = f.text_field :name, :id => 'client_name', :placeholder => 'Full Name'
+      = f.text_field :email, :id => 'client_email', :placeholder => 'Email'
+      = text_field_tag :phone, nil, :id => 'client_phone', :placeholder => 'Phone'
+      = text_field_tag :address, nil, :placeholder => 'Address'
+      = f.password_field :password, :id => 'client_password', :placeholder => 'Password'
+      = f.password_field :password_confirmation, :id => 'client_password_confirmation', :placeholder => 'Password Confirmation'
+      = f.label :image, 'Upload your Photo', :class => 'legend'
+      = file_field_tag :image, :id => 'client_image'
+      = f.submit 'Join', :id => 'submit_btn', :class => 'button radius small success'
+  .seven.columns

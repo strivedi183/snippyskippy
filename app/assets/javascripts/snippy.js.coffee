@@ -13,6 +13,8 @@ class Snippy
     $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
+    $('#side-menu').sidr()
+
 
   @highlight_winners: (poll_id, winner_array) ->
     Snippy.poll_id = poll_id

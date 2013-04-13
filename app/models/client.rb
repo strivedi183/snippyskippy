@@ -8,15 +8,16 @@
 #  longitude  :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  phone      :string(255)
 #
 
 class Client < ActiveRecord::Base
-  attr_accessible :address, :latitude, :longitude
+  attr_accessible :address, :latitude, :longitude, :phone
   has_one :user, :as => :userable
   has_many :favorites, :inverse_of => :client
   has_many :bookings, :inverse_of => :client
   has_many :polls, :inverse_of => :client
-  validates :address, :presence => true
+  validates :address, :phone, :presence => true
 
   before_save :geocode
 

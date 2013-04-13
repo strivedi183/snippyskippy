@@ -190,7 +190,17 @@ padding: 0 15px;
 line-height: 45px;
 background: $black;
 }
+.top-bar-section>ul>.divider {
+border-right: solid 1px $black;
+border-left: solid 1px $black;
+}
 
+.top-bar-section ul {
+background: $black;
+}
+.top-bar-section li a:not(.button) {
+      background: $black;
+}
 
 .button {
   background-color: $lt_purp;
@@ -389,6 +399,10 @@ $topbar-bg: #777;
 
 /* Set Login Form width */
 
+#login_form.screen {
+  background-color: transparent;
+}
+
 #login_form:hover {
   background-color: transparent;
 }
@@ -428,7 +442,21 @@ li.name {
 }
 
 legend {
+  margin-bottom: 10px;
   text-align: left;
+}
+
+.legend {
+  text-align: left;
+}
+
+#submit_btn {
+  margin-top: 5px;
+  float: right;
+}
+
+#client.reveal-modal {
+height: 435px;
 }
 
 .f-dropdown.content.open {
