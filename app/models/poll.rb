@@ -66,7 +66,31 @@ class Poll < ActiveRecord::Base
     self.vote_3 += 1
   end
 
-  def date
-    self.created_at.strftime("%m/%d/%Y")
+  def winner
+    if vote_1 == 0 && vote_2 == 0 && vote_3 == 0
+      []
+    elsif vote_1 > vote_2 && vote_1 > vote_3
+      [self.rank_1.id]
+    elsif vote_2 > vote_1 && vote_2 > vote_3
+      [self.rank_2.id]
+    elsif vote_3 > vote_1 && vote_3 > vote_2
+      [self.rank_3.id]
+    elsif vote_1 == vote_2 && vote_1 > vote_3
+      [self.rank_1.id, self.rank_2.id]
+    elsif vote_1 == vote_3 && vote_1 > vote_2
+      [self.rank_1.id, self.rank_3.id]
+    elsif vote_2 == vote_3 && vote_2 > vote_1
+      [self.rank_2.id, self.rank_3.id]
+    elsif vote_1 == vote_2 && vote_1 == vote_3
+      [self.rank_1.id, self.rank_2.id, self.rank_3.id]
+    else
+    end
+
   end
+
+  def date
+    self.created_at.strftime("%m/%d/%Y at %I:%M%p")
+  end
+
+
 end
