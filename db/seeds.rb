@@ -7,7 +7,7 @@ Stylist.delete_all
 User.delete_all
 
 u1 = User.create(:name => 'Joan Osborne', :email => 'j@gmail.com', :password => 'a', :password_confirmation => 'a')
-u2 = User.create(:name => 'God', :email => ENV['EMAIL'], :password => 'a', :password_confirmation => 'a')
+u2 = User.create(:name => 'God', :email => 'god@gmail.com', :password => 'a', :password_confirmation => 'a')
 u2.is_admin = true
 u2.save
 u3 = User.create(:name => 'Snippy', :email => 'snip@gmail.com', :image => 'https://s3.amazonaws.com/uploads.hipchat.com/38251/267262/4lo1rvydwdr6l9r/mads2.jpg', :password => 'a', :password_confirmation => 'a')
