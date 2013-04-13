@@ -15,4 +15,4 @@
 //= require 'foundation/js/foundation/foundation.alerts.js'
 //= require 'map.js'
 //= require 'jquery.jkit.custom/jquery.jkit.custom.1.2.1.min.js'
-
+//= require 'underscore-min.js'

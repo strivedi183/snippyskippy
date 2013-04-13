@@ -22,4 +22,5 @@
 
   #clear_ranks.inline.float-right
     = link_to('Clear All Ranks', clear_ranks_client_path , :class => 'button small orange', :method => 'post', :remote => true, :'data-clear-ranks' => true)
+    = link_to('POLL THIS', '/polls', :method => 'post', :class => 'button small orange')
 
