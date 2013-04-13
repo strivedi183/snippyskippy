@@ -17,9 +17,10 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
   end
   def update_poll
-    rank = params[:rank]
+    rank = params[:poll_rank]
     @poll = Poll.find(params[:id])
     @poll.add_to_vote(rank)
     @poll.save
+    @user = User.new
   end
 end

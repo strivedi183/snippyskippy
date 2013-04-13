@@ -16,10 +16,12 @@ class Snippy
 
   @select_poll: ->
     Snippy.reset_polls()
+    rank = $(this).prev().data('rank')
     if $(this).children().hasClass('favorite_off')
       $(this).children().removeClass('favorite_off')
       $(this).children().addClass('favorite_on')
-      $(this).next().removeClass('hide')
+      $('#poll_rank').val(rank)
+      $('#vote-btn').removeAttr('disabled')
     else
       $(this).children().removeClass('favorite_on')
       $(this).children().addClass('favorite_off')

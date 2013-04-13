@@ -12,15 +12,16 @@ class Snippy
     $('#dashboard_hide').click(Snippy.hide_dashboard)
     $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
-<<<<<<< HEAD
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
 
   @select_poll: ->
     Snippy.reset_polls()
+    rank = $(this).prev().data('rank')
     if $(this).children().hasClass('favorite_off')
       $(this).children().removeClass('favorite_off')
       $(this).children().addClass('favorite_on')
-      $(this).next().removeClass('hide')
+      $('#poll_rank').val(rank)
+      $('#vote-btn').removeAttr('disabled')
     else
       $(this).children().removeClass('favorite_on')
       $(this).children().addClass('favorite_off')
@@ -52,9 +53,7 @@ class Snippy
     #   data: {authenticity_token: token, medium_id:medium_id, rank:rank}
     # $.ajax(settings).done(Snippy.update_rank_response())
 
-=======
     $('#side-menu').sidr()
->>>>>>> f5016c0be6f33095a3ac440da216bc849dfe0f00
 
   @show_dashboard: ->
     $('#user_header').slideDown('slow')

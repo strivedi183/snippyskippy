@@ -8,10 +8,6 @@
     .poll_favorite
       .favorite_off
       = "#{@poll.vote_1} people liked this"
-    .vote_button.hide
-      = form_tag update_poll_poll_path(@poll.id), :remote => true do
-        = hidden_field_tag :rank, 'rank_1'
-        = submit_tag 'VOTE', :class => 'button'
 
   .large-4.columns
     .poll_image{:'data-rank' => 'rank_2', :'data-medium-id' => "#{@poll.rank_2.id}", :'data-client-id' => "#{@poll.client.id}"}
@@ -22,10 +18,6 @@
     .poll_favorite
       .favorite_off
       = "#{@poll.vote_2} people liked this"
-    .vote_button.hide
-      = form_tag update_poll_poll_path(@poll.id), :remote => true do
-        = hidden_field_tag :rank, 'rank_2'
-        = submit_tag 'VOTE', :class => 'button'
 
   .large-4.columns
     .poll_image{:'data-rank' => 'rank_3', :'data-medium-id' => "#{@poll.rank_3.id}", :'data-client-id' => "#{@poll.client.id}"}
@@ -36,9 +28,23 @@
     .poll_favorite
       .favorite_off
       = "#{@poll.vote_3} people liked this"
-    .vote_button.hide
-      = form_tag update_poll_poll_path(@poll.id), :remote => true do
-        = hidden_field_tag :rank, 'rank_3'
-        = submit_tag 'VOTE', :class => 'button'
 
+%br
+%br
+.row
+  .large-1.large-centered.columns
+    .vote_button
+      = form_tag update_poll_poll_path(@poll.id), :remote => true do
+        = hidden_field_tag :poll_rank
+        = submit_tag 'VOTE', :class => 'button', :id => 'vote-btn', :disabled => 'disabled'
+
+#registration_post_voting.reveal-modal
+  %h2.register_msg= "Thank you for voting for #{@poll.client.user.name}'s hairstyle!"
+  %h4 If you would like to have your friends vote on your hairstyle, click to register!
+  %a.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} Client
+  %a.close-reveal-modal X
+
+#poll_client.reveal-modal
+  = render(:partial => 'clients/form')
+  %a.close-reveal-modal X
 
