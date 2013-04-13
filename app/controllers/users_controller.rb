@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     if @user.save
       gflash :success => { :id => "registered", :position => :top_right, :title => "Registration Complete", :value => "Congratulations " + @user.name.split(" ")[0] + "," + '<br>' + "You've created an account!", :time => 3000, :sticky => false },
-             :notice => { :id => "welcome", :position => :bottom_right, :title => "Thank you, " + @user.name.split(" ")[0] + "!", :value => "You'll recieve a welcome" + '<br>' + "notification momentarily", :time => 7000, :sticky => false }
+             :notice => { :id => "welcome", :position => :bottom_right, :title => "Thank you, " + @user.name.split(" ")[0] + "!", :value => "You'll receive a welcome" + '<br>' + "notification momentarily", :time => 7000, :sticky => false }
       @user.sendtxt
       @user.sendemail
       redirect_to(root_path)
