@@ -190,7 +190,17 @@ padding: 0 15px;
 line-height: 45px;
 background: $black;
 }
+.top-bar-section>ul>.divider {
+border-right: solid 1px $black;
+border-left: solid 1px $black;
+}
 
+.top-bar-section ul {
+background: $black;
+}
+.top-bar-section li a:not(.button) {
+      background: $black;
+}
 
 .button {
   background-color: $lt_purp;
