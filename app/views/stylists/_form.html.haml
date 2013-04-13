@@ -1,13 +1,14 @@
 .row
-  %fieldset.forms
-    %legend Stylist Registion
-    .five.columns.stylist_form
-      = form_for @user do |f|
-        = f.text_field :name, :placeholder => 'Name'
-        = f.text_field :email, :placeholder => 'Email'
-        = f.text_field :image, :placeholder => 'Image'
-        = f.password_field :password, :placeholder => 'Password'
-        = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
-        = f.submit 'Create Account', :class => 'button radius success'
-    .seven.columns
-
+  / %fieldset.forms
+  %legend Stylist Registion
+  .five.columns.stylist_form
+    = form_for @user, :html => {:multipart => true}  do |f|
+      = f.text_field :name, :placeholder => 'Full Name'
+      = f.text_field :email, :placeholder => 'Email'
+      = f.password_field :password, :placeholder => 'Password'
+      = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
+      = f.label :image, 'Upload your Photo', :class => 'legend'
+      = file_field_tag :image, :id => 'stylist_image'
+      %p
+      = f.submit 'Create Account', :id => 'submit_btn', :class => 'button radius small success'
+  .seven.columns

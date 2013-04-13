@@ -14,6 +14,7 @@ class Stylist < ActiveRecord::Base
   belongs_to :salon, :inverse_of => :stylists
   has_many :media, :inverse_of => :stylist
 
+
   # def stylist_favorities
   #   @favorites = Favorite.where(:stylist_id => self.id).order(:created_at).reverse
   #   @favorites

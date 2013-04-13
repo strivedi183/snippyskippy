@@ -1,0 +1,27 @@
+#gritter-notice-wrapper {
+  position:fixed;
+  top:75px;
+  right:20px;
+  width:301px;
+  z-index:9999;
+}
+
+.gritter-title {
+  font-size:24px;
+  font-weight:bold;
+  color: #f9fce7;
+  font-family: "brandon-grotesque",sans-serif;
+  padding:0 0 7px 0;
+  display:block;
+  text-shadow:1px 1px #000;
+}
+
+.gritter-with-image p {
+  display:block;
+  color:#f9fce7;
+  font-family: "brandon-grotesque",sans-serif;
+  padding:2px 11px 8px 11px;
+  font-size: 18px;
+  filter:inherit;
+}
+

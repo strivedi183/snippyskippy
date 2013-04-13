@@ -1,6 +1,9 @@
 = form_tag '/' do
   = hidden_field_tag :client_id, @auth.client.id
 
+= js extend_gritter(:position => :top_right, :fade_in_speed => "medium", :fade_out_speed => "slow")
+= gflash
+
 
 #user_dashboard
   = render(:partial => 'clients/dashboard')

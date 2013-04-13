@@ -10,6 +10,9 @@ gem 'carrierwave'
 gem 'fog'
 gem 'rmagick'
 gem 'remotipart'
+gem "gritter", "1.0.3"
+gem 'twilio-ruby'
+gem 'aws-ses'
 
 group :assets do
   gem 'sass-rails'
