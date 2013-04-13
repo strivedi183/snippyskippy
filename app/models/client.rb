@@ -16,6 +16,7 @@ class Client < ActiveRecord::Base
   has_one :user, :as => :userable
   has_many :favorites, :inverse_of => :client
   has_many :bookings, :inverse_of => :client
+  has_many :polls, :inverse_of => :client
   validates :address, :phone, :presence => true
 
   before_save :geocode

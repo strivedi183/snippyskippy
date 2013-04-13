@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bobs and Bangs</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <script type="text/javascript" src="//use.typekit.net/btk8pqo.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE']}&sensor=false" %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width" />
+
+</head>
+<body>
+
+<%= yield %>
+
+<script>
+ $(document).foundation();
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('body').jKit();
+});
+</script>
+
+</body>
+</html>

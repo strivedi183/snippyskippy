@@ -13,6 +13,7 @@ gem 'remotipart'
 gem "gritter", "1.0.3"
 gem 'twilio-ruby'
 gem 'aws-ses'
+gem 'colorbox-rails'
 
 group :assets do
   gem 'sass-rails'

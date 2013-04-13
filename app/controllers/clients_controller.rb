@@ -8,6 +8,8 @@ class ClientsController < ApplicationController
     @tags = @media.map(&:tags).flatten.uniq.map(&:tag)
   end
 
+
+
   def create
   end
 

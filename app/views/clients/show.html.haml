@@ -3,11 +3,16 @@
 
 .clear
 
+= link_to('Open Menu', '#sidr', :id => 'side-menu', :class => 'button')
+
 #user_dashboard
   = render(:partial => 'clients/dashboard')
 
 #gallery
   = render(:partial => 'media/gallery')
+
+#sidr
+  = render(:partial => 'side_menu')
 
 :javascript
   $.backstretch("https://dl.dropbox.com/u/5433755/snippy/im1.jpg");

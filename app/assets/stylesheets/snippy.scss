@@ -314,6 +314,7 @@ $topbar-bg: #777;
   position: relative;
 }
 
+
 /* USER PAGE HEADER */
 #user_header {
   position: relative;
@@ -395,7 +396,6 @@ li.name {
 
 #modals {
   z-index: 1;
-  opacity: .9;
   position: relative;
   text-align: center;
   width: 40%;
@@ -403,6 +403,7 @@ li.name {
   float: center;
   border-radius: 25px;
   padding-bottom: -10px;
+  background-color: $white;
 }
 
 #add_media_btn {
@@ -520,7 +521,11 @@ height: 435px;
 /*- END NAV -*/
 
 
+/*- Colorbox show -*/
 
+.colorbox_image {
+  margin-top: 50px;
+}
 
 
 
