@@ -1,0 +1,25 @@
+#clear_ranks.inline.float-right
+  = link_to('Clear All Ranks', clear_ranks_client_path , :class => 'button small orange', :method => 'post', :remote => true, :'data-clear-ranks' => true)
+
+
+#user_photo
+  = image_tag(@auth.image, :size => '200x260')
+#style1.style.ui-droppable.droppable{:'data-rank' => 1}
+  - if @auth.client.rank_1.present?
+    - if @auth.client.rank_1.photo?
+      = image_tag(@auth.client.rank_1.photo.thumb, :size => '150x200')
+    - elsif @auth.client.rank_1.video?
+      = video_tag(@auth.client.rank_1.video, :size => '150x230')
+#style2.style.ui-droppable.droppable{:'data-rank' => 2}
+  - if @auth.client.rank_2.present?
+    - if @auth.client.rank_2.photo?
+      = image_tag(@auth.client.rank_2.photo.thumb, :size => '150x200')
+    - elsif @auth.client.rank_2.video?
+      = video_tag(@auth.client.rank_2.video, :size => '150x230')
+#style3.style.ui-droppable.droppable{:'data-rank' => 3}
+  - if @auth.client.rank_3.present?
+    - if @auth.client.rank_3.photo?
+      = image_tag(@auth.client.rank_3.photo.thumb, :size => '150x200')
+    - elsif @auth.client.rank_3.video?
+      = video_tag(@auth.client.rank_3.video, :size => '150x230')
+
