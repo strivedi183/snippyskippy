@@ -10,7 +10,7 @@ class PollsController < ApplicationController
   end
   def index
     @user = User.new
-    @polls = Poll.where(:client_id => @auth.id)
+    @polls = Poll.where(:client_id => @auth.client.id).order(:created_at)
   end
   def show
     @user = User.new

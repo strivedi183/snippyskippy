@@ -65,4 +65,8 @@ class Poll < ActiveRecord::Base
   def add_to_vote_3
     self.vote_3 += 1
   end
+
+  def date
+    self.created_at.strftime("%m/%d/%Y")
+  end
 end
