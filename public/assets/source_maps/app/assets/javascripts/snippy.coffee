@@ -14,6 +14,17 @@ class Snippy
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
 
+  @highlight_winners: (poll_id, winner_array) ->
+    Snippy.poll_id = poll_id
+    x = winner_array
+    _.each(x, Snippy.highlight_winner)
+    # console.log(winner_array)
+
+  @highlight_winner: (element, index, list) ->
+    console.log(element)
+
+    $(".poll_image[data-poll-medium-id='#{Snippy.poll_id}_#{element}']").addClass('orange_bg')
+
   @select_poll: ->
     Snippy.reset_polls()
     rank = $(this).prev().data('rank')
