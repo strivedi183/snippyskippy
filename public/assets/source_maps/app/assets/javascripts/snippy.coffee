@@ -12,6 +12,47 @@ class Snippy
     $('#dashboard_hide').click(Snippy.hide_dashboard)
     $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
+    $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
+
+  @select_poll: ->
+    Snippy.reset_polls()
+    rank = $(this).prev().data('rank')
+    if $(this).children().hasClass('favorite_off')
+      $(this).children().removeClass('favorite_off')
+      $(this).children().addClass('favorite_on')
+      $('#poll_rank').val(rank)
+      $('#vote-btn').removeAttr('disabled')
+    else
+      $(this).children().removeClass('favorite_on')
+      $(this).children().addClass('favorite_off')
+      $(this).next().addClass('hide')
+
+  @reset_polls: ->
+    x = $('.poll_favorite')
+    _.each(x, Snippy.reset_poll)
+
+  @reset_poll: (element, index, list) ->
+    $(element).children().removeClass('favorite_on')
+    $(element).children().addClass('favorite_off')
+    $(element).next().addClass('hide')
+
+  @update_poll: ->
+    rank = $(this).prev().data('rank')
+    medium_id = $(this).prev().data('medium-id')
+    client_id = $(this).prev().data('client-id')
+    console.log("Update Poll Called")
+    token = $('input[name=authenticity_token]').val()
+    console.log(token)
+    console.log(medium_id)
+    console.log(client_id)
+    console.log(rank)
+    # settings =
+    #   dataType: 'script'
+    #   type: 'post'
+    #   url: "/clients/#{client_id}/update_rank"
+    #   data: {authenticity_token: token, medium_id:medium_id, rank:rank}
+    # $.ajax(settings).done(Snippy.update_rank_response())
+
     $('#side-menu').sidr()
     $('.add_to_rank').on('click','.rank',Snippy.update_rank)
 

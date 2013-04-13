@@ -396,7 +396,6 @@ li.name {
 
 #modals {
   z-index: 1;
-  opacity: .9;
   position: relative;
   text-align: center;
   width: 40%;
@@ -404,6 +403,7 @@ li.name {
   float: center;
   border-radius: 25px;
   padding-bottom: -10px;
+  background-color: $white;
 }
 
 #add_media_btn {
