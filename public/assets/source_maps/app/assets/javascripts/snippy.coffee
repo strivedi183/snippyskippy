@@ -13,6 +13,8 @@ class Snippy
     $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
+    $('#side-menu').sidr()
+
 
   @select_poll: ->
     Snippy.reset_polls()

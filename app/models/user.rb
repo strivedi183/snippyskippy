@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :image, :password, :password_confirmation
   has_secure_password
   belongs_to :userable, :polymorphic => true
+  validates :email, :presence => true
+  mount_uploader :image, PhotoUploader
 
   def is_client?
     true if self.userable.is_a?(Client)
@@ -33,5 +35,21 @@ class User < ActiveRecord::Base
 
   def stylist
     self.userable if self.is_stylist?
+  end
+
+  def sendtxt
+    if self != nil
+      body = 'Congrats, ' + self.name.split(" ")[0] + ' your registration is complete!'
+      client = Twilio::REST::Client.new(ENV['TW_SID'], ENV['TW_TOK'])
+      client.account.sms.messages.create(:from => ENV['TW_PHONE'], :to => self.client.phone, :body => body)
+    end
+  end
+
+  def sendemail
+    if self != nil
+      self.name = name
+      self.email = email
+      Notifications.registration_message(name, email).deliver
+    end
   end
 end

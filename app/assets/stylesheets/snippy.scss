@@ -399,6 +399,10 @@ $topbar-bg: #777;
 
 /* Set Login Form width */
 
+#login_form.screen {
+  background-color: transparent;
+}
+
 #login_form:hover {
   background-color: transparent;
 }
@@ -438,7 +442,21 @@ li.name {
 }
 
 legend {
+  margin-bottom: 10px;
   text-align: left;
+}
+
+.legend {
+  text-align: left;
+}
+
+#submit_btn {
+  margin-top: 5px;
+  float: right;
+}
+
+#client.reveal-modal {
+height: 435px;
 }
 
 .f-dropdown.content.open {

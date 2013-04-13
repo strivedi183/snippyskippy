@@ -6,6 +6,8 @@
 //= require 'foundation/js/foundation.min.js'
 //= require 'wookmark.js'
 //= require 'woodmark_init.js'
+//= require 'gritter.js'
+//= require 'snippy.js'
 //= require 'colorbox-rails'
 //= require 'jquery.sidr.min.js'
 //= require 'backstretch.js'

@@ -8,6 +8,7 @@
 #  longitude  :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  phone      :string(255)
 #
 
 require 'spec_helper'
