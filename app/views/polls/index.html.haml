@@ -1,0 +1,28 @@
+- if @auth.client.present?
+  - @polls.each do |poll|
+    .row
+      .large-12.columms
+        %h1
+          = "THIS IS THE POLL TAKEN ON #{poll.date}"
+    .row
+      .large-4.columns
+        .poll_image{:'data-rank' => 'rank_1', :'data-medium-id' => "#{poll.rank_1.id}", :'data-client-id' => "#{poll.client.id}"}
+          - if poll.rank_1.photo.present?
+            = image_tag(poll.rank_1.photo.thumb, :size => '200x320', :class => 'video')
+          - elsif poll.rank_1.video.present?
+            = video_tag(poll.rank_1.video, :width => '190', :class => 'video')
+          = "#{poll.vote_1} people liked this"
+      .large-4.columns
+        .poll_image{:'data-rank' => 'rank_2', :'data-medium-id' => "#{poll.rank_2.id}", :'data-client-id' => "#{poll.client.id}"}
+          - if poll.rank_2.photo.present?
+            = image_tag(poll.rank_2.photo.thumb, :size => '200x320', :class => 'video')
+          - elsif poll.rank_2.video.present?
+            = video_tag(poll.rank_2.video, :width => '190', :class => 'video')
+          = "#{poll.vote_2} people liked this"
+      .large-4.columns
+        .poll_image{:'data-rank' => 'rank_3', :'data-medium-id' => "#{poll.rank_3.id}", :'data-client-id' => "#{poll.client.id}"}
+          - if poll.rank_3.photo.present?
+            = image_tag(poll.rank_3.photo.thumb, :size => '200x320', :class => 'video')
+          - elsif poll.rank_3.video.present?
+            = video_tag(poll.rank_3.video, :width => '190', :class => 'video')
+          = "#{poll.vote_3} people liked this"
