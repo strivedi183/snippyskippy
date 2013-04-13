@@ -13,6 +13,7 @@ class Snippy
     $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#side-menu').sidr()
+    $('.add_to_rank').on('click','.rank',Snippy.update_rank)
 
   @show_dashboard: ->
     $('#user_header').slideDown('slow')
@@ -52,13 +53,11 @@ class Snippy
       data: {authenticity_token: token}
     $.ajax(settings)
 
-  @update_rank: (e, ui) ->
-    console.log("Update Dashboard Called")
-    token = $('input[name=authenticity_token]').val()
-    console.log(token)
-    medium_id = Snippy.medium_id
-    console.log(Snippy.medium_id)
-    client_id = $('#client_id').val()
+  @update_rank: (e) ->
+    e.preventDefault()
+    token = $('#auth_token').data('auth-token')
+    medium_id = $('#medium_id').data('medium_id')
+    client_id = $(this).data('client_id')
     console.log(client_id)
     rank = $(this).data('rank')
     console.log(rank)
