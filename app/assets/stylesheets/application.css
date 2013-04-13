@@ -4,5 +4,6 @@
  *= require 'jquery-ui-1.10.2.custom/css/humanity/jquery-ui-1.10.2.custom.min.css'
  *= require colorbox-rails
  *= require 'wookmark.scss'
+ *= require 'jquery.sidr.dark.css'
  *= require 'snippy.scss'
  */

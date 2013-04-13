@@ -12,6 +12,7 @@ class Snippy
     $('#dashboard_hide').click(Snippy.hide_dashboard)
     $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
+    $('#side-menu').sidr()
 
   @show_dashboard: ->
     $('#user_header').slideDown('slow')
@@ -84,6 +85,8 @@ class Snippy
       console.log(client_id)
       $(this).parent().parent().addClass('favorite')
       $(this).children().first().removeClass('favorite_off').addClass('favorite_on')
+      $(this).children().first().addClass('top_3_ribbon')
+
     else
       console.log("Add to Favorites")
       token = $('input[name=authenticity_token]').val()
