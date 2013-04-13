@@ -8,7 +8,6 @@
 //= require 'woodmark_init.js'
 //= require 'gritter.js'
 //= require 'snippy.js'
-//= require 'tiles.js'
 //= require 'colorbox-rails'
 //= require 'jquery.sidr.min.js'
 //= require 'backstretch.js'

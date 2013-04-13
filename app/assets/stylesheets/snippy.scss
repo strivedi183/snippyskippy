@@ -376,6 +376,10 @@ $topbar-bg: #777;
 
 /* Set Login Form width */
 
+#login_form.screen {
+  background-color: transparent;
+}
+
 #login_form:hover {
   background-color: transparent;
 }

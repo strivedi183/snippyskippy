@@ -21,7 +21,7 @@ class SessionController < ApplicationController
     else
       session[:user_id] = nil
       redirect_to root_path
-      gflash :error => { :title => "Login Error", :value => "Something went wrong..." + '<br>' + "Please try loging in again.", :time => 3000, :sticky => false }
+      gflash :error => { :title => "Login Error", :value => "Something went wrong..." + '<br>' + "Please try logging in again.", :time => 3000, :sticky => false }
     end
     authenticate
   end
