@@ -1,0 +1,4 @@
+- if @medium.photo.present?
+  = image_tag(@medium.photo.thumb, :size => '200x320', :class => 'video')
+- elsif @medium.video.present?
+  = video_tag(@medium.video, :width => '190', :class => 'video')

@@ -10,6 +10,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'rmagick'
 gem 'remotipart'
+gem 'colorbox-rails'
 
 group :assets do
   gem 'sass-rails'
