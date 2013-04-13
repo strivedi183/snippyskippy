@@ -178,6 +178,20 @@ a.button {
 
 /* 6. Foundation Overrides  *********************************/
 
+.top-bar {
+  overflow: hidden;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  background: $black;
+}
+.top-bar-section li a:not(.button) {
+padding: 0 15px;
+line-height: 45px;
+background: $black;
+}
+
+
 .button {
   background-color: $lt_purp;
   border-color: darken( $lt_purp, 30% );
@@ -203,7 +217,6 @@ a.button {
   border-color: $blue;
   color: #fff;
   font-weight: 700;
-
 }
 
 .button.alert {
