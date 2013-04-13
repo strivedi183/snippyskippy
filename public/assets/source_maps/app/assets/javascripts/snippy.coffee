@@ -12,6 +12,7 @@ class Snippy
     $('#dashboard_hide').click(Snippy.hide_dashboard)
     $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
+<<<<<<< HEAD
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
 
   @select_poll: ->
@@ -51,6 +52,9 @@ class Snippy
     #   data: {authenticity_token: token, medium_id:medium_id, rank:rank}
     # $.ajax(settings).done(Snippy.update_rank_response())
 
+=======
+    $('#side-menu').sidr()
+>>>>>>> f5016c0be6f33095a3ac440da216bc849dfe0f00
 
   @show_dashboard: ->
     $('#user_header').slideDown('slow')
@@ -123,6 +127,8 @@ class Snippy
       console.log(client_id)
       $(this).parent().parent().addClass('favorite')
       $(this).children().first().removeClass('favorite_off').addClass('favorite_on')
+      $(this).children().first().addClass('top_3_ribbon')
+
     else
       console.log("Add to Favorites")
       token = $('input[name=authenticity_token]').val()

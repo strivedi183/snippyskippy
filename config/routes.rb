@@ -15,7 +15,7 @@ Snippyskippy::Application.routes.draw do
     end
   end
   resources :stylists
-  resources :users, :only => [:new, :create]
+  resources :users, :only => [:new, :create, :edit, :update]
   resources :salons, :only => [:new, :create]
   resources :polls, :only => [:create, :index, :show] do
     member do
