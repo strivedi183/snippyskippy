@@ -1,36 +1,39 @@
 .row.poll_info{:'data-poll-id' => "#{@poll.id}", :'data-poll-is-active' => "#{@poll.is_active?}"}
   .large-4.columns
-    .poll_image{:'data-rank' => 'rank_1', :'data-medium-id' => "#{@poll.rank_1.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_1.id}"}
-      - if @poll.rank_1.photo.present?
-        = image_tag(@poll.rank_1.photo.thumb, :size => '200x320', :class => 'video')
-      - elsif @poll.rank_1.video.present?
-        = video_tag(@poll.rank_1.video, :width => '190', :class => 'video')
-    .poll_favorite
-      - if @poll.is_active?
-        .favorite_off
-        = "#{@poll.vote_1} people liked this"
+    - @poll.rank_1.present?
+      .poll_image{:'data-rank' => 'rank_1', :'data-medium-id' => "#{@poll.rank_1.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_1.id}"}
+        - if @poll.rank_1.photo.present?
+          = image_tag(@poll.rank_1.photo.thumb, :size => '200x320', :class => 'video')
+        - elsif @poll.rank_1.video.present?
+          = video_tag(@poll.rank_1.video, :width => '190', :class => 'video')
+      .poll_favorite
+        - if @poll.is_active?
+          .favorite_off
+          = "#{@poll.vote_1} people liked this"
 
   .large-4.columns
-    .poll_image{:'data-rank' => 'rank_2', :'data-medium-id' => "#{@poll.rank_2.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_2.id}"}
-      - if @poll.rank_2.photo.present?
-        = image_tag(@poll.rank_2.photo.thumb, :size => '200x320', :class => 'video')
-      - elsif @poll.rank_2.video.present?
-        = video_tag(@poll.rank_2.video, :width => '190', :class => 'video')
-    .poll_favorite
-      - if @poll.is_active?
-        .favorite_off
-        = "#{@poll.vote_2} people liked this"
+    - @poll.rank_2.present?
+      .poll_image{:'data-rank' => 'rank_2', :'data-medium-id' => "#{@poll.rank_2.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_2.id}"}
+        - if @poll.rank_2.photo.present?
+          = image_tag(@poll.rank_2.photo.thumb, :size => '200x320', :class => 'video')
+        - elsif @poll.rank_2.video.present?
+          = video_tag(@poll.rank_2.video, :width => '190', :class => 'video')
+      .poll_favorite
+        - if @poll.is_active?
+          .favorite_off
+          = "#{@poll.vote_2} people liked this"
 
   .large-4.columns
-    .poll_image{:'data-rank' => 'rank_3', :'data-medium-id' => "#{@poll.rank_3.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_3.id}"}
-      - if @poll.rank_3.photo.present?
-        = image_tag(@poll.rank_3.photo.thumb, :size => '200x320', :class => 'video')
-      - elsif @poll.rank_3.video.present?
-        = video_tag(@poll.rank_3.video, :width => '190', :class => 'video')
-    .poll_favorite
-      - if @poll.is_active?
-        .favorite_off
-        = "#{@poll.vote_3} people liked this"
+    - @poll.rank_3.present?
+      .poll_image{:'data-rank' => 'rank_3', :'data-medium-id' => "#{@poll.rank_3.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_3.id}"}
+        - if @poll.rank_3.photo.present?
+          = image_tag(@poll.rank_3.photo.thumb, :size => '200x320', :class => 'video')
+        - elsif @poll.rank_3.video.present?
+          = video_tag(@poll.rank_3.video, :width => '190', :class => 'video')
+      .poll_favorite
+        - if @poll.is_active?
+          .favorite_off
+          = "#{@poll.vote_3} people liked this"
 - if !@poll.is_active?
   .row
     .large-12.columns
