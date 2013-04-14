@@ -1,6 +1,7 @@
 #clear_ranks.inline.float-right
   = link_to('Clear All Ranks', clear_ranks_client_path , :class => 'button small orange', :method => 'post', :remote => true, :'data-clear-ranks' => true)
-  = link_to('POLL THIS', '/polls', :method => 'post', :class => 'button small orange')
+  - if @auth.client.rank_1.present? || @auth.client.rank_2.present? || @auth.client.rank_3.present?
+    = link_to('POLL THIS', '/polls', :method => 'post', :class => 'button small orange')
 
 
 #user_photo
