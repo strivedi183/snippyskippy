@@ -20,6 +20,7 @@ Snippyskippy::Application.routes.draw do
   resources :polls, :only => [:create, :index, :show] do
     member do
       post 'update_poll'
+      post 'end_poll'
     end
   end
 
