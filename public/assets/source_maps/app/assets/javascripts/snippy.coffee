@@ -14,6 +14,15 @@ class Snippy
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
     $('#side-menu').sidr()
+    Snippy.show_poll_disabled
+
+
+  @show_polls_disabled: ->
+    x = $('.poll_info').data('is_active') == true
+
+  @show_poll_disabled: (element, index, list) ->
+    if $(element).data('is_active') == true
+      $(element).addClass('blue_bg')
 
 
   @highlight_winners: (poll_id, winner_array) ->

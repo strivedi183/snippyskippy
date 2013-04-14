@@ -23,4 +23,11 @@ class PollsController < ApplicationController
     @poll.save
     @user = User.new
   end
+  def end_poll
+    binding.pry
+    poll = Poll.find(params[:id])
+    poll.is_active = false
+    poll.save
+    @polls = Poll.where(:client_id => @auth.client.id).order(:created_at).reverse
+  end
 end

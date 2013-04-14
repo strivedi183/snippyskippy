@@ -32,15 +32,21 @@ class Poll < ActiveRecord::Base
   end
 
   def rank_1
-    medium = Medium.find(self.rank_1_medium_id)
+    if self.rank_1_medium_id.present?
+      medium = Medium.find(self.rank_1_medium_id)
+    end
   end
 
   def rank_2
-    medium = Medium.find(self.rank_2_medium_id)
+    if self.rank_2_medium_id.present?
+      medium = Medium.find(self.rank_2_medium_id)
+    end
   end
 
   def rank_3
-    medium = Medium.find(self.rank_3_medium_id)
+    if self.rank_3_medium_id.present?
+      medium = Medium.find(self.rank_3_medium_id)
+    end
   end
 
   def add_to_vote(rank)
@@ -85,12 +91,19 @@ class Poll < ActiveRecord::Base
       [self.rank_1.id, self.rank_2.id, self.rank_3.id]
     else
     end
-
   end
 
   def date
     self.created_at.strftime("%m/%d/%Y at %I:%M%p")
   end
 
+  def is_active?
+    if self.is_active == true
+      true
+    elsif self.is_active == false
+      false
+    else
+    end
+  end
 
 end

@@ -1,20 +1,24 @@
 class Snippy
   @document_ready: ->
     Snippy.video_hover()
-    $(".draggable").draggable({snap: ".style", zIndex: 9999, revert: true, opacity: 0.5, drag: Snippy.get_draggable_info})
-    $(".droppable").droppable({drop: Snippy.update_rank})
     $('#tiles').on('click', '.favorites', Snippy.update_favorite)
     $('body').on('click', '#login-form-btn', Snippy.show_login_form)
     $(window).load(Snippy.refresh)
     $('#carousel').jKit('carousel', { 'autoplay': 'yes', 'interval': '3000' })
     $('#login_form').on('click', 'a[data-clear-form]', Snippy.clear_form)
-    $('#dashboard_show').click(Snippy.show_dashboard)
-    $('#dashboard_hide').click(Snippy.hide_dashboard)
-    $('#dashboard_hide').hide()
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
     $('#side-menu').sidr()
+    $('.add_to_rank').on('click','.rank',Snippy.update_rank)
+    Snippy.show_poll_disabled
 
+
+  @show_polls_disabled: ->
+    x = $('.poll_info').data('is_active') == true
+
+  @show_poll_disabled: (element, index, list) ->
+    if $(element).data('is_active') == true
+      $(element).addClass('blue_bg')
 
   @highlight_winners: (poll_id, winner_array) ->
     Snippy.poll_id = poll_id
@@ -24,7 +28,6 @@ class Snippy
 
   @highlight_winner: (element, index, list) ->
     console.log(element)
-
     $(".poll_image[data-poll-medium-id='#{Snippy.poll_id}_#{element}']").addClass('orange_bg')
 
   @select_poll: ->
@@ -69,18 +72,6 @@ class Snippy
     $('#side-menu').sidr()
     $('.add_to_rank').on('click','.rank',Snippy.update_rank)
 
-  @show_dashboard: ->
-    $('#user_header').slideDown('slow')
-    $('#user_header').removeClass('hide')
-    $('#dashboard_show').hide()
-    $('#dashboard_hide').show()
-
-  @hide_dashboard: ->
-    $('#user_header').slideUp('slow')
-    $('#dashboard_hide').hide()
-    $('#dashboard_show').show()
-
-
   @refresh: ->
     $('#main').trigger('refreshWookmark')
 
@@ -91,11 +82,6 @@ class Snippy
 
   @show_login_form: ->
     $('#login_form').removeClass('hide')
-
-  @get_draggable_info: (e, ui) ->
-    Snippy.medium_id = $(this).data('medium-id')
-    console.log("The Medium ID is #{Snippy.medium_id}")
-    # ui.helper.addClass('drag_size')
 
   @clear_all_ranks: ->
     client_id = $('#client_id').val()
@@ -119,7 +105,7 @@ class Snippy
       dataType: 'script'
       type: 'post'
       url: "/clients/#{client_id}/update_rank"
-      data: {authenticity_token: token, medium_id:medium_id, rank:rank}
+      data: {authenticity_token: token, medium_id: medium_id, rank: rank}
     $.ajax(settings).done(Snippy.update_rank_response())
 
   @update_rank_response: ->
@@ -138,7 +124,6 @@ class Snippy
       console.log(client_id)
       $(this).parent().parent().addClass('favorite')
       $(this).children().first().removeClass('favorite_off').addClass('favorite_on')
-      $(this).children().first().addClass('top_3_ribbon')
 
     else
       console.log("Add to Favorites")
