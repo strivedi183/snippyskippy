@@ -1,4 +1,13 @@
-$('#sidr').empty();
-$('#nav').empty().append('<%=j render :partial => 'layouts/nav' %>');
-handler.wookmark();
-$('#gallery').empty().append('<%=j render(:partial => 'media/gallery' ) %>');
+parent.jQuery.colorbox.close();
+console.log('WTF YO!!');
+// $('#nav').empty().append('<%=j render :partial => 'layouts/nav' %>');
+// handler.wookmark();
+// $('#gallery').empty().append('<%=j render(:partial => 'media/gallery' ) %>');
+$(document).ready(){
+  function(){
+    setTimeout( function(){
+      console.log('waiting 2 secs');
+    }
+   , 2000 );
+  }
+}

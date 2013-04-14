@@ -98,9 +98,7 @@ class Snippy
     token = $('#auth_token').data('auth-token')
     medium_id = $('#medium_id').data('medium_id')
     client_id = $(this).data('client_id')
-    console.log(client_id)
     rank = $(this).data('rank')
-    console.log(rank)
     settings =
       dataType: 'script'
       type: 'post'
@@ -109,7 +107,10 @@ class Snippy
     $.ajax(settings).done(Snippy.update_rank_response())
 
   @update_rank_response: ->
-    console.log("This works")
+    setTimeout (->
+      console.log('MOTHERFUCKER')
+      $('#sidr').empty()
+    ), 2000
 
   @update_favorite: ->
     x = $(this).parent().hasClass('favorite')
