@@ -3,7 +3,7 @@
 # Table name: polls
 #
 #  id               :integer          not null, primary key
-#  user_id          :integer
+#  client_id        :integer
 #  rank_1_medium_id :integer
 #  rank_2_medium_id :integer
 #  rank_3_medium_id :integer
