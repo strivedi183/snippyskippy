@@ -9,7 +9,7 @@
       = video_tag(@medium.video, :width => '190', :class => 'video')
 
 .row
-  .small-11.small-centered.columns
+  .small-4.small-centered.columns
     %h3 Add to your top 3
     .add_to_rank#medium_id{:'data-medium_id' => @medium.id}
       = link_to '1', '#', :'data-rank' => 1, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'

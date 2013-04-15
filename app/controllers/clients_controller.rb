@@ -60,6 +60,7 @@ class ClientsController < ApplicationController
   end
 
   def update_favorites
+    # binding.pry
     @user = User.new
     @media = Medium.all
     @tags = @media.map(&:tags).flatten.uniq.map(&:tag)
