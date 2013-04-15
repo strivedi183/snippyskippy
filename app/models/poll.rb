@@ -93,6 +93,27 @@ class Poll < ActiveRecord::Base
     end
   end
 
+  def winner_object
+    if vote_1 == 0 && vote_2 == 0 && vote_3 == 0
+      []
+    elsif vote_1 > vote_2 && vote_1 > vote_3
+      [self.rank_1]
+    elsif vote_2 > vote_1 && vote_2 > vote_3
+      [self.rank_2]
+    elsif vote_3 > vote_1 && vote_3 > vote_2
+      [self.rank_3]
+    elsif vote_1 == vote_2 && vote_1 > vote_3
+      [self.rank_1, self.rank_2]
+    elsif vote_1 == vote_3 && vote_1 > vote_2
+      [self.rank_1, self.rank_3]
+    elsif vote_2 == vote_3 && vote_2 > vote_1
+      [self.rank_2, self.rank_3]
+    elsif vote_1 == vote_2 && vote_1 == vote_3
+      [self.rank_1, self.rank_2, self.rank_3]
+    else
+    end
+  end
+
   def date
     self.created_at.strftime("%m/%d/%Y at %I:%M%p")
   end
