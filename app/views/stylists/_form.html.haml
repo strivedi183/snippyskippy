@@ -1,6 +1,8 @@
 .row
-  / %fieldset.forms
-  %legend Stylist Registion
+  - if !@auth.present?
+    %legend Stylist Registion
+  - if @auth.present? && @auth.stylist.present?
+    %legend Update Profile
   .five.columns.stylist_form
     = form_for @user, :html => {:multipart => true}  do |f|
       = f.text_field :name, :placeholder => 'Full Name'

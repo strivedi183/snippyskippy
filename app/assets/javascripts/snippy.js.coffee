@@ -20,6 +20,7 @@ class Snippy
 
   @show_onboard: ->
     $('#onboard').show()
+    $('#onboard').removeClass('opacity')
     $('#call_to_action').hide()
 
   @show_polls_disabled: ->

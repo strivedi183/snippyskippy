@@ -1,5 +1,8 @@
 .row
-  %legend Client Registration
+  - if !@auth.present?
+    %legend Client Registion
+  - if @auth.present? && @auth.client.present?
+    %legend Update Profile
   .five.columns.client_form
     = form_for @user, :html => {:multipart => true} do |f|
       = f.text_field :name, :id => 'client_name', :placeholder => 'Full Name'
