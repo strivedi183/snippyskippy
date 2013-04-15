@@ -8,6 +8,7 @@
         %h3.bold Client Registration
   .tiny_spacer
 .row
+
   .five.columns.client_form
     = form_for @user, :html => {:multipart => true} do |f|
       = f.text_field :name, :id => 'client_name', :placeholder => 'Full Name'

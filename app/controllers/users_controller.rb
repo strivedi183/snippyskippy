@@ -49,10 +49,9 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      gflash :success => { :id => "registered", :position => :top_right, :title => "Registration Complete", :value => "Congratulations " + @user.name.split(" ")[0] + "," + '<br>' + "You've created an account!", :time => 5000, :sticky => false },
-             :notice => { :id => "welcome", :position => :top_right, :title => "Thank you, " + @user.name.split(" ")[0] + "...", :value => "You'll receive a welcome" + '<br>' + "notification momentarily", :time => 8000, :sticky => false }
+      gflash :success => { :id => "edit", :position => :top_right, :title => "Profile Updated", :value => @user.name.split(" ")[0] + ", the changes you've" + '<br>' + "submited were processed.", :time => 5000, :sticky => false }
     else
-      gflash :warning => { :title => "Registration Error", :value => "Please complete all" + '<br>' + "registration fields, thanks!", :time => 7000, :sticky => false }
+      gflash :warning => { :title => "Profile Edit Error", :value => "Please make sure all" + '<br>' + "for fields are complete.", :time => 7000, :sticky => false }
       redirect_to root_path
     end
     if params[:image]
