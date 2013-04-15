@@ -9,7 +9,6 @@
 //= require 'gritter.js'
 //= require 'snippy.js'
 //= require 'colorbox-rails'
-//= require 'jquery.sidr.min.js'
 //= require 'backstretch.js'
 //= require 'foundation/js/foundation/foundation.dropdown.js'
 //= require 'foundation/js/foundation/foundation.reveal.js'
@@ -17,4 +16,5 @@
 //= require 'jquery.jkit.custom/jquery.jkit.custom.1.2.1.min.js'
 //= require 'underscore-min.js'
 //= require 'map.js'
+//= require 'jquery.sidr.min.js'
 //= require 'snippy.js'

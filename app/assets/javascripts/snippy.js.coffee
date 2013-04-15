@@ -9,7 +9,7 @@ class Snippy
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
     $('#side-menu').sidr()
-    $('.add_to_rank').on('click','.rank',Snippy.update_rank)
+    $('.add_to_rank').on('click','.rank', Snippy.update_rank)
     Snippy.show_poll_disabled
 
 
@@ -104,13 +104,11 @@ class Snippy
       type: 'post'
       url: "/clients/#{client_id}/update_rank"
       data: {authenticity_token: token, medium_id: medium_id, rank: rank}
-    $.ajax(settings).done(Snippy.update_rank_response())
+    $.ajax(settings).done(Snippy.update_rank_response)
 
   @update_rank_response: ->
-    setTimeout (->
-      console.log('MOTHERFUCKER')
-      $('#sidr').empty()
-    ), 2000
+    window.location = 'http://yerko.com';
+    console.log('update_rank completed')
 
   @update_favorite: ->
     x = $(this).parent().hasClass('favorite')
