@@ -26,6 +26,10 @@ class Snippy
     $('#medium_tag_ids').val(x)
     console.log($('#medium_tag_ids').val())
     $('input[data-add-media-btn]').submit()
+    jQuery.gritter.add
+      image: "/assets/success.png"
+      title: "Upload Successful"
+      text: "Your media has been uploaded, thank you!"
 
   @show_onboard: ->
     $('#onboard').show()

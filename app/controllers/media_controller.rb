@@ -12,7 +12,6 @@ class MediaController < ApplicationController
       @medium.tags << tag
     end
     @medium = Medium.new
-    gflash :success => { :title => "Upload Successful", :value => @auth.name.split(" ")[0] + ",You are now logged in.", :time => 3000, :sticky => false }
   end
 
   def show
