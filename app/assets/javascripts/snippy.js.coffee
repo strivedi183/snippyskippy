@@ -104,11 +104,7 @@ class Snippy
       type: 'post'
       url: "/clients/#{client_id}/update_rank"
       data: {authenticity_token: token, medium_id: medium_id, rank: rank}
-    $.ajax(settings).done(Snippy.update_rank_response)
-
-  @update_rank_response: ->
-    window.location = 'http://yerko.com';
-    console.log('update_rank completed')
+    $.ajax(settings)
 
   @update_favorite: ->
     x = $(this).parent().hasClass('favorite')
