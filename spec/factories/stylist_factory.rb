@@ -6,6 +6,7 @@
 #  salon_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  bio        :text
 #
 
 FactoryGirl.define do
