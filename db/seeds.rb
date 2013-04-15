@@ -10,24 +10,24 @@ u1 = User.create(:name => 'Joan Osborne', :email => 'j@gmail.com', :password => 
 u2 = User.create(:name => 'God', :email => 'god@gmail.com', :password => 'a', :password_confirmation => 'a')
 u2.is_admin = true
 u2.save
-u3 = User.create(:name => 'Snippy', :email => 'snip@gmail.com', :image => 'https://s3.amazonaws.com/uploads.hipchat.com/38251/267262/4lo1rvydwdr6l9r/mads2.jpg', :password => 'a', :password_confirmation => 'a')
-u4 = User.create(:name => 'Vincenzo', :email => 'v@gmail.com', :image => 'http://www.beautycollectivesalon.com/_wp/wp-content/uploads/2012/08/Beauty-Collective-Hair-Salon-Tarek-Makki.jpg', :password => 'a', :password_confirmation => 'a')
-u5 = User.create(:name => 'Kennith', :email => 'k@gmail.com', :image => 'https://s3.amazonaws.com/uploads.hipchat.com/38251/267262/cnwocu8ndf4j5y1/images%20(1).jpeg', :password => 'a', :password_confirmation => 'a')
-u6 = User.create(:name => 'Sam', :email => 's@gmail.com', :image => 'https://s3.amazonaws.com/uploads.hipchat.com/38251/267262/fe1y3rwx3tc5jvd/sam.jpg', :password => 'a', :password_confirmation => 'a')
-u7 = User.create(:name => 'Michael', :email => 'm@gmail.com', :image => 'https://s3.amazonaws.com/uploads.hipchat.com/38251/267262/jazwqiveqxb8itc/stylist.jpeg', :password => 'a', :password_confirmation => 'a')
-u8 = User.create(:name => 'Anita', :email => 'a@gmail.com', :image => 'https://s3.amazonaws.com/uploads.hipchat.com/38251/267262/m8wbkc9bf3vzq49/Carmena-Victoria-Wardrobe-Stylist-San-Francisco-photo.jpg', :password => 'a', :password_confirmation => 'a')
+u3 = User.create(:name => 'Snippy', :email => 'snip@gmail.com', :password => 'a', :password_confirmation => 'a')
+u4 = User.create(:name => 'Vincenzo', :email => 'v@gmail.com', :password => 'a', :password_confirmation => 'a')
+u5 = User.create(:name => 'Kennith', :email => 'k@gmail.com', :password => 'a', :password_confirmation => 'a')
+u6 = User.create(:name => 'Sam', :email => 's@gmail.com', :password => 'a', :password_confirmation => 'a')
+u7 = User.create(:name => 'Michael', :email => 'm@gmail.com', :password => 'a', :password_confirmation => 'a')
+u8 = User.create(:name => 'Anita', :email => 'a@gmail.com', :password => 'a', :password_confirmation => 'a')
 
-s1 = Stylist.create
+s1 = Stylist.create(:bio => 'WHEN CUTZ ARE OUTLAWED, ONLY OUTLAWS WILL CUT')
 s1.user = u3
-s2 = Stylist.create
+s2 = Stylist.create(:bio => 'Cut your hair, fool!')
 s2.user = u4
-s3 = Stylist.create
+s3 = Stylist.create(:bio => 'I won the 2003 Styliez Award for Best Cutter')
 s3.user = u5
-s4 = Stylist.create
+s4 = Stylist.create(:bio => 'They call me Kennith Scissorhands.')
 s4.user = u6
-s5 = Stylist.create
+s5 = Stylist.create(:bio => 'I rock')
 s5.user = u7
-s6 = Stylist.create
+s6 = Stylist.create(:bio => 'I am a god in the hairstyle world')
 s6.user = u8
 
 c1 = Client.create(:address => 'nyc', :phone => ENV['PHONE'])
