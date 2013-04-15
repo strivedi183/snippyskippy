@@ -1,44 +1,70 @@
-- if @auth.client.present?
-  - @polls.each do |poll|
-    .row
-      .large-8.columms
-        %h1
-          = "THIS IS THE POLL TAKEN ON #{poll.date}"
-        - if poll.is_active?
-          %h2 THIS POLL IS ACTIVE
-        - else
-          %h2 THIS POLL IS DONE
-      .large-4.columns
-        - if poll.is_active?
-          = form_tag end_poll_poll_path(poll.id), :remote => true do
-            = submit_tag 'END POLL'
+.poll_bg
+  .row
+    .large-12.columns.spacer
 
-    .row.poll_info{:'data-poll-id' => "#{poll.id}", :'data-poll-is-active' => "#{poll.is_active?}"}
-      .large-4.columns
-        - if poll.rank_1.present?
-          .poll_image{:'data-poll-id' => "#{poll.id}", :'data-rank' => 'rank_1', :'data-poll-medium-id' => "#{poll.id}_#{poll.rank_1.id}", :'data-client-id' => "#{poll.client.id}"}
-            - if poll.rank_1.photo.present?
-              = image_tag(poll.rank_1.photo.thumb, :size => '200x320', :class => 'video')
-            - elsif poll.rank_1.video.present?
-              = video_tag(poll.rank_1.video, :width => '190', :class => 'video')
-            = "#{poll.vote_1} people liked this"
-      .large-4.columns
-        - if poll.rank_2.present?
-          .poll_image{:'data-poll-id' => "#{poll.id}", :'data-rank' => 'rank_2', :'data-poll-medium-id' => "#{poll.id}_#{poll.rank_2.id}", :'data-client-id' => "#{poll.client.id}"}
-            - if poll.rank_2.photo.present?
-              = image_tag(poll.rank_2.photo.thumb, :size => '200x320', :class => 'video')
-            - elsif poll.rank_2.video.present?
-              = video_tag(poll.rank_2.video, :width => '190', :class => 'video')
-            = "#{poll.vote_2} people liked this"
-      .large-4.columns
-        - if poll.rank_3.present?
-          .poll_image{:'data-poll-id' => "#{poll.id}", :'data-rank' => 'rank_3', :'data-poll-medium-id' => "#{poll.id}_#{poll.rank_3.id}", :'data-client-id' => "#{poll.client.id}"}
-            - if poll.rank_3.photo.present?
-              = image_tag(poll.rank_3.photo.thumb, :size => '200x320', :class => 'video')
-            - elsif poll.rank_3.video.present?
-              = video_tag(poll.rank_3.video, :width => '190', :class => 'video')
-            = "#{poll.vote_3} people liked this"
-      %script
-        = "var poll_id = #{poll.id}"
-        = "var winner_#{poll.id} = #{poll.winner};"
-        = "Snippy.highlight_winners(poll_id, winner_#{poll.id});"
+  - if @auth.client.present?
+    - @polls.each do |poll|
+      .row
+        .large-10.large-centered.columns.poll_tiles
+          .row
+            .large-12.columms
+              .tiny_spacer
+              - if poll.is_active?
+                %h2.center= "This poll was started  #{distance_of_time_in_words_to_now(poll.created_at, include_seconds = false)} ago."
+                .tiny_spacer
+              - else
+                %h3.center= "The poll from  #{distance_of_time_in_words_to_now(poll.created_at, include_seconds = false)} ago is now closed."
+                .tiny_spacer
+
+          .row.poll_info{:'data-poll-id' => "#{poll.id}", :'data-poll-is-active' => "#{poll.is_active?}"}
+            .large-4.columns
+              - if poll.rank_1.present?
+                .image_box.poll_image{:'data-poll-id' => "#{poll.id}", :'data-rank' => 'rank_1', :'data-poll-medium-id' => "#{poll.id}_#{poll.rank_1.id}", :'data-client-id' => "#{poll.client.id}"}
+                  - if poll.rank_1.photo.present?
+                    .poll_image= image_tag(poll.rank_1.photo.thumb, :size => '100%', :class => 'video')
+                  - elsif poll.rank_1.video.present?
+                    .poll_image= video_tag(poll.rank_1.video, :width => '190', :class => 'video')
+                  %h4= "#{pluralize(poll.vote_1, 'person')} liked this"
+            .large-4.columns
+              - if poll.rank_2.present?
+                .image_box.poll_image{:'data-poll-id' => "#{poll.id}", :'data-rank' => 'rank_2', :'data-poll-medium-id' => "#{poll.id}_#{poll.rank_2.id}", :'data-client-id' => "#{poll.client.id}"}
+                  - if poll.rank_2.photo.present?
+                    .poll_image= image_tag(poll.rank_2.photo.thumb, :size => '100%', :class => 'video')
+                  - elsif poll.rank_2.video.present?
+                    .poll_image= video_tag(poll.rank_2.video, :width => '190', :class => 'video')
+                  %h4= "#{pluralize(poll.vote_2, 'person')} liked this"
+            .large-4.columns
+              - if poll.rank_3.present?
+                .image_box.poll_image{:'data-poll-id' => "#{poll.id}", :'data-rank' => 'rank_3', :'data-poll-medium-id' => "#{poll.id}_#{poll.rank_3.id}", :'data-client-id' => "#{poll.client.id}"}
+                  - if poll.rank_3.photo.present?
+                    .poll_image= image_tag(poll.rank_3.photo.thumb, :size => '100%', :class => 'video')
+                  - elsif poll.rank_3.video.present?
+                    .poll_image= video_tag(poll.rank_3.video, :width => '190', :class => 'video')
+                  %h4= "#{pluralize(poll.vote_3, 'person')} liked this"
+          .row
+            .large-12.columns.tiny_spacer
+          .row
+            .large-12.columns.tiny_spacer
+
+          .row
+            .large-12.columns
+              - if poll.is_active?
+                = form_tag end_poll_poll_path(poll.id), :remote => true do
+                  .center= submit_tag 'END POLL', :class => 'button round'
+              - if poll.is_active? == false
+                - if poll.winner.length == 1
+                  %h3.center= "Your friends have selected a style by #{poll.winner_object[0].stylist.user.name}."
+                  %h3.center= "Get in touch and make it happen!"
+
+      .row
+        .large-12.columns.spacer
+
+
+
+
+        %script
+          = "var poll_id = #{poll.id}"
+          = "var winner_#{poll.id} = #{poll.winner};"
+          = "Snippy.highlight_winners(poll_id, winner_#{poll.id});"
+
+

@@ -1,25 +1,30 @@
 <div id="main" role="main">
 
-  <div class="row">
-    <div class="large-8.columns">
-      <div class='box'>
-        <ol id="filters" class="filter_type" >
-          <li data-filter='favorite'>favorites</li>
-          <% @tags.uniq.each do |tag| %>
-          <li data-filter='<%= tag %>'><%= tag %></li>
-          <% end %>
-        </ol>
+  <% if @auth.client.present? %> <!-- not for stylysts show page -->
+    <div class="row">
+      <div class="large-8.columns">
+        <div class='box'>
+          <ol id="filters" class="filter_type" >
+            <li data-filter='favorite'>favorites</li>
+            <% @tags.uniq.each do |tag| %>
+              <li data-filter='<%= tag %>'><%= tag %></li>
+            <% end %>
+          </ol>
+        </div>
       </div>
-    </div>
-  </div> <!-- end filter row -->
-
+    </div> <!-- end filter row -->
+  <% end %>
 
   <div class="row">
     <div class="large-12.columns">
       <ul id="tiles">
         <% @media.each do |medium| %>
-        <li class="<%=medium.tags.map(&:tag).join(' ') %> <%= 'favorite' if medium.id.in?(@auth.client.favorites.map(&:medium_id)) %>">
-          <div class="tile draggable" data-medium-id='<%= medium.id  %>'>
+        <li class="<%=medium.tags.map(&:tag).join(' ') %>
+        <% if @auth.client.present? %> <!-- not for stylysts show page -->
+          <%= 'favorite' if medium.id.in?(@auth.client.favorites.map(&:medium_id)) %>
+        <% end %>
+        ">
+          <div class="tile">
             <div>
               <% if medium.photo? %>
                 <%= link_to image_tag(medium.photo.thumb, :size => '200x200', :class => 'video'), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '600px', :colorbox_iframe => true} %>
@@ -27,18 +32,20 @@
                 <%= link_to (image_tag('http://placehold.it/200x200', :class => 'video')), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '600px', :colorbox_iframe => true } %>
               <% end %>
             </div>
+            <% if @auth.client.present? %> <!-- not for stylysts show page -->
             <div class="info">
               <h5>cut by <span class="stylist"><%= link_to(medium.stylist.user.name, "/stylists/#{medium.stylist.id}") %></span></h5>
-              <div class="favorites">
+              <div class="favorites" data-medium-id='<%= medium.id %>'>
                 <% if medium.id.in?(@auth.client.favorites.map(&:medium_id)) %>
-                <div class="favorite_on"></div>
+                  <div class="favorite_on"></div>
                 <% else %>
-                <div class="favorite_off"></div>
+                  <div class="favorite_off"></div>
                 <% end %>
               </div>
             </div>
+            <% end %>
           </div>
-          <% end %>
+          <% end %> <!-- end media.each block -->
         </ul>
 
       </div>

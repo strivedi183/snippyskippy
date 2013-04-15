@@ -10,23 +10,29 @@ class Snippy
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
     $('#side-menu').sidr()
     $('.add_to_rank').on('click','.rank',Snippy.update_rank)
+<<<<<<< HEAD
     Snippy.show_poll_disabled
     $('body').on('click', 'a[data-learn-more]', Snippy.show_onboard)
     $('.orbit-bullets').remove()
     $('.orbit-slide-number').remove()
     $('.orbit-prev').remove()
     $('.orbit-next').remove()
+=======
+    Snippy.show_polls_disabled()
+>>>>>>> e2115881451333427e4c8325b2518240d7eeb71d
 
   @show_onboard: ->
     $('#onboard').show()
     $('#call_to_action').hide()
 
   @show_polls_disabled: ->
-    x = $('.poll_info').data('is_active') == true
+    x = $('.poll_info')
+    _.each(x, Snippy.show_poll_disabled)
 
   @show_poll_disabled: (element, index, list) ->
-    if $(element).data('is_active') == true
-      $(element).addClass('blue_bg')
+    console.log($(element).data('poll-is-active'))
+    if $(element).data('poll-is-active') == false
+      $(element).addClass('poll_done')
 
   @highlight_winners: (poll_id, winner_array) ->
     Snippy.poll_id = poll_id
@@ -36,7 +42,10 @@ class Snippy
 
   @highlight_winner: (element, index, list) ->
     console.log(element)
-    $(".poll_image[data-poll-medium-id='#{Snippy.poll_id}_#{element}']").addClass('orange_bg')
+    $(".poll_image[data-poll-medium-id='#{Snippy.poll_id}_#{element}']").addClass('image_box_winner')
+
+  @inactive_poll: ->
+
 
   @select_poll: ->
     Snippy.reset_polls()
