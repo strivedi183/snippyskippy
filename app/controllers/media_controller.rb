@@ -9,9 +9,11 @@ class MediaController < ApplicationController
     @medium.update_attributes(params[:medium])
     @medium = Medium.new
   end
+
   def show
     @medium = Medium.find(params[:id])
   end
+
   private
   def resolve_layout
     case action_name

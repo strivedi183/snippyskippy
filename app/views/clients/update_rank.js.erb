@@ -1,4 +1,2 @@
-$('#sidr').empty();
-$('#nav').empty().append('<%=j render :partial => 'layouts/nav' %>');
-handler.wookmark();
-$('#gallery').empty().append('<%=j render(:partial => 'media/gallery' ) %>');
+parent.jQuery.colorbox.close();
+parent.$('#sidr').empty().append('<%=j render :partial => 'side_menu' %>');

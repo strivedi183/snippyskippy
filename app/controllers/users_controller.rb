@@ -13,11 +13,17 @@ class UsersController < ApplicationController
     end
 
     if @user.save
-      gflash :success => { :id => "registered", :position => :top_right, :title => "Registration Complete", :value => "Congratulations " + @user.name.split(" ")[0] + "," + '<br>' + "You've created an account!", :time => 3000, :sticky => false },
-             :notice => { :id => "welcome", :position => :bottom_right, :title => "Thank you, " + @user.name.split(" ")[0] + "!", :value => "You'll recieve a welcome" + '<br>' + "notification momentarily", :time => 7000, :sticky => false }
-      @user.sendtxt
-      @user.sendemail
-      redirect_to(root_path)
+      session[:user_id] = @user.id
+      gflash :success => { :id => "registered", :position => :top_right, :title => "Registration Complete", :value => "Congratulations " + @user.name.split(" ")[0] + "," + '<br>' + "You've created an account!", :time => 5000, :sticky => false },
+             :notice => { :id => "welcome", :position => :top_right, :title => "Thank you, " + @user.name.split(" ")[0] + "...", :value => "You'll receive a welcome" + '<br>' + "notification momentarily", :time => 8000, :sticky => false }
+      if @user.client.present?
+        @user.sendtxt
+        @user.sendemail
+        redirect_to(client_path(@user.client.id))
+      else
+        @user.sendemail
+        redirect_to(stylist_path(@user.stylist.id))
+      end
     else
       gflash :warning => { :title => "Registration Error", :value => "Please complete all" + '<br>' + "registration fields, thanks!", :time => 7000, :sticky => false }
       redirect_to root_path
