@@ -4,23 +4,23 @@
     = form_for @user, :html => {:multipart => true} do |f|
       = f.text_field :name, :id => 'client_name', :placeholder => 'Full Name'
       = f.text_field :email, :id => 'client_email', :placeholder => 'Email'
-      - if @auth.present? && !@auth.client.present?
+      - if !@auth.present?
         = text_field_tag :phone, nil, :id => 'client_phone', :placeholder => 'Phone'
       - if @auth.present? && @auth.client.present?
         = text_field_tag :phone, @auth.client.phone, :id => 'client_phone', :placeholder => 'Phone'
-      - if @auth.present? && !@auth.client.present?
+      - if !@auth.present?
         = text_field_tag :address, nil, :placeholder => 'Address'
       - if @auth.present? && @auth.client.present?
         = text_field_tag :address, @auth.client.address, :placeholder => 'Address'
       = f.password_field :password, :id => 'client_password', :placeholder => 'Password'
       = f.password_field :password_confirmation, :id => 'client_password_confirmation', :placeholder => 'Password Confirmation'
       = f.label :image, 'Upload your Photo', :class => 'legend'
-      - if @auth.present? && !@auth.client.present?
+      - if !@auth.present?
         = file_field_tag :image, :id => 'client_image'
       - if @auth.present? && @auth.client.present?
         / = image_tag(@auth.image, :size => '200x260')
         = file_field_tag :image, :id => 'client_image'
-      - if @auth.present? && !@auth.client.present?
+      - if !@auth.present?
         = f.submit 'Join', :id => 'submit_btn', :class => 'button radius small success'
       - if @auth.present? && @auth.client.present?
         = f.submit 'Update', :id => 'submit_btn', :class => 'button radius small success'

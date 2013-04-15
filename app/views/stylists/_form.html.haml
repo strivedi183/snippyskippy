@@ -5,20 +5,20 @@
     = form_for @user, :html => {:multipart => true}  do |f|
       = f.text_field :name, :placeholder => 'Full Name'
       = f.text_field :email, :placeholder => 'Email'
-      - if @auth.present? && !@auth.stylist.present?
+      - if !@auth.present?
         = text_area_tag :bio, :placeholder => 'Your bio'
       - if @auth.present? && @auth.stylist.present?
         = text_area_tag :bio, @auth.stylist.bio
       = f.password_field :password, :placeholder => 'Password'
       = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
       = f.label :image, 'Upload your Photo', :class => 'legend'
-      - if @auth.present? && !@auth.stylist.present?
+      - if !@auth.present?
         = file_field_tag :image, :id => 'stylist_image'
       - if @auth.present? && @auth.stylist.present?
         / = image_tag(@auth.image, :size => '200x260')
         = file_field_tag :image, :id => 'stylist_image'
       %p
-      - if @auth.present? && !@auth.stylist.present?
+      - if !@auth.present?
         = f.submit 'Create Account', :id => 'submit_btn', :class => 'button radius small success'
       - if @auth.present? && @auth.stylist.present?
         = f.submit 'Update Account', :id => 'submit_btn', :class => 'button radius small success'
