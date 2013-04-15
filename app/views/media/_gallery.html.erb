@@ -1,5 +1,6 @@
 <div id="main" role="main">
 
+  <% if @auth.client.present? %> <!-- not for stylysts show page -->
   <div class="row">
     <div class="large-8.columns">
       <div class='box'>
@@ -12,13 +13,17 @@
       </div>
     </div>
   </div> <!-- end filter row -->
-
+  <% end %>
 
   <div class="row">
     <div class="large-12.columns">
       <ul id="tiles">
         <% @media.each do |medium| %>
-        <li class="<%=medium.tags.map(&:tag).join(' ') %> <%= 'favorite' if medium.id.in?(@auth.client.favorites.map(&:medium_id)) %>">
+        <li class="<%=medium.tags.map(&:tag).join(' ') %>
+       <% if @auth.client.present? %> <!-- not for stylysts show page -->
+          <%= 'favorite' if medium.id.in?(@auth.client.favorites.map(&:medium_id)) %>
+        <% end %>
+        ">
           <div class="tile">
             <div>
               <% if medium.photo? %>
@@ -30,11 +35,13 @@
             <div class="info">
               <h5>cut by <span class="stylist"><%= link_to(medium.stylist.user.name, "/stylists/#{medium.stylist.id}") %></span></h5>
               <div class="favorites" data-medium-id='<%= medium.id %>'>
+            <% if @auth.client.present? %> <!-- not for stylysts show page -->
                 <% if medium.id.in?(@auth.client.favorites.map(&:medium_id)) %>
                 <div class="favorite_on"></div>
                 <% else %>
                 <div class="favorite_off"></div>
                 <% end %>
+            <% end %>
               </div>
             </div>
           </div>
