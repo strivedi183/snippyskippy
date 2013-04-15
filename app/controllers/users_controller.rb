@@ -43,7 +43,6 @@ class UsersController < ApplicationController
       @user.client.address = params[:address]
       @user.client.phone = params[:phone]
     else
-      binding.pry
       @user.stylist.bio = params[:bio]
       @user.stylist.save
     end

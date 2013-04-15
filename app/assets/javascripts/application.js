@@ -8,6 +8,7 @@
 //= require 'woodmark_init.js'
 //= require 'gritter.js'
 //= require 'colorbox-rails'
+//= require select2
 //= require 'backstretch.js'
 //= require 'foundation/js/foundation/foundation.dropdown.js'
 //= require 'foundation/js/foundation/foundation.reveal.js'
