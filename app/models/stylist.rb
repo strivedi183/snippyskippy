@@ -6,10 +6,11 @@
 #  salon_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  bio        :text
 #
 
 class Stylist < ActiveRecord::Base
-  attr_accessible :salon_id
+  attr_accessible :salon_id, :bio
   has_one :user, :as => :userable
   belongs_to :salon, :inverse_of => :stylists
   has_many :media, :inverse_of => :stylist
