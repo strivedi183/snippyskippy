@@ -422,7 +422,7 @@ li.name {
 }
 
 #modals {
-  z-index: 1;
+  z-index: 100;
   position: relative;
   text-align: center;
   width: 40%;
@@ -458,6 +458,8 @@ legend {
 #client.reveal-modal {
 height: 435px;
 }
+
+#learn-more
 
 .f-dropdown.content.open {
   width: 500px;

@@ -11,7 +11,15 @@ class Snippy
     $('#side-menu').sidr()
     $('.add_to_rank').on('click','.rank',Snippy.update_rank)
     Snippy.show_poll_disabled
+    $('body').on('click', 'a[data-learn-more]', Snippy.show_onboard)
+    $('.orbit-bullets').remove()
+    $('.orbit-slide-number').remove()
+    $('.orbit-prev').remove()
+    $('.orbit-next').remove()
 
+  @show_onboard: ->
+    $('#onboard').show()
+    $('#call_to_action').hide()
 
   @show_polls_disabled: ->
     x = $('.poll_info').data('is_active') == true
@@ -74,6 +82,7 @@ class Snippy
 
   @refresh: ->
     $('#main').trigger('refreshWookmark')
+    $('#onboard').hide()
 
   @clear_form: (e) ->
     e.preventDefault()

@@ -9,7 +9,7 @@
     settings: {
       timer_speed: 10000,
       animation_speed: 500,
-      bullets: true,
+      bullets: false,
       stack_on_small: true,
       container_class: 'orbit-container',
       stack_on_small_class: 'orbit-stack-on-small',
@@ -340,6 +340,7 @@
       if ($slides_container.css('marginLeft') === new_margin_left) {
         $container.removeClass(self.settings.orbit_transition_class);
         $slides_container.trigger('orbit:after-slide-change', [{slide_number: active_index, total_slides: $slides_container.children().length - 2}]);
+        $("#client_tab").removeClass("active");
         callback();
       } else {
         $slides_container.animate({
