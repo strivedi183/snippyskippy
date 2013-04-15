@@ -95,6 +95,8 @@ class Snippy
 
   @show_login_form: ->
     $('#login_form').removeClass('hide')
+    $('#onboard').hide()
+    $('#call_to_action').show()
 
   @clear_all_ranks: ->
     client_id = $('#client_id').val()
