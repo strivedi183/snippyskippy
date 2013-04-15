@@ -1,11 +1,12 @@
-#clear_ranks.inline.float-right
+#clear_ranks.inline.float-right.up-40px
   = link_to('Clear All Ranks', clear_ranks_client_path , :class => 'button small orange', :method => 'post', :remote => true, :'data-clear-ranks' => true)
   - if @auth.client.rank_1.present? || @auth.client.rank_2.present? || @auth.client.rank_3.present?
     = link_to('POLL THIS', '/polls', :method => 'post', :class => 'button small orange')
 
-
 #user_photo
   = image_tag(@auth.image, :size => '200x260')
+  .tiny_spacer
+  %h5.center.white.bold= @auth.client.user.name
 #style1.style
   - if @auth.client.rank_1.present?
     - if @auth.client.rank_1.photo?
