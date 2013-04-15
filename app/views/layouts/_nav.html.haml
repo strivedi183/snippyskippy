@@ -25,11 +25,13 @@
     %a.close-reveal-modal X
 
   #stylist.reveal-modal
-    = render(:partial => 'stylists/form')
+    - @user = @auth if @auth.present?
+    = render(:partial => 'stylists/form', :locals => {:object => @user})
     %a.close-reveal-modal X
 
   #client.reveal-modal
-    = render(:partial => 'clients/form')
+    - @user = @auth if @auth.present?
+    = render(:partial => 'clients/form', :locals => {:object => @user})
     %a.close-reveal-modal X
 
 

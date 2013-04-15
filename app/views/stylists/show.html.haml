@@ -22,7 +22,8 @@
     .large-4.columns
       .bio_container.screen
         %h1.orange.upcase= @stylist.user.name
-        %h5.white= @stylist.user.name + ' has been cutting hair for over 10 years. He has worked with a range of very important celebrities and people of great import. Lorem ipsum Sunt cupidatat non sunt non consequat ex id ut laborum consequat anim quis mollit aliqua veniam sunt reprehenderit Excepteur.'
+        %h5.white
+          = @stylist.bio if @stylist.bio.present?
     .large-4.columns
       %a{"data-reveal-id" => "media_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Media'
       %a{"data-reveal-id" => "salon_form", :href => "#", :id => 'links', :class => 'button radius'}= 'Add Salon'
