@@ -6,7 +6,7 @@
       = f.text_field :name, :placeholder => 'Full Name'
       = f.text_field :email, :placeholder => 'Email'
       - if !@auth.present?
-        = text_area_tag :bio, :placeholder => 'Your bio'
+        = text_area_tag :bio, nil, :placeholder => 'Your bio'
       - if @auth.present? && @auth.stylist.present?
         = text_area_tag :bio, @auth.stylist.bio
       = f.password_field :password, :placeholder => 'Password'
