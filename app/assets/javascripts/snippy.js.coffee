@@ -17,6 +17,15 @@ class Snippy
     $('.orbit-prev').remove()
     $('.orbit-next').remove()
     Snippy.show_polls_disabled()
+    $('#medium_tags').select2()
+    $('#media_form').on('click', 'input[data-add-media-btn]', Snippy.update_tags)
+
+  @update_tags: (e) ->
+    x = $('#medium_tags').select2('val')
+    e.preventDefault()
+    $('#medium_tag_ids').val(x)
+    console.log($('#medium_tag_ids').val())
+    $('input[data-add-media-btn]').submit()
 
   @show_onboard: ->
     $('#onboard').show()

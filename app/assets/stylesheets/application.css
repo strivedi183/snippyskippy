@@ -5,6 +5,7 @@
  *= require gritter
  *= require 'custom_gritter.scss'
  *= require 'colorbox.css'
+ *= require select2
  *= require 'wookmark.scss'
  *= require 'jquery.sidr.dark.css'
  *= require 'onboarding.scss'

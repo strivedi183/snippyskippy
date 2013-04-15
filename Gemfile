@@ -14,6 +14,7 @@ gem "gritter", "1.0.3"
 gem 'twilio-ruby'
 gem 'colorbox-rails'
 gem 'aws-ses'
+gem 'select2-rails'
 
 group :assets do
   gem 'sass-rails'

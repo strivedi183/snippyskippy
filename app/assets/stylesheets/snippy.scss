@@ -333,7 +333,7 @@ background: $black;
 }
 
 #clear_ranks{
-  margin: 20px;
+  margin: 20px 48px 0px 20px;
 }
 /* FULL BG IMAGE sets full viewport, proportionally scaled, bg image */
 // body {
@@ -376,9 +376,9 @@ background: $black;
 
 #user_photo {
   width: 200px;
-  height: 260px;
+  height: 230px;
   // background-color: $orange;
-  margin: 20px;
+  margin: 10px 30px;
   display: inline-block;
 }
 
@@ -395,11 +395,16 @@ background: $black;
 }
 
 .style{
-  width:150px;
+  width:200px;
   height: 200px;
   // background-color: $orange;
   display: inline-block;
-  margin: 20px;
+  margin: 10px 30px;
+  overflow: hidden;
+}
+
+.style img {
+  width: 100%;
   overflow: hidden;
 }
 
@@ -408,7 +413,9 @@ background: $black;
   width: 100%;
 }
 
-
+.up-40px{
+  margin-bottom: -40px;
+}
 /*- START NAV -*/
 
 /* Set Login Form width */
