@@ -16,8 +16,10 @@ class StylistsController < ApplicationController
   end
   def show
     @user = User.new
-    @medium = Medium.new
+    @media = Medium.all #for gallery partial
+    @medium = Medium.new #to add new media
     @stylist = Stylist.find(params[:id])
     @salon = Salon.new
+    @tags = @media.map(&:tags).flatten.uniq.map(&:tag)
   end
 end

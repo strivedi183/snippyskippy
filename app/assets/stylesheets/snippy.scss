@@ -5,6 +5,9 @@
 /* 4. Icons                                             */
 /* 5. Page Utilities                                    */
 /* 6. Foundation Overrides                              */
+
+
+
 /** 1. COLORS *******************************************/
 
 $orange:  #e57113; //accent color, stylist name
@@ -51,6 +54,13 @@ $black:   #4b3b3b; //text color
   font-size: 2em;
 
 }
+
+.bold{
+  font-weight: 700;
+}
+
+
+
 
 h1 {
   font-family: "brandon-grotesque",sans-serif;
@@ -176,6 +186,52 @@ a.button {
   text-transform: uppercase;
 }
 
+
+.poll_tiles{
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dedede;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.poll_bg{
+  background: url('diamond_upholstery.png') repeat;
+}
+
+.poll_image{
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.poll_done{
+  opacity: .7;
+
+}
+.image_box_winner{
+  box-shadow: 2px 2px 20px $black;
+  background-color: $orange;
+  padding: 20px;
+  width: 100%;
+  opacity: 1;
+}
+
+.image_box_winner h4 {
+  font-weight: 700;
+  color: $white;
+}
+
+
+.image_box{
+  box-shadow: 2px 2px 12px lighten($black, 55%);
+  padding: 20px;
+  width: 100%;
+  opacity: 1;
+}
 /* 6. Foundation Overrides  *********************************/
 
 .top-bar {
@@ -261,49 +317,7 @@ background: $black;
 
 
 
-// /*- TOP BAR OVERRIDES ***************************************/
 
-// /* Background color for the top bar */
-$topbar-bg: #777;
-
-// /* Height and margin */
-// $topbar-height: 45px;
-// $topbar-margin-bottom: emCalc(30px);
-
-// /* Control Input height for top bar */
-// $topbar-input-height: 2.45em;
-
-// /* Controlling the styles for the title in the top bar */
-// $topbar-title-weight: bold;
-// $topbar-title-font-size: emCalc(17px);
-
-// /* Set the link colors and styles for top-level nav */
-// $topbar-link-color: #fff;
-// $topbar-link-weight: bold;
-// $topbar-link-font-size: emCalc(13px);
-
-// /* Style the top bar dropdown elements */
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
-// $topbar-dropdown-toggle-alpha: 0.5;
-// $dropdown-label-color: #555;
-
-// /* Top menu icon styles */
-// $topbar-menu-link-transform: lowercase;
-// $topbar-menu-link-font-size: emCalc(13px);
-// $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
-
-// /* Transitions and breakpoint styles */
-// $topbar-transition-speed: 300ms;
-// $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
-
-// /* END TOP BAR CSS  ***************************************/
 
 .screen {
   background-color: rgba($black, .7);
@@ -422,7 +436,7 @@ li.name {
 }
 
 #modals {
-  z-index: 1;
+  z-index: 100;
   position: relative;
   text-align: center;
   width: 40%;
@@ -458,6 +472,8 @@ legend {
 #client.reveal-modal {
 height: 435px;
 }
+
+#learn-more
 
 .f-dropdown.content.open {
   width: 500px;

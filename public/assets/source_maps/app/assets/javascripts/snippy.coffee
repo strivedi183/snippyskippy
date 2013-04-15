@@ -10,13 +10,16 @@ class Snippy
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
     $('#side-menu').sidr()
     $('.add_to_rank').on('click','.rank',Snippy.update_rank)
+<<<<<<< HEAD
     Snippy.show_poll_disabled
     $('body').on('click', 'a[data-learn-more]', Snippy.show_onboard)
     $('.orbit-bullets').remove()
     $('.orbit-slide-number').remove()
     $('.orbit-prev').remove()
     $('.orbit-next').remove()
+=======
     Snippy.show_polls_disabled()
+>>>>>>> e2115881451333427e4c8325b2518240d7eeb71d
 
   @show_onboard: ->
     $('#onboard').show()
@@ -40,6 +43,8 @@ class Snippy
   @highlight_winner: (element, index, list) ->
     console.log(element)
     $(".poll_image[data-poll-medium-id='#{Snippy.poll_id}_#{element}']").addClass('image_box_winner')
+
+  @inactive_poll: ->
 
 
   @select_poll: ->
@@ -111,29 +116,42 @@ class Snippy
     token = $('#auth_token').data('auth-token')
     medium_id = $('#medium_id').data('medium_id')
     client_id = $(this).data('client_id')
+    console.log(client_id)
     rank = $(this).data('rank')
+    console.log(rank)
     settings =
       dataType: 'script'
       type: 'post'
       url: "/clients/#{client_id}/update_rank"
       data: {authenticity_token: token, medium_id: medium_id, rank: rank}
-    $.ajax(settings)
+    $.ajax(settings).done(Snippy.update_rank_response())
+
+  @update_rank_response: ->
+    console.log("This works")
 
   @update_favorite: ->
+    x = $(this).parent().hasClass('favorite')
+    console.log(x)
     if $(this).children().first().hasClass('favorite_off')
       console.log("Add to Favorites")
       token = $('input[name=authenticity_token]').val()
-      medium_id = $(this).data('medium-id')
+      console.log(token)
+      medium_id = $(this).parent().data('medium-id')
+      console.log("The Medium ID is #{medium_id}")
       client_id = $('#client_id').val()
       console.log(client_id)
-      $(this).parent().parent().parent().addClass('favorite')
+      $(this).parent().parent().addClass('favorite')
       $(this).children().first().removeClass('favorite_off').addClass('favorite_on')
+
     else
-      console.log("remove from favorites")
+      console.log("Add to Favorites")
       token = $('input[name=authenticity_token]').val()
-      medium_id = $(this).data('medium-id')
+      console.log(token)
+      medium_id = $(this).parent().data('medium-id')
+      console.log("The Medium ID is #{medium_id}")
       client_id = $('#client_id').val()
-      $(this).parent().parent().parent().removeClass('favorite')
+      console.log(client_id)
+      $(this).parent().parent().removeClass('favorite')
       $(this).children().first().removeClass('favorite_on').addClass('favorite_off')
     settings =
       dataType: 'script'

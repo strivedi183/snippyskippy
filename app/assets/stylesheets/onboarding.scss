@@ -1,0 +1,83 @@
+#learn-more {
+  margin-top: 10px;
+}
+
+.banner {
+  position: relative;
+}
+
+.slide_content {
+  margin: 10px 10px 15px 20px;
+}
+
+.content {
+  color: white;
+}
+
+a.reg_btns.banner {
+  float: right;
+  margin-bottom: 20px;
+}
+
+.orbit-container {
+  opacity: 0.9;
+}
+
+.orbit-container .orbit-timer {
+position: absolute;
+bottom: 0px;
+right: 0px;
+height: 6px;
+width: 100px;
+}
+
+.section-container.tabs section#client_tab.active .title {
+  background-color: rgba(104, 187, 222, 0.9)
+}
+
+.section-container.tabs section#client_tab .title {
+  background-color: rgba(104, 187, 222, 0.9)
+}
+
+#client_slide {
+  background-color: rgb(104, 187, 222);
+
+}
+
+.section-container.tabs section#stylist_tab.active .title {
+  background-color: #e57113;
+  opacity: 0.9;
+}
+
+.section-container.tabs section#stylist_tab .title {
+  background-color: #e57113;
+  opacity: 0.9;
+}
+
+#stylist_slide {
+  background-color: #e57113;
+}
+
+.ul.disc.section-container.tabs {
+  margin-bottom: 1.5px;
+}
+
+.section-container.tabs section .title {
+  border: none;
+  width: 485px;
+  -webkit-border-top-left-radius: 25px;
+  -webkit-border-top-right-radius: 25px;
+  -moz-border-radius-topleft: 25px;
+  -moz-border-radius-topright: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.section-container section .title a {
+  text-transform: uppercase;
+  font-family: "brandon-grotesque",sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25em;
+  padding-bottom: 10px;
+}

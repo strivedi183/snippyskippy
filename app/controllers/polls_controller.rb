@@ -24,7 +24,6 @@ class PollsController < ApplicationController
     @user = User.new
   end
   def end_poll
-    binding.pry
     poll = Poll.find(params[:id])
     poll.is_active = false
     poll.save

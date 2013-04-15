@@ -4,14 +4,15 @@
 .row
   .small-6.small-centered.columns.colorbox_image
     - if @medium.photo.present?
-      = image_tag(@medium.photo.thumb, :size => '200x320', :class => 'video')
+      = image_tag(@medium.photo, :class => 'video')
     - elsif @medium.video.present?
       = video_tag(@medium.video, :width => '190', :class => 'video')
 
-.row
-  .small-4.small-centered.columns
-    %h3 Add to your top 3
-    .add_to_rank#medium_id{:'data-medium_id' => @medium.id}
-      = link_to '1', '#', :'data-rank' => 1, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
-      = link_to '2', '#', :'data-rank' => 2, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
-      = link_to '3', '#', :'data-rank' => 3, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
+- if @auth.client.present? #do not show this on stylist show page
+  .row
+    .small-4.small-centered.columns
+      %h3 Add to your top 3
+      .add_to_rank#medium_id{:'data-medium_id' => @medium.id}
+        = link_to '1', '#', :'data-rank' => 1, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
+        = link_to '2', '#', :'data-rank' => 2, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
+        = link_to '3', '#', :'data-rank' => 3, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
