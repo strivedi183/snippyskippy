@@ -2,11 +2,11 @@
   .small-6.small-centered.columns
 
 .row
-  .small-6.small-centered.columns.colorbox_image
+  .large-1.large-centered.columns.colorbox_image
     - if @medium.photo.present?
       = image_tag(@medium.photo, :class => 'video')
     - elsif @medium.video.present?
-      = video_tag(@medium.video, :width => '190', :class => 'video')
+      = video_tag(@medium.video, :class => 'video')
 
 - if @auth.client.present? #do not show this on stylist show page
   .row
