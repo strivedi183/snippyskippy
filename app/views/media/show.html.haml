@@ -1,7 +1,4 @@
 .row#auth_token{:'data-auth-token' => form_authenticity_token}
-  .small-6.small-centered.columns
-
-.row
   .large-1.large-centered.columns.colorbox_image
     - if @medium.photo.present?
       = image_tag(@medium.photo, :class => 'video')
@@ -10,7 +7,7 @@
 
 - if @auth.client.present? #do not show this on stylist show page
   .row
-    .small-4.small-centered.columns
+    .large-1.large-centered.columns
       %h3 Add to your top 3
       .add_to_rank#medium_id{:'data-medium_id' => @medium.id}
         = link_to '1', '#', :'data-rank' => 1, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'

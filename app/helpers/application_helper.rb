@@ -6,6 +6,7 @@ module ApplicationHelper
       nav += "<li class='name'>#{link_to('Browse Styles', client_path(@auth.client.id) )}</li>" if @auth.client.present?
       nav += "<li class='name'>#{link_to('Edit my Profile', '#', :"data-reveal-id" => "client")}</li>" if @auth.client.present?
       nav += "<li class='name'>#{link_to('Edit my Profile', '#', :"data-reveal-id" => "stylist")}</li>" if @auth.stylist.present?
+      nav += "<li class='name'>#{link_to('My Home', stylist_path(@auth.stylist))}</li>" if @auth.stylist.present?
       nav += "<li class='name'><a href='/stylists' id='stylists_index'>Find a Stylist</a></li>" if @auth.client.present?
       nav += "<li class='name'>#{link_to('Logout', '/login', :method => :delete )}</li>"
     else
