@@ -19,3 +19,4 @@
 //= require 'map.js'
 //= require 'jquery.sidr.min.js'
 //= require 'snippy.js'
+//= require 'mapbox.js'
