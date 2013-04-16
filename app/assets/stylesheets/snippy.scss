@@ -403,6 +403,11 @@ background: $black;
   overflow: hidden;
 }
 
+.style img {
+  width: 100%;
+  overflow: hidden;
+}
+
 .salon_box {
   height: 100%;
   width: 100%;
@@ -475,7 +480,9 @@ legend {
 height: 435px;
 }
 
-#learn-more
+#stylist.reveal-modal {
+height: 425px;
+}
 
 .f-dropdown.content.open {
   width: 500px;
@@ -497,7 +504,7 @@ height: 435px;
 
 .stylist_form
 {
-  height: 275px;
+  height: 100%;
 }
 
 .salon_form
@@ -548,7 +555,9 @@ height: 435px;
   border: 10px solid $lt_purp;
   box-shadow: 5px 5px 20px #111;
 }
-
+.stylist_photo img {
+  width: 100%;
+}
 #map_canvas
 {
   width: 303px;

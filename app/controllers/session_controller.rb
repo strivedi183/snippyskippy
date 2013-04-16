@@ -9,7 +9,12 @@ class SessionController < ApplicationController
       session[:user_id] = @auth.id
       if @auth.is_client?
         redirect_to client_path(@auth.client.id)
-        gflash :success => { :title => "Successful Login", :value => "Welcome Back, " + @auth.name.split(" ")[0] + "!" + '<br>' + "You are now logged in.", :image => "#{@auth.image}", :time => 3000, :sticky => false }
+        if @auth.image.present?
+          gflash :success => { :title => "Successful Login", :value => "Welcome Back, " + @auth.name.split(" ")[0] + "!" + '<br>' + "You are now logged in.", :image => "#{@auth.image}", :time => 3000, :sticky => false }
+        else
+          gflash :success => { :title => "Successful Login", :value => "Welcome Back, " + @auth.name.split(" ")[0] + "!" + '<br>' + "You are now logged in.", :time => 3000, :sticky => false },
+                 :notice => { :title => "Update Your Profile", :value => @auth.name.split(" ")[0] + ", please update your" + '<br>' + "account by adding a" + '<br>' + "picture of your current style.", :time => 8000, :sticky => false }
+        end
       elsif @auth.is_stylist?
         @stylist = Stylist.find(@auth.stylist.id)
         redirect_to stylist_path(@auth.stylist.id)

@@ -8,23 +8,18 @@
         = f.label 'Video', :class => 'media_label title'
         = f.file_field :video
         %p
-        = f.text_field :remote_video_url, :placeholder => 'Video URL'
-        %p
         = f.label 'Photo', :class => 'media_label title'
         = f.file_field :photo
-        %p
-        = f.text_field :remote_photo_url, :placeholder => 'Photo URL'
         %p
         = f.label 'Please Tag your media', :class => 'media_label'
         %p
         .row
           .large-5.large-centered.columns
+          %select{:multiple => 'multiple', :id => 'medium_tags', :style => "width:300px"}
             - Tag.order(:tag).each do |tag|
-              .checkbox
-                .left= tag.tag
-                .right= check_box_tag 'medium[tag_ids][]', tag.id, tag.in?(@medium.tags)
-                %br
+              %option{:value => tag.id, :'data-tag' => "#{tag.tag}"}= tag.tag
         %br
+        = hidden_field_tag :medium_tag_ids, :medium_tag_ids
         = hidden_field_tag :stylist_id, @stylist.id
-        = f.submit 'Add Photo/Video', :class => 'button small radius success', :id => 'add_media_btn'
+        = f.submit 'Add Photo/Video', :class => 'button small radius success', :id => 'add_media_btn', :'data-add-media-btn' => true
     .seven.columns
