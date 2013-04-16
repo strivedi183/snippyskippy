@@ -4,7 +4,10 @@
     = link_to('POLL THIS', '/polls', :method => 'post', :class => 'button small orange')
 
 #user_photo
-  = image_tag(@auth.image, :size => '200x260')
+  - if @auth.image.present?
+    = image_tag(@auth.image, :size => '200x260')
+  -else
+    = link_to(image_tag('/assets/default_image.jpg', :size => '200x260'), '#', :"data-reveal-id" => "client")
   .tiny_spacer
   %h5.center.white.bold= @auth.client.user.name
 #style1.style
