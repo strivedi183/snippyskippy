@@ -9,6 +9,7 @@ class Snippy
     $('body').on('keypress', Snippy.easter_egg_video)
     $('#poll').on('click', '.poll_favorite', Snippy.select_poll)
     $('#side-menu').sidr()
+    $('#side-menu').on('click', Snippy.sidr_btn_text)
     $('.add_to_rank').on('click','.rank',Snippy.update_rank)
     Snippy.show_poll_disabled
     $('body').on('click', 'a[data-learn-more]', Snippy.show_onboard)
@@ -97,6 +98,14 @@ class Snippy
 
     $('#side-menu').sidr()
     $('.add_to_rank').on('click','.rank',Snippy.update_rank)
+
+  @sidr_btn_text: (e) ->
+    if $(this).hasClass("hidden")
+      $(this).text("Close Menu")
+      $(this).removeClass("hidden")
+    else
+      $(this).addClass("hidden")
+      $(this).text("Open Menu")
 
   @refresh: ->
     $('#main').trigger('refreshWookmark')
