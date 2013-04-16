@@ -23,11 +23,11 @@
         = text_field_tag :address, @auth.client.address, :placeholder => 'Address'
       = f.password_field :password, :id => 'client_password', :placeholder => 'Password'
       = f.password_field :password_confirmation, :id => 'client_password_confirmation', :placeholder => 'Password Confirmation'
-      = f.label :image, 'Upload your Photo', :class => 'legend'
+      = f.label :image, 'Upload a Photo', :class => 'legend'
       - if !@auth.present?
         = file_field_tag :image, :id => 'client_image'
       - if @auth.present? && @auth.client.present?
-        = image_tag(@auth.image, :size => '200x260')
+        / = image_tag(@auth.image, :size => '200x260')
         = file_field_tag :image, :id => 'client_image'
       .tiny_spacer
       - if !@auth.present?

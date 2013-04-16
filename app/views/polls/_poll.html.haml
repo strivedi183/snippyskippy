@@ -77,10 +77,10 @@
 
   #registration_post_voting.reveal-modal
     .row
-      .large-6.large-centered.columns
+      .large.columns
         %h2.register_msg= "Thank you for voting for #{@poll.client.user.name}'s hairstyle!"
         %h4 If you would like to have your friends vote on your hairstyle, click to register!
-        %a.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} Client
+        %a.no_left_margin.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} REGISTER
         %a.close-reveal-modal X
 
   #poll_client.reveal-modal

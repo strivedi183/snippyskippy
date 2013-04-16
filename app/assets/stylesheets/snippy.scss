@@ -147,7 +147,9 @@ a.button {
   display: block;
 }
 
-
+#registration_post_voting{
+  width: 600px;
+}
 
 
 
@@ -489,11 +491,11 @@ legend {
 }
 
 #client.reveal-modal {
-height: 435px;
+  min-height: 500px;
 }
 
 #stylist.reveal-modal {
-height: 425px;
+min-height: 600x;
 }
 
 .f-dropdown.content.open {
