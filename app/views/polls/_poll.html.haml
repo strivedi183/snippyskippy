@@ -1,68 +1,89 @@
-.row.poll_info{:'data-poll-id' => "#{@poll.id}", :'data-poll-is-active' => "#{@poll.is_active?}"}
-  .large-4.columns
-    - if @poll.rank_1.present?
-      .poll_image{:'data-rank' => 'rank_1', :'data-medium-id' => "#{@poll.rank_1.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_1.id}"}
-        - if @poll.rank_1.photo.present?
-          = image_tag(@poll.rank_1.photo.thumb, :size => '200x320', :class => 'video')
-        - elsif @poll.rank_1.video.present?
-          = video_tag(@poll.rank_1.video, :width => '190', :class => 'video')
-      .poll_favorite
-        - if @poll.is_active?
-          .favorite_off
-          = "#{@poll.vote_1} people liked this"
-
-  .large-4.columns
-    - if @poll.rank_2.present?
-      .poll_image{:'data-rank' => 'rank_2', :'data-medium-id' => "#{@poll.rank_2.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_2.id}"}
-        - if @poll.rank_2.photo.present?
-          = image_tag(@poll.rank_2.photo.thumb, :size => '200x320', :class => 'video')
-        - elsif @poll.rank_2.video.present?
-          = video_tag(@poll.rank_2.video, :width => '190', :class => 'video')
-      .poll_favorite
-        - if @poll.is_active?
-          .favorite_off
-          = "#{@poll.vote_2} people liked this"
-
-  .large-4.columns
-    - if @poll.rank_3.present?
-      .poll_image{:'data-rank' => 'rank_3', :'data-medium-id' => "#{@poll.rank_3.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_3.id}"}
-        - if @poll.rank_3.photo.present?
-          = image_tag(@poll.rank_3.photo.thumb, :size => '200x320', :class => 'video')
-        - elsif @poll.rank_3.video.present?
-          = video_tag(@poll.rank_3.video, :width => '190', :class => 'video')
-      .poll_favorite
-        - if @poll.is_active?
-          .favorite_off
-          = "#{@poll.vote_3} people liked this"
-- if !@poll.is_active?
+.poll_bg
   .row
-    .large-12.columns
-      THIS POLL IS CLOSED
-  %script
-    = "var poll_id = #{@poll.id}"
-    = "var winner_#{@poll.id} = #{@poll.winner};"
-    = "Snippy.highlight_winners(poll_id, winner_#{@poll.id});"
-
-
-%br
-%br
-- if @poll.is_active?
+    .large-12.columns.spacer
   .row
-    .large-1.large-centered.columns
-      .vote_button
-        = form_tag update_poll_poll_path(@poll.id), :remote => true do
-          = hidden_field_tag :poll_rank
-          = submit_tag 'VOTE', :class => 'button', :id => 'vote-btn', :disabled => 'disabled'
+    .large-3.columns
+      .stylist_photo.center= image_tag(@poll.client.user.image.thumb)
+    .large-9.columns
+      .tiny_spacer
+      .tiny_spacer
+      %h2.center.bold= "Your friend, " + @poll.client.user.name + ", wants you to help her choose her next hair style."
 
-#registration_post_voting.reveal-modal
+      %h2.center  Select a style from the options below <br>and let her know what you think!
   .row
-    .large-6.large-centered.columns
-      %h2.register_msg= "Thank you for voting for #{@poll.client.user.name}'s hairstyle!"
-      %h4 If you would like to have your friends vote on your hairstyle, click to register!
-      %a.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} Client
-      %a.close-reveal-modal X
+    .large-12.columns.spacer
 
-#poll_client.reveal-modal
-  = render(:partial => 'clients/form')
-  %a.close-reveal-modal X
+  .row.poll_tiles.poll_info{:'data-poll-id' => "#{@poll.id}", :'data-poll-is-active' => "#{@poll.is_active?}"}
+    .large-4.columns
+      .tiny_spacer
+      - if @poll.rank_1.present?
+        .image_box.poll_image{:'data-rank' => 'rank_1', :'data-medium-id' => "#{@poll.rank_1.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_1.id}"}
+          - if @poll.rank_1.photo.present?
+            .poll_image= image_tag(@poll.rank_1.photo.thumb, :size => '200x320', :class => 'video')
+          - elsif @poll.rank_1.video.present?
+            .poll_image= video_tag(@poll.rank_1.video, :width => '190', :class => 'video')
+        .poll_favorite
+          - if @poll.is_active?
+            .tiny_spacer
+            .favorite_off.center_fav
+            %h3.center= "#{@poll.vote_1} people liked this"
+
+    .large-4.columns
+      .tiny_spacer
+      - if @poll.rank_2.present?
+        .image_box.poll_image{:'data-rank' => 'rank_2', :'data-medium-id' => "#{@poll.rank_2.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_2.id}"}
+          - if @poll.rank_2.photo.present?
+            .poll_image= image_tag(@poll.rank_2.photo.thumb, :size => '200x320', :class => 'video')
+          - elsif @poll.rank_2.video.present?
+            .poll_image= video_tag(@poll.rank_2.video, :width => '190', :class => 'video')
+        .poll_favorite
+          - if @poll.is_active?
+            .tiny_spacer
+            .center_fav.favorite_off
+            %h3.center= "#{@poll.vote_2} people liked this"
+
+    .large-4.columns
+      .tiny_spacer
+      - if @poll.rank_3.present?
+        .image_box.poll_image{:'data-rank' => 'rank_3', :'data-medium-id' => "#{@poll.rank_3.id}", :'data-client-id' => "#{@poll.client.id}", :'data-poll-medium-id' => "#{@poll.id}_#{@poll.rank_3.id}"}
+          - if @poll.rank_3.photo.present?
+            .poll_image= image_tag(@poll.rank_3.photo.thumb, :size => '200x320', :class => 'video')
+          - elsif @poll.rank_3.video.present?
+            .poll_image= video_tag(@poll.rank_3.video, :width => '190', :class => 'video')
+        .poll_favorite
+          - if @poll.is_active?
+            .tiny_spacer
+            .center_fav.favorite_off
+            %h3.center= "#{@poll.vote_3} people liked this"
+  - if !@poll.is_active?
+    .row
+      .large-12.columns
+        THIS POLL IS CLOSED
+    %script
+      = "var poll_id = #{@poll.id}"
+      = "var winner_#{@poll.id} = #{@poll.winner};"
+      = "Snippy.highlight_winners(poll_id, winner_#{@poll.id});"
+
+
+  %br
+  %br
+  - if @poll.is_active?
+    .row
+      .large-1.large-centered.columns
+        .vote_button
+          = form_tag update_poll_poll_path(@poll.id), :remote => true do
+            = hidden_field_tag :poll_rank
+            = submit_tag 'VOTE', :class => 'button', :id => 'vote-btn', :disabled => 'disabled'
+
+  #registration_post_voting.reveal-modal
+    .row
+      .large-6.large-centered.columns
+        %h2.register_msg= "Thank you for voting for #{@poll.client.user.name}'s hairstyle!"
+        %h4 If you would like to have your friends vote on your hairstyle, click to register!
+        %a.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} Client
+        %a.close-reveal-modal X
+
+  #poll_client.reveal-modal
+    = render(:partial => 'clients/form')
+    %a.close-reveal-modal X
 

@@ -59,14 +59,14 @@ class Snippy
   @select_poll: ->
     Snippy.reset_polls()
     rank = $(this).prev().data('rank')
-    if $(this).children().hasClass('favorite_off')
-      $(this).children().removeClass('favorite_off')
-      $(this).children().addClass('favorite_on')
+    if $(this).children('.center_fav').hasClass('favorite_off')
+      $(this).children('.center_fav').removeClass('favorite_off')
+      $(this).children('.center_fav').addClass('favorite_on')
       $('#poll_rank').val(rank)
       $('#vote-btn').removeAttr('disabled')
     else
-      $(this).children().removeClass('favorite_on')
-      $(this).children().addClass('favorite_off')
+      $(this).children('.center_fav').removeClass('favorite_on')
+      $(this).children('.center_fav').addClass('favorite_off')
       $(this).next().addClass('hide')
 
   @reset_polls: ->
@@ -74,8 +74,8 @@ class Snippy
     _.each(x, Snippy.reset_poll)
 
   @reset_poll: (element, index, list) ->
-    $(element).children().removeClass('favorite_on')
-    $(element).children().addClass('favorite_off')
+    $(element).children('.center_fav').removeClass('favorite_on')
+    $(element).children('.center_fav').addClass('favorite_off')
     $(element).next().addClass('hide')
 
   @update_poll: ->
