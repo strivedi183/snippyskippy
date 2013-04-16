@@ -1,8 +1,13 @@
 .row
-  - if !@auth.present?
-    %legend Stylist Registion
-  - if @auth.present? && @auth.stylist.present?
-    %legend Update Profile
+  .large-12.columns
+    - if @auth
+      %legend
+        %h3.bold Edit Profile
+    - else
+      %legend
+        %h3.bold Stylist Registration
+  .tiny_spacer
+.row
   .five.columns.stylist_form
     = form_for @user, :html => {:multipart => true}  do |f|
       = f.text_field :name, :placeholder => 'Full Name'
@@ -19,7 +24,7 @@
       - if @auth.present? && @auth.stylist.present?
         / = image_tag(@auth.image, :size => '200x260')
         = file_field_tag :image, :id => 'stylist_image'
-      %p
+      .tiny_spacer
       - if !@auth.present?
         = f.submit 'Create Account', :id => 'submit_btn', :class => 'button radius small success'
       - if @auth.present? && @auth.stylist.present?

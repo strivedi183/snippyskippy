@@ -1,9 +1,1 @@
-$('#media_form').empty().append('<%=j render :partial => 'stylists/media_form' %>');
-$('#stylist_galery').empty().append('<%=j render :partial => 'stylists/gallery' %>');
-$('#media_form').foundation('reveal', 'close');
-$('#confirm_upload_msg').removeClass('hide');
-Snippy.video_hover();
-setTimeout( function(){
-    $('#confirm_upload_msg').addClass('hide');
-  }
- , 2000 );
+  window.location = '<%= stylist_path(@auth.stylist.id) %>';

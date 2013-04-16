@@ -1,8 +1,14 @@
 .row
-  - if !@auth.present?
-    %legend Client Registion
-  - if @auth.present? && @auth.client.present?
-    %legend Update Profile
+  .large-12.columns
+    - if @auth
+      %legend
+        %h3.bold Edit Profile
+    - else
+      %legend
+        %h3.bold Client Registration
+  .tiny_spacer
+.row
+
   .five.columns.client_form
     = form_for @user, :html => {:multipart => true} do |f|
       = f.text_field :name, :id => 'client_name', :placeholder => 'Full Name'
@@ -21,10 +27,12 @@
       - if !@auth.present?
         = file_field_tag :image, :id => 'client_image'
       - if @auth.present? && @auth.client.present?
-        / = image_tag(@auth.image, :size => '200x260')
+        = image_tag(@auth.image, :size => '200x260')
         = file_field_tag :image, :id => 'client_image'
+      .tiny_spacer
       - if !@auth.present?
-        = f.submit 'Join', :id => 'submit_btn', :class => 'button radius small success'
+        = f.submit 'Join', :id => 'submit_btn', :class => 'button radius small success left'
       - if @auth.present? && @auth.client.present?
-        = f.submit 'Update', :id => 'submit_btn', :class => 'button radius small success'
+        = f.submit 'Update', :id => 'submit_btn', :class => 'button radius left small success'
+      .tiny_spacer
   .seven.columns

@@ -11,6 +11,7 @@
 //= require select2
 //= require 'backstretch.js'
 //= require 'foundation/js/foundation/foundation.dropdown.js'
+//= require 'foundation/js/foundation/foundation.topbar.js'
 //= require 'foundation/js/foundation/foundation.reveal.js'
 //= require 'foundation/js/foundation/foundation.alerts.js'
 //= require 'jquery.jkit.custom/jquery.jkit.custom.1.2.1.min.js'
@@ -18,3 +19,4 @@
 //= require 'map.js'
 //= require 'jquery.sidr.min.js'
 //= require 'snippy.js'
+//= require 'mapbox.js'

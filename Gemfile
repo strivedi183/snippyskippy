@@ -15,6 +15,9 @@ gem 'twilio-ruby'
 gem 'colorbox-rails'
 gem 'aws-ses'
 gem 'select2-rails'
+gem 'streamio-ffmpeg'
+gem 'carrierwave-video'
+gem 'carrierwave-video-thumbnailer'
 
 group :assets do
   gem 'sass-rails'

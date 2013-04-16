@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bobs and Bangs</title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width" />
+  <%= javascript_include_tag "jquery.js" %>
+  <%= javascript_include_tag "mapbox.js" %>
+  <%= stylesheet_link_tag "mapbox.css" %>
+</head>
+<body>
+
+<%= yield %>
+
+<script>
+ //$(document).foundation();
+</script>
+
+</body>
+</html>

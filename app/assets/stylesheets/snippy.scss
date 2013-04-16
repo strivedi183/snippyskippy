@@ -504,7 +504,7 @@ height: 425px;
 
 .stylist_form
 {
-  height: 275px;
+  height: 100%;
 }
 
 .salon_form
@@ -555,7 +555,9 @@ height: 425px;
   border: 10px solid $lt_purp;
   box-shadow: 5px 5px 20px #111;
 }
-
+.stylist_photo img {
+  width: 100%;
+}
 #map_canvas
 {
   width: 303px;
