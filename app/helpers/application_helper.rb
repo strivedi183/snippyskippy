@@ -7,7 +7,7 @@ module ApplicationHelper
       nav += "<li class='name'>#{link_to('Edit my Profile', '#', :"data-reveal-id" => "client")}</li>" if @auth.client.present?
       nav += "<li class='name'>#{link_to('Edit my Profile', '#', :"data-reveal-id" => "stylist")}</li>" if @auth.stylist.present?
       nav += "<li class='name'><a href='/stylists' id='stylists_index'>Find a Stylist</a></li>" if @auth.client.present?
-      nav += "<li>#{link_to('Logout', '/login', :method => :delete, :id => 'logout_btn', :class => 'button tiny')}</li>"
+      nav += "<li class='name'>#{link_to('Logout', '/login', :method => :delete )}</li>"
     else
       nav += "<li class='name'><h1>#{link_to('Login', '#', :id => 'login-form-btn', :'data-dropdown' => 'drop')}</h1></li>"
       nav += "<li class='name'><h1>#{link_to('Register','#', :'data-reveal-id' => 'register' )}</h1></li>"
