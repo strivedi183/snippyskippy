@@ -2,7 +2,7 @@
   %ul.title-area
     / Title Area
     %li.name
-      %h1{"data-position" => "bottom", "data-intro" => "You can click on this link at any time to be redirected back to the this home page.", "style" => "margin-left: 10px;"}
+      %h1.logo{"data-position" => "bottom", "data-intro" => "You can click on this link at any time to be redirected back to the this home page.", "style" => "margin-left: 10px;"}
         %a{:href => "/"}
           bobs
           %span.orange> and
@@ -14,7 +14,8 @@
       = login_nav.html_safe
       %li.divider
     %ul.right
-      = link_to(image_tag("/assets/gear.png", :size => '40x40', :id => 'gear'), "#", "data-toggle" => "chardinjs")
+      / %span.tip-left{"data-tooltip" => "", :title => "Click on this helper at any time to learn more about functionality on that page."}
+      = link_to(image_tag("/assets/gear.png", :size => '40x40', :id => 'gear'), "#", :'data-show-form' => true, :'data-toggle-form' => true, "data-toggle" => "chardinjs", id: 'gear-link')
 
 
 
@@ -24,7 +25,7 @@
     %h4 Please register as either:
     %a.reg_btns{"data-reveal-id" => "stylist", :href => "#", :class => 'button success radius'} Stylist
     %a.reg_btns{"data-reveal-id" => "client", :href => "#", :class => 'button success radius'} Client
-    %a.close-reveal-modal X
+
 
   #stylist.reveal-modal
     - @user = @auth if @auth.present?

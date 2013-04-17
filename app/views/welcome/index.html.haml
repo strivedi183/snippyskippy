@@ -45,17 +45,77 @@
       %ul{"data-orbit" => "", "bullets" => "false"}
         %li#client_slide{"data-orbit-slide" => "headline-1"}
           .slide_content
-            %h2.content Client
-            %h3.content Client Subheadline
-            %p.content Content for Client...
-            %a.reg_btns.banner{"data-reveal-id" => "client", :href => "#", :class => 'button secondary radius'} Register
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Browse the Styles
+                = image_tag('client_1.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+              .large-6.columns.height200
+                %h2.white.bold.center Select your favorites
+                = image_tag('client_2.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Share styles with friends
+                = image_tag('client_3.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+              .large-6.columns.height200
+                %h2.white.bold.center Connect with a Stylist!
+                = image_tag('client_4.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+            .row
+              .large-3.large-centered.columns
+                %a.reg_btns.banner{"data-reveal-id" => "client", :href => "#", :class => 'button secondary radius'} SIGN ME UP!
         %li#stylist_slide{"data-orbit-slide" => "headline-2"}
           .slide_content
-            %h2.content Stylist
-            %h3.content Stylist Subheadline
-            %p.content Content for Stylist...
-            %a.reg_btns.banner{"data-reveal-id" => "stylist", :href => "#", :class => 'button secondary radius'} Register
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Snap a photo or video
+                = image_tag('stylist_1.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+              .large-6.columns.height200
+                %h2.white.bold.center Show off your work
+                = image_tag('stylist_2.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Connect with new clients
+                = image_tag('stylist_2.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+              .large-6.columns.height200
+                %h2.white.bold.center Build your brand
+                = image_tag('client_4.png')
+                .tiny_spacer
+                %p.white.ff.center Some more interesting things here
+            .row
+              .large-3.large-centered.columns
+                %a.reg_btns.banner{"data-reveal-id" => "stylist", :href => "#", :class => 'button secondary radius'} SIGN ME UP!
 
+- if flash[:message].present?
+  #registration_post_voting.reveal-modal
+    .row
+      .large.columns
+        %h2.register_msg= flash[:message] if flash[:message].present?
+        %h4 If you would like to have your friends vote on your hairstyle, click to register!
+        %a.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} Register
+        = link_to('No Thanks', root_path, :class => 'button alert radius')
+        %a.close-reveal-modal X
+
+  #poll_client.reveal-modal
+    = render(:partial => 'clients/form')
+    %a.close-reveal-modal X
+
+- if flash[:message].present? && @auth.nil?
+  :javascript
+      console.log('This is hit');
+      $('#registration_post_voting').foundation('reveal', 'open');
 
 / .row
 /   .large-4.columns.screen
