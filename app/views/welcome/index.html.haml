@@ -9,7 +9,7 @@
 
 #call_to_action
   .row
-    .large-4.columns.screen
+    .large-3.columns.screen
       %h1.display_type.tight-leading.amber Get the style you want,<br /> wherever you are!
 
       .test
@@ -28,7 +28,7 @@
               .login_btn
                 = submit_tag 'Login', :id => 'login_btn', :class => 'button small radius success'
                 = link_to('Cancel', '#', :'data-clear-form' => true, :id => 'cancel_btn', :class => 'button small radius alert')
-    .large-4.columns
+    .large-5.columns
 .row
   .large-12.columns.tiny_spacer
 
@@ -126,4 +126,4 @@
 //THIS IS THE BG IMAGE SCRIPT, DO NOT DELETE
 
 :javascript
-  $.backstretch("https://dl.dropbox.com/u/5433755/snippy/bg2.jpg");
+  $.backstretch("assets/cover.jpg");
