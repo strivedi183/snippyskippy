@@ -22,6 +22,7 @@ class PollsController < ApplicationController
     @poll.add_to_vote(rank)
     @poll.save
     @user = User.new
+    flash[:message] = "Thank you for voting for #{@poll.client.user.name}'s hairstyle!"
   end
   def end_poll
     poll = Poll.find(params[:id])
