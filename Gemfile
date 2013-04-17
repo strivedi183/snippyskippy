@@ -45,7 +45,3 @@ group :development, :test do
   gem 'meta_request'
 end
 
-group :production do
-  gem 'unicorn-rails'
-end
-
