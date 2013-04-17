@@ -13,7 +13,7 @@ class SessionController < ApplicationController
           gflash :success => { :title => "Successful Login", :value => "Welcome Back, " + @auth.name.split(" ")[0] + "!" + '<br>' + "You are now logged in.", :image => "#{@auth.image}", :time => 3000, :sticky => false }
         else
           gflash :success => { :title => "Successful Login", :value => "Welcome Back, " + @auth.name.split(" ")[0] + "!" + '<br>' + "You are now logged in.", :time => 3000, :sticky => false },
-                 :notice => { :title => "Update Your Profile", :value => @auth.name.split(" ")[0] + ", please update your" + '<br>' + "account by adding a" + '<br>' + "picture of your current style.", :time => 8000, :sticky => false }
+                 :notice => { :title => "Update Your Profile", :value => @auth.name.split(" ")[0] + ", please update your" + '<br>' + "account by adding a" + '<br>' + "picture of yourself.", :time => 8000, :sticky => false }
         end
       elsif @auth.is_stylist?
         @stylist = Stylist.find(@auth.stylist.id)
