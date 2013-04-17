@@ -6,10 +6,10 @@
  *= require select2
  *= require 'wookmark.scss'
  *= require 'jquery.sidr.dark.css'
- *= require 'onboarding.scss'
  *= require 'mapbox.css'
  *= require 'custom_chardin.css'
  *= require 'foundation/css/normalize.css'
  *= require 'foundation/css/foundation.min.css'
+ *= require 'onboarding.scss'
  *= require 'snippy.scss'
  */
