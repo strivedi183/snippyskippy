@@ -20,5 +20,4 @@
 //= require 'jquery.sidr.min.js'
 //= require 'snippy.js'
 //= require 'mapbox.js'
-//= require chardinjs
 //= require 'chardin.js'
