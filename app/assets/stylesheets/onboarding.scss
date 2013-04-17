@@ -1,3 +1,20 @@
+$orange:  #e57113; //accent color, stylist name
+$lt_purp: #b6a6ad; //secondary BG color
+$white:   #f9fce7; //default BG color
+$blue:    #68bbde; //accent, alerts
+$amber:   #726f2b; //accent, warnings
+$black:   #4b3b3b; //text color
+
+.orange { color: $orange; }
+.lt_purp{ color: $lt_purp; }
+.white { color: $white; }
+.blue   { color: $blue; }
+.amber  { color: $amber; }
+.black  { color: $black; }
+
+
+
+
 #learn-more {
   margin-top: 10px;
 }
@@ -15,7 +32,7 @@
 }
 
 .content {
-  color: white;
+  color: $white;
 }
 
 a.reg_btns.banner {
@@ -36,30 +53,32 @@ width: 100px;
 }
 
 .section-container.tabs section#client_tab.active .title {
-  background-color: rgba(104, 187, 222, 0.9)
+  background-color: $black;
+  opacity: 0.9;
 }
 
 .section-container.tabs section#client_tab .title {
-  background-color: rgba(104, 187, 222, 0.9)
+  background-color: $black;
+  opacity: 0.9;
 }
 
 #client_slide {
-  background-color: rgb(104, 187, 222);
+  background-color: $black;
 
 }
 
 .section-container.tabs section#stylist_tab.active .title {
-  background-color: #e57113;
+  background-color: $orange;
   opacity: 0.9;
 }
 
 .section-container.tabs section#stylist_tab .title {
-  background-color: #e57113;
+  background-color: $orange;
   opacity: 0.9;
 }
 
 #stylist_slide {
-  background-color: #e57113;
+  background-color: $orange;
 }
 
 .ul.disc.section-container.tabs {
@@ -80,7 +99,7 @@ width: 100px;
 .section-container section .title a {
   text-transform: uppercase;
   font-family: "brandon-grotesque",sans-serif;
-  color: white;
+  color: $white;
   font-weight: bold;
   font-size: 1.25em;
   padding-bottom: 10px;
