@@ -14,6 +14,7 @@
 FactoryGirl.define do
   factory :client, class: Client do
     address 'New York'
+    phone "#{ENV['PHONE']}"
     user    {FactoryGirl.create(:client_user)}
   end
 end

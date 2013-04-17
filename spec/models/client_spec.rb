@@ -16,7 +16,7 @@ require 'spec_helper'
 describe Client do
   describe '.create' do
     it 'has an id' do
-      client = Client.create(address: 'New York')
+      client = Client.create(address: 'New York', phone: "#{ENV['PHONE']}")
       expect(client.id).to_not be nil
     end
     it 'fails validation if address is not present' do
@@ -38,9 +38,8 @@ describe Client do
 
     describe '#geocoder' do
       it 'captures a lat and long' do
-        user = FactoryGirl.create(:client_user)
-        client.user = user
-        result = Geocoder.search(user.client.address).first
+        client = FactoryGirl.create(:client)
+        result = Geocoder.search(client.address).first
         expect(result.present?).to be true
       end
     end
