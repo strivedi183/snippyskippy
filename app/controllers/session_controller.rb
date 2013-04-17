@@ -23,7 +23,7 @@ class SessionController < ApplicationController
           else
             gflash :success => { :title => "Successful Login", :value => "Welcome Back, " + @auth.name.split(" ")[0] + "!" + '<br>' + "You are now logged in.", :time => 3000, :sticky => false },
                    :notice => { :title => "Update Your Profile", :value => @auth.name.split(" ")[0] + ", please update your" + '<br>' + "account by adding an" + '<br>' + "image of yourself.", :time => 8000, :sticky => false }
-          end
+        end
       else
         # # For Admin
         # redirect_to root_path
