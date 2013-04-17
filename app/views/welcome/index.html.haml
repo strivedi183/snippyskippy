@@ -105,7 +105,6 @@
         %h2.register_msg= flash[:message] if flash[:message].present?
         %h4 If you would like to have your friends vote on your hairstyle, click to register!
         %a.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} Register
-        = link_to('No Thanks', root_path, :class => 'button alert radius')
         %a.close-reveal-modal X
 
   #poll_client.reveal-modal
