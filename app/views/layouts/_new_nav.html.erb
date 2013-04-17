@@ -33,8 +33,7 @@
        <% end %>
 
         <% if @auth.stylist.present? %>
-          <li class='name'><%= link_to('Edit my Profile', '#', :"data-reveal-id" => "stylist") %></li>
-          <li class='name'><%= link_to('My Home', stylist_path(@auth.stylist)) %></li>
+          <li class='name'><%= link_to('Stylist home', stylist_path(@auth.stylist)) %></li>
         <% end %>
     </ul>
   <ul class='right'>
