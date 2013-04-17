@@ -19,5 +19,5 @@
 //= require 'underscore-min.js'
 //= require 'map.js'
 //= require 'jquery.sidr.min.js'
+//= require chardinjs
 //= require 'snippy.js'
-//= require 'chardin.js'
