@@ -9,10 +9,6 @@
             .large-12.columms
               .tiny_spacer
               - if poll.is_active?
-                #tweet_button
-                  %a{:href=>"https://twitter.com/intent/tweet?button_hashtag=BobsAndBangs&text=Please%20vote%20on%20my%2C%20hairstyles%20", :class=>"twitter-hashtag-button", :'data-size'=>"large", :'data-url'=>"http://www.bobsandbangs.com/polls/#{poll.id}"}
-                  %script
-                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
                 %h2.center= "This poll was started  #{distance_of_time_in_words_to_now(poll.created_at, include_seconds = false)} ago."
                 .tiny_spacer
               - else
@@ -46,6 +42,12 @@
                   %h4= "#{pluralize(poll.vote_3, 'person')} liked this"
           .row
             .large-12.columns.tiny_spacer
+          .row
+            .large-12.columns
+              #tweet_button.center
+                %a{:href=>"https://twitter.com/intent/tweet?button_hashtag=BobsAndBangs&text=Please%20vote%20on%20my%2C%20hairstyles%20", :class=>"twitter-hashtag-button", :'data-size'=>"large", :'data-url'=>"http://www.bobsandbangs.com/polls/#{poll.id}"}
+                %script
+                  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
           .row
             .large-12.columns.tiny_spacer
 
