@@ -7,6 +7,9 @@ class WelcomeController < ApplicationController
 
   def gallery_dev
     @user = User.new
+    @media = Medium.all
+    @tags = @media.map(&:tags).flatten.uniq.map(&:tag)
+    @client = @auth
   end
 
 end
