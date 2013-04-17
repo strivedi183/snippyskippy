@@ -27,9 +27,9 @@
           <div class="tile">
             <div>
               <% if medium.photo? %>
-                <%= link_to image_tag(medium.photo.thumb, :size => '200x200', :class => 'video'), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '400px', :colorbox_iframe => true} %>
+                <%= link_to image_tag(medium.photo.thumb, :class => 'video'), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '400px', :colorbox_iframe => true} %>
               <% elsif medium.video? %>
-                <%= link_to (image_tag(medium.video.thumb, :class => 'video')), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '300px', :colorbox_width => '300px', :colorbox_iframe => true } %>
+                <%= link_to (image_tag(medium.video.thumb, :class => 'video video_thumb')), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '300px', :colorbox_width => '300px', :colorbox_iframe => true } %>
               <% end %>
             </div>
             <% if @auth.client.present? %> <!-- not for stylysts show page -->
