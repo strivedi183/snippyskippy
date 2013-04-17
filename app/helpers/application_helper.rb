@@ -11,7 +11,7 @@ module ApplicationHelper
       nav += "<li class='name'>#{link_to('Logout', '/login', :method => :delete )}</li>"
     else
       nav += "<li class='name'><h1>#{link_to('Login', '#', :id => 'login-form-btn', :'data-dropdown' => 'drop')}</h1></li>"
-      nav += "<li class='name'><h1>#{link_to('Register','#', :'data-reveal-id' => 'register' )}</h1></li>"
+      nav += "<li class='name' data-position=right data-intro='Click here to Register as either a Client or Stylist.'><h1>#{link_to('Register','#', :'data-reveal-id' => 'register' )}</h1></li>"
     end
   end
 end
