@@ -278,6 +278,11 @@ a.button {
 //       background: $black;
 // }
 
+.top-bar .toggle-topbar.menu-icon a {
+  top: 20px;
+}
+
+
 .button {
   background-color: $lt_purp;
   border-color: darken( $lt_purp, 30% );
@@ -330,7 +335,6 @@ a.button {
   color: $white;
   font-weight: 700;
 }
-
 
 .screen {
   background-color: rgba($black, .7);
