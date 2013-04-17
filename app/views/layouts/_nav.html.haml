@@ -2,7 +2,7 @@
   %ul.title-area
     / Title Area
     %li.name
-      %h1
+      %h1{"data-position" => "bottom", "data-intro" => "You can click on this link at any time to be redirected back to the this home page.", "style" => "margin-left: 10px;"}
         %a{:href => "/"}
           bobs
           %span.orange> and
@@ -13,6 +13,8 @@
       %li.divider
       = login_nav.html_safe
       %li.divider
+    %ul.right
+      = link_to(image_tag("/assets/gear.png", :size => '40x40', :id => 'gear'), "#", "data-toggle" => "chardinjs")
 
 
 

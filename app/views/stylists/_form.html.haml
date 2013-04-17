@@ -8,7 +8,7 @@
         %h3.bold Stylist Registration
   .tiny_spacer
 .row
-  .large-5.columns.stylist_form
+  .five.columns.stylist_form
     = form_for @user, :html => {:multipart => true}  do |f|
       = f.text_field :name, :placeholder => 'Full Name'
       = f.text_field :email, :placeholder => 'Email'
@@ -29,4 +29,4 @@
         = f.submit 'Create Account', :id => 'submit_btn', :class => 'button radius small success'
       - if @auth.present? && @auth.stylist.present?
         = f.submit 'Update Account', :id => 'submit_btn', :class => 'button radius small success'
-  .large-7.columns
+  .seven.columns

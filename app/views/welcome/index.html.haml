@@ -16,18 +16,18 @@
         %h1.blue.subhed Upload Vine&#0153; videos and photos
         %h1.blue.subhed Browse latest looks
         %h1.blue.subhed Connect with the greatest stylists
-        = link_to('LEARN MORE', '#', :'data-learn-more' => true, :id => 'learn-more', :class => 'button radius success small')
+        .chardin_call{"data-position" => "top", "data-intro" => "To learn more about the differences between our Stylist and Client Accounts, click the button below..."}= link_to('LEARN MORE', '#', :'data-learn-more' => true, :id => 'learn-more', :class => 'button radius success small')
         / = image_tag('camera_icon.png')
     .large-4.columns
       .row
-        .large-12.columns
+        .large-12.columns{"data-position" => "right", "data-intro" => "Input both you're e-mail and password in order to login." + '<br><br>' + "You'll have the option to change these both on your profile page"}
           #login_form.hide.screen
             = form_tag '/login' do
               = text_field_tag :email, nil, :autofocus => true, :id => 'email_field', :placeholder => 'Email'
               = password_field_tag :password, nil, :id => 'password_field', :placeholder => 'Password'
               .login_btn
                 = submit_tag 'Login', :id => 'login_btn', :class => 'button small radius success'
-                = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button small radius alert')
+                = link_to('Cancel', '#', :'data-clear-form' => true, :id => 'cancel_btn', :class => 'button small radius alert')
     .large-4.columns
 .row
   .large-12.columns.tiny_spacer
@@ -45,15 +45,33 @@
       %ul{"data-orbit" => "", "bullets" => "false"}
         %li#client_slide{"data-orbit-slide" => "headline-1"}
           .slide_content
-            %h2.content Client
-            %h3.content Client Subheadline
-            %p.content Content for Client...
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Browse the Styles
+                = image_tag('client_1.png')
+              .large-6.columns.height200
+                %h2.white.bold.center Select your favorites
+                = image_tag('client_2.png')
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Share styles with friends
+                = image_tag('client_3.png')
+              .large-6.columns.height200
+                %h2.white.bold.center Connect with a Stylist!
+                = image_tag('client_4.png')
             %a.reg_btns.banner{"data-reveal-id" => "client", :href => "#", :class => 'button secondary radius'} Register
         %li#stylist_slide{"data-orbit-slide" => "headline-2"}
           .slide_content
-            %h2.content Stylist
-            %h3.content Stylist Subheadline
-            %p.content Content for Stylist...
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Snap a photo or video
+              .large-6.columns.height200
+                %h2.white.bold.center Show off your work
+            .row
+              .large-6.columns.height200
+                %h2.white.bold.center Connect with customers
+              .large-6.columns.height200
+                %h2.white.bold.center Expand your client base
             %a.reg_btns.banner{"data-reveal-id" => "stylist", :href => "#", :class => 'button secondary radius'} Register
 
 
