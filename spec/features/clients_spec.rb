@@ -17,7 +17,7 @@ describe 'Client' do
       page.should have_link('Register')
     end
 
-    it 'shows the registration form when the Registration link is clicked' do
+    it 'shows the registration form when the Registration link is clicked', :js => true do
       visit root_path
       click_link('Register')
       page.should have_link('Client')
@@ -28,16 +28,15 @@ describe 'Client' do
       click_link('Register')
       page.should have_link('Client')
       click_link('Register')
-      save_and_open_page
       page.find('#client').visible? != true
     end
   end
 
   describe 'POST /users/create' do
-    it 'creates a new client' do
+    it 'creates a new client', :js => true do
       visit root_path
       click_link('Login')
-      fill_in('client_name', :with => 'bob')
+      fill_in('client_name', :with => 'joseph')
       fill_in('client_email', :with => 'bob@gmail.com')
       fill_in('address', :with => 'NYC')
       fill_in('client_password', :with => 'a')
