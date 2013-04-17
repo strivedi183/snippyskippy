@@ -40,7 +40,7 @@
   <% end %> <!-- only show above if logged in -->
 
   <ul class='right'>
-    <li><%= link_to(image_tag("/assets/gear.png", :size => '40x40', :id => 'gear'), "#", "data-toggle" => "chardinjs") %></li>
+    <li><%= link_to(image_tag("/assets/gear.png", :size => '40x40', :id => 'gear'), "#", :'data-show-form' => true, :'data-toggle-form' => true, "data-toggle" => "chardinjs", id: 'gear-link') %></li>
   </ul>
 
 
