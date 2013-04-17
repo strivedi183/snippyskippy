@@ -19,7 +19,7 @@
     Change the following styles to modify the appearance of Colorbox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
-#cboxOverlay{background:#fff;}
+#cboxOverlay{background:#4b3b3b;}
 #colorbox{outline:0;}
     #cboxTopLeft{width:25px; height:25px; background:url('border1.png') no-repeat 0 0;}
     #cboxTopCenter{height:25px; background:url('border1.png') repeat-x 0 -50px;}
@@ -30,7 +30,7 @@
     #cboxMiddleLeft{width:25px; background:url('border2.png') repeat-y 0 0;}
     #cboxMiddleRight{width:25px; background:url('border2.png') repeat-y -25px 0;}
     #cboxContent{background:#fff; overflow:hidden;}
-        .cboxIframe{background:#fff;}
+        .cboxIframe{background:#4b3b3b;}
         #cboxError{padding:50px; border:1px solid #ccc;}
         #cboxLoadedContent{margin-bottom:20px;}
         #cboxTitle{position:absolute; bottom:0px; left:0; text-align:center; width:100%; color:#999;}

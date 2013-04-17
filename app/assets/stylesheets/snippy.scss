@@ -39,14 +39,13 @@ $black:   #4b3b3b; //text color
   font-family: "brandon-grotesque",sans-serif;
 }
 
-
 .display_type {
-  font-size: 4em;
+  font-size: 3em;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-weight: 100;
   color: $white;
-  line-height: -.2em;
+  line-height: -.4em;
   -webkit-font-smoothing: antialiased;
   opacity: .99;
 }
@@ -58,9 +57,6 @@ $black:   #4b3b3b; //text color
 .bold{
   font-weight: 700;
 }
-
-
-
 
 h1 {
   font-family: "brandon-grotesque",sans-serif;
@@ -150,9 +146,15 @@ a.button {
 #registration_post_voting{
   width: 600px;
 }
+.height200 {
+  height: 300px;
+}
 
-
-
+#onboard img{
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* 5. PAGE UTILITIES  ***************************************/
 .spacer {
   height: 60px;
@@ -213,6 +215,13 @@ a.button {
   background: url('diamond_upholstery.png') repeat;
 }
 
+.stylist_bg{
+  background: url('illusion.png') repeat;
+  min-height: 1000px;
+}
+
+
+
 .poll_image{
   width: 200px;
   margin-right: auto;
@@ -246,29 +255,37 @@ a.button {
 }
 /* 6. Foundation Overrides  *********************************/
 
-.top-bar {
-  overflow: hidden;
-  height: 45px;
-  line-height: 45px;
-  position: relative;
-  background: $black;
-}
-.top-bar-section li a:not(.button) {
-padding: 0 15px;
-line-height: 45px;
-background: $black;
-}
-.top-bar-section>ul>.divider {
-border-right: solid 1px $black;
-border-left: solid 1px $black;
+// .top-bar {
+//   overflow: hidden;
+//   height: 45px;
+//   line-height: 45px;
+//   position: relative;
+//   background: $black;
+// }
+
+// .top-bar-section li a:not(.button) {
+// padding: 0 15px;
+// line-height: 45px;
+// background: $black;
+// }
+
+// .top-bar-section>ul>.divider {
+// border-right: solid 1px $black;
+// border-left: solid 1px $black;
+// }
+
+// .top-bar-section ul {
+// background: $black;
+// }
+
+// .top-bar-section li a:not(.button) {
+//       background: $black;
+// }
+
+.top-bar .toggle-topbar.menu-icon a {
+  top: 20px;
 }
 
-.top-bar-section ul {
-background: $black;
-}
-.top-bar-section li a:not(.button) {
-      background: $black;
-}
 
 .button {
   background-color: $lt_purp;
@@ -323,13 +340,9 @@ background: $black;
   font-weight: 700;
 }
 
-
-
-
-
-
-
-
+.small_fucking_photo {
+  width: 100px;
+}
 
 .screen {
   background-color: rgba($black, .7);
@@ -583,7 +596,7 @@ min-height: 600x;
 .bio_container
 {
   width: 100%;
-  height: 414px;
+  height: 400px;
   margin-bottom: 15px;
 }
 /*- END NAV -*/
@@ -611,67 +624,67 @@ min-height: 600x;
 
 
 
-/*- STYLIST INDEX CAROUSEL -*/
-#carousel {
-  margin-top: 10%;
-}
-.index_pics {
-  height: 250px;
-  width: 200px;
-  float: center;
-}
+// /*- STYLIST INDEX CAROUSEL -*/
+// #carousel {
+//   margin-top: 10%;
+// }
+// .index_pics {
+//   height: 250px;
+//   width: 200px;
+//   float: center;
+// }
 
-div.carousel {
-  overflow: hidden;
-  pointer-events: none;
-  text-align: center;
-  width: 100%;
-  height: 225px;
-}
+// div.carousel {
+//   overflow: hidden;
+//   pointer-events: none;
+//   text-align: center;
+//   width: 100%;
+//   height: 225px;
+// }
 
-div.carousel-item {
-  float: left;
-  width: 20%;
-  height: 225px;
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  line-height: 200%;
-}
+// div.carousel-item {
+//   float: left;
+//   width: 20%;
+//   height: 225px;
+//   margin: 0px;
+//   padding: 0px;
+//   text-align: center;
+//   color: #fff;
+//   font-weight: bold;
+//   line-height: 200%;
+// }
 
-div.carousel-item div {
-  border: 1px #fff solid;
-  height: 250px;
-}
+// div.carousel-item div {
+//   border: 1px #fff solid;
+//   height: 250px;
+// }
 
-a.jkit-carousel-prev, a.jkit-carousel-next {
-  width: 40px;
-  background: #eee;
-  border: 1px #999 solid;
-  color: #333;
-  padding: 4px;
-  cursor: pointer;
-  cursor: hand;
-  margin-top: 10px;
-  text-align: center;
-  user-select: none;
-}
+// a.jkit-carousel-prev, a.jkit-carousel-next {
+//   width: 40px;
+//   background: #eee;
+//   border: 1px #999 solid;
+//   color: #333;
+//   padding: 4px;
+//   cursor: pointer;
+//   cursor: hand;
+//   margin-top: 10px;
+//   text-align: center;
+//   user-select: none;
+// }
 
-a.jkit-carousel-prev:hover, a.jkit-carousel-next:hover {
-  background: #fff;
-  border: 1px #666 solid;
-  color: #000;
-}
+// a.jkit-carousel-prev:hover, a.jkit-carousel-next:hover {
+//   background: #fff;
+//   border: 1px #666 solid;
+//   color: #000;
+// }
 
-a.jkit-carousel-prev {
-  float: left;
-}
+// a.jkit-carousel-prev {
+//   float: left;
+// }
 
-a.jkit-carousel-next {
-  float: right;
-}
+// a.jkit-carousel-next {
+//   float: right;
+// }
 
 #map_canvas.index {
   top: 50px;

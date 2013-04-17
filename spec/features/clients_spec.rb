@@ -28,6 +28,7 @@ describe 'Client' do
       click_link('Register')
       page.should have_link('Client')
       click_link('Register')
+      save_and_open_page
       page.find('#client').visible? != true
     end
   end
@@ -41,8 +42,9 @@ describe 'Client' do
       fill_in('address', :with => 'NYC')
       fill_in('client_password', :with => 'a')
       fill_in('client_password_confirmation', :with => 'a')
-      click_button('Join')
-      page.should have_link('Login')
+      fill_in('client_phone', :with => "#{ENV['PHONE']}")
+      click_button('Login')
+      page.should have_link('Logout')
       expect(User.first.name).to eq 'bob'
     end
   end

@@ -1,15 +1,15 @@
 .row#auth_token{:'data-auth-token' => form_authenticity_token}
-  .large-1.large-centered.columns.colorbox_image
+  .large-4.large-centered.columns.colorbox_image
     - if @medium.photo.present?
-      = image_tag(@medium.photo, :class => 'video')
+      .cbox-photo= image_tag(@medium.photo, :class => 'video')
     - elsif @medium.video.present?
-      = video_tag(@medium.video, :class => 'video')
+      = video_tag(@medium.video, :size => '50%', :class => 'video')
 
 - if @auth.client.present? #do not show this on stylist show page
   .row
-    .large-1.large-centered.columns
-      %h3 Add to your top 3
-      .add_to_rank#medium_id{:'data-medium_id' => @medium.id}
-        = link_to '1', '#', :'data-rank' => 1, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
-        = link_to '2', '#', :'data-rank' => 2, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
-        = link_to '3', '#', :'data-rank' => 3, :'data-client_id' => @auth.client.id, :class => 'button small radius rank'
+    .large-4.large-centered.columns
+      %h3.white.center Add to your top 3
+      .center.add_to_rank#medium_id{:'data-medium_id' => @medium.id}
+        = link_to '1', '#', :'data-rank' => 1, :'data-client_id' => @auth.client.id, :class => 'button small round rank'
+        = link_to '2', '#', :'data-rank' => 2, :'data-client_id' => @auth.client.id, :class => 'button small round rank'
+        = link_to '3', '#', :'data-rank' => 3, :'data-client_id' => @auth.client.id, :class => 'button small round rank'

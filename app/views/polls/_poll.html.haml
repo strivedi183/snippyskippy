@@ -3,15 +3,19 @@
     .large-12.columns.spacer
   .row
     .large-3.columns
-      .stylist_photo.center= image_tag(@poll.client.user.image.thumb)
+      .stylist_photo.center
+        - if @poll.client.user.image.present?
+          = image_tag(@poll.client.user.image, :size => '200x260')
+        - else
+          = link_to(image_tag('/assets/default_image.jpg', :size => '200x260'), '#', :"data-reveal-id" => "client")
     .large-9.columns
       .tiny_spacer
       .tiny_spacer
-      %h2.center.bold= "Your friend, " + @poll.client.user.name + ", wants you to help her choose her next hair style."
+      %h2.bold= "Your friend, " + @poll.client.user.name + ", wants you to help her choose her next hair style."
 
-      %h2.center  Select a style from the options below <br>and let her know what you think!
+      %h3 Select a style from the options below <br>and let her know what you think!
   .row
-    .large-12.columns.spacer
+    .large-12.columns.tiny_spacer
 
   .row.poll_tiles.poll_info{:'data-poll-id' => "#{@poll.id}", :'data-poll-is-active' => "#{@poll.is_active?}"}
     .large-4.columns
@@ -75,15 +79,18 @@
             = hidden_field_tag :poll_rank
             = submit_tag 'VOTE', :class => 'button', :id => 'vote-btn', :disabled => 'disabled'
 
+  #poll_client.reveal-modal
+    = render(:partial => 'clients/form')
+    %a.close-reveal-modal X
+
   #registration_post_voting.reveal-modal
     .row
       .large.columns
         %h2.register_msg= "Thank you for voting for #{@poll.client.user.name}'s hairstyle!"
         %h4 If you would like to have your friends vote on your hairstyle, click to register!
-        %a.no_left_margin.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} REGISTER
+        %a.reg_btns{"data-reveal-id" => "poll_client", :href => "#", :class => 'button success radius'} Register
+        = link_to('No Thanks', root_path, :class => 'button alert radius')
         %a.close-reveal-modal X
 
-  #poll_client.reveal-modal
-    = render(:partial => 'clients/form')
-    %a.close-reveal-modal X
+
 
