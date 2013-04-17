@@ -251,29 +251,32 @@ a.button {
 }
 /* 6. Foundation Overrides  *********************************/
 
-.top-bar {
-  overflow: hidden;
-  height: 45px;
-  line-height: 45px;
-  position: relative;
-  background: $black;
-}
-.top-bar-section li a:not(.button) {
-padding: 0 15px;
-line-height: 45px;
-background: $black;
-}
-.top-bar-section>ul>.divider {
-border-right: solid 1px $black;
-border-left: solid 1px $black;
-}
+// .top-bar {
+//   overflow: hidden;
+//   height: 45px;
+//   line-height: 45px;
+//   position: relative;
+//   background: $black;
+// }
 
-.top-bar-section ul {
-background: $black;
-}
-.top-bar-section li a:not(.button) {
-      background: $black;
-}
+// .top-bar-section li a:not(.button) {
+// padding: 0 15px;
+// line-height: 45px;
+// background: $black;
+// }
+
+// .top-bar-section>ul>.divider {
+// border-right: solid 1px $black;
+// border-left: solid 1px $black;
+// }
+
+// .top-bar-section ul {
+// background: $black;
+// }
+
+// .top-bar-section li a:not(.button) {
+//       background: $black;
+// }
 
 .button {
   background-color: $lt_purp;
@@ -327,13 +330,6 @@ background: $black;
   color: $white;
   font-weight: 700;
 }
-
-
-
-
-
-
-
 
 
 .screen {

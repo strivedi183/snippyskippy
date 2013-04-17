@@ -1,0 +1,72 @@
+<!-- Navigation -->
+
+    <nav class="top-bar nav">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1 data-position="bottom" data-intro="You can click on this link at any time to be redirected back to the this home page." style="margin-left: 10px;">
+            <a href="/">
+              bobs<span class="orange">and</span>bangs
+            </a>
+          </h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <% if @auth.present?  %>
+        <ul class="left">
+          <li class="divider"></li>
+          <li class="has-dropdown">
+            <a href="#">Main Item 1</a>
+            <ul class="dropdown">
+              <li><label>Section Name</label></li>
+              <li class="has-dropdown">
+                <a href="#" class="">Has Dropdown, Level 1</a>
+                <ul class="dropdown">
+                  <li><a href="#">Dropdown Options</a></li>
+                  <li><a href="#">Dropdown Options</a></li>
+                  <li><a href="#">Level 2</a></li>
+                  <li><a href="#">Subdropdown Option</a></li>
+                  <li><a href="#">Subdropdown Option</a></li>
+                  <li><a href="#">Subdropdown Option</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown Option</a></li>
+              <li><a href="#">Dropdown Option</a></li>
+              <li class="divider"></li>
+              <li><label>Section Name</label></li>
+              <li><a href="#">Dropdown Option</a></li>
+              <li><a href="#">Dropdown Option</a></li>
+              <li><a href="#">Dropdown Option</a></li>
+              <li class="divider"></li>
+              <li><a href="#">See all &rarr;</a></li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+          <li><a href="#">Main Item 2</a></li>
+          <li class="divider"></li>
+          <li class="has-dropdown">
+            <a href="#">Main Item 3</a>
+            <ul class="dropdown">
+              <li><a href="#">Dropdown Option</a></li>
+              <li><a href="#">Dropdown Option</a></li>
+              <li><a href="#">Dropdown Option</a></li>
+              <li class="divider"></li>
+              <li><a href="#">See all &rarr;</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class='right'>
+          <li><%= link_to(image_tag("/assets/gear.png", :size => '40x40', :id => 'gear'), "#", "data-toggle" => "chardinjs") %></li>
+        </ul>
+        <% end %> <!-- only show above if logged in -->
+      </section>
+    </nav>
+        <!-- End Top Bar -->
+  <!-- End Navigation -->
+
+<div id='modals'>
+  <%= render(:partial => 'layouts/nav_bar_modals')  %>
+</div>
