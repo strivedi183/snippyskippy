@@ -141,6 +141,18 @@ a.button {
   margin: 5px;
 }
 
+.center_fav{
+  margin-left:auto;
+  margin-right:auto;
+  display: block;
+}
+
+#registration_post_voting{
+  width: 600px;
+}
+
+
+
 /* 5. PAGE UTILITIES  ***************************************/
 .spacer {
   height: 60px;
@@ -343,7 +355,9 @@ background: $black;
 //   -o-background-size: cover;
 //   background-size: cover;
 // }
-
+body {
+  background-color: $black;
+}
 
 
 .container {
@@ -477,11 +491,11 @@ legend {
 }
 
 #client.reveal-modal {
-height: 435px;
+  min-height: 500px;
 }
 
 #stylist.reveal-modal {
-height: 425px;
+min-height: 600x;
 }
 
 .f-dropdown.content.open {
