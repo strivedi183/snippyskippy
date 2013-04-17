@@ -21,6 +21,9 @@ class Snippy
     $('#medium_tags').select2()
     $('#media_form').on('click', 'input[data-add-media-btn]', Snippy.update_tags)
 
+
+
+
   @update_tags: (e) ->
     x = $('#medium_tags').select2('val')
     e.preventDefault()
@@ -188,5 +191,3 @@ class Snippy
 window.Snippy = Snippy
 
 $(document).ready(Snippy.document_ready)
-
-

@@ -1,6 +1,4 @@
-  /*
- *= require 'foundation/css/normalize.css'
- *= require 'foundation/css/foundation.min.css'
+/*
  *= require 'jquery-ui-1.10.2.custom/css/humanity/jquery-ui-1.10.2.custom.min.css'
  *= require gritter
  *= require 'custom_gritter.scss'
@@ -9,7 +7,9 @@
  *= require 'wookmark.scss'
  *= require 'jquery.sidr.dark.css'
  *= require 'onboarding.scss'
- *= require 'snippy.scss'
  *= require 'mapbox.css'
  *= require 'custom_chardin.css'
+ *= require 'foundation/css/normalize.css'
+ *= require 'foundation/css/foundation.min.css'
+ *= require 'snippy.scss'
  */

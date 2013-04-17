@@ -255,29 +255,37 @@ a.button {
 }
 /* 6. Foundation Overrides  *********************************/
 
-.top-bar {
-  overflow: hidden;
-  height: 45px;
-  line-height: 45px;
-  position: relative;
-  background: $black;
-}
-.top-bar-section li a:not(.button) {
-padding: 0 15px;
-line-height: 45px;
-background: $black;
-}
-.top-bar-section>ul>.divider {
-border-right: solid 1px $black;
-border-left: solid 1px $black;
+// .top-bar {
+//   overflow: hidden;
+//   height: 45px;
+//   line-height: 45px;
+//   position: relative;
+//   background: $black;
+// }
+
+// .top-bar-section li a:not(.button) {
+// padding: 0 15px;
+// line-height: 45px;
+// background: $black;
+// }
+
+// .top-bar-section>ul>.divider {
+// border-right: solid 1px $black;
+// border-left: solid 1px $black;
+// }
+
+// .top-bar-section ul {
+// background: $black;
+// }
+
+// .top-bar-section li a:not(.button) {
+//       background: $black;
+// }
+
+.top-bar .toggle-topbar.menu-icon a {
+  top: 20px;
 }
 
-.top-bar-section ul {
-background: $black;
-}
-.top-bar-section li a:not(.button) {
-      background: $black;
-}
 
 .button {
   background-color: $lt_purp;
@@ -332,15 +340,9 @@ background: $black;
   font-weight: 700;
 }
 
-
-
 .small_fucking_photo {
   width: 100px;
 }
-
-
-
-
 
 .screen {
   background-color: rgba($black, .7);
