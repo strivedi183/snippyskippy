@@ -21,3 +21,4 @@ config/database.yml
 public/assets/source_maps/*
 /public/uploads/tmp/*
 public/assets/source_maps/app/assets/javascripts/snippy.map
+Gemfile.lock
