@@ -58,7 +58,7 @@
                 - if poll.winner.length == 1
                   %h3.center= "Your friends have selected a style by "
                   %h2.bold.center=link_to("#{poll.winner_object[0].stylist.user.name}", stylist_path( "#{poll.winner_object[0].stylist.id}"))
-                  =image_tag("#{poll.winner_object[0].stylist.user.image.thumb}")
+                  .small_photo=image_tag("#{poll.winner_object[0].stylist.user.image.thumb}")
                   %h3.center= "Get in touch and make it happen!"
 
       .row

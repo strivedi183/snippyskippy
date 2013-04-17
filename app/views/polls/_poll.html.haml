@@ -11,11 +11,11 @@
     .large-9.columns
       .tiny_spacer
       .tiny_spacer
-      %h2.center.bold= "Your friend, " + @poll.client.user.name + ", wants you to help her choose her next hair style."
+      %h2.bold= "Your friend, " + @poll.client.user.name + ", wants you to help her choose her next hair style."
 
-      %h2.center  Select a style from the options below <br>and let her know what you think!
+      %h3 Select a style from the options below <br>and let her know what you think!
   .row
-    .large-12.columns.spacer
+    .large-12.columns.tiny_spacer
 
   .row.poll_tiles.poll_info{:'data-poll-id' => "#{@poll.id}", :'data-poll-is-active' => "#{@poll.is_active?}"}
     .large-4.columns
