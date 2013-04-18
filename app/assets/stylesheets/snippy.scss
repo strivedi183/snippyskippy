@@ -585,7 +585,9 @@ min-height: 600x;
   color: white;
 }
 
-
+.top-bar-section li a:not(.button) {
+  line-height: 46px;
+}
 
 .stylist_photo{
   border: 10px solid $lt_purp;

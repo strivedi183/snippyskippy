@@ -19,6 +19,7 @@
        <li class='name'><h1><%= link_to('Login', '#', :id => 'login-form-btn', :'data-dropdown' => 'drop') %></h1></li>
        <li class='name' data-position=right data-intro='Click here to Register as either a Client or Stylist.'><h1><%=link_to('Register','#', :'data-reveal-id' => 'register' ) %></h1></li>
      <% end %>
+
     <% if @auth.present? %>
        <% if @auth.client.present? %> <!-- only show the below if logged in -->
         <li class='has-dropdown'>
