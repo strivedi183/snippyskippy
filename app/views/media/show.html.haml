@@ -1,7 +1,7 @@
 - if @auth.client.present? #do not show this on stylist show page
   .row
     .large-4.large-centered.columns
-      %h3.white.center Add to your top 3
+      %h3.white.center Add this style to your top 3
       .center.add_to_rank#medium_id{:'data-medium_id' => @medium.id}
         = link_to '1', '#', :'data-rank' => 1, :'data-client_id' => @auth.client.id, :class => 'button small round rank'
         = link_to '2', '#', :'data-rank' => 2, :'data-client_id' => @auth.client.id, :class => 'button small round rank'
@@ -12,5 +12,5 @@
     - if @medium.photo.present?
       .cbox-photo= image_tag(@medium.photo, :class => 'video')
     - elsif @medium.video.present?
-      = video_tag(@medium.video, :size => '50%', :class => 'video')
+      = video_tag(@medium.video, :width => '380', :class => 'video')
 
