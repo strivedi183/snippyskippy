@@ -2,8 +2,12 @@ Snip!
 =====
 Hairstyle discovery app. Featuring an all star cast of characters.  See it live at [bobandbangs.com](http://bobsandbangs.com)
 
+This is our final project for GAs Web Development Immersive.
+
+Created by [Sandip Trivedi](https://github.com/strivedi183), [Ron Jones](https://github.com/ron-), [Tony Contreras](https://github.com/khalua), and [Eric Holland](https://github.com/holl0272)
+
 For this project we stood on the shoulders of giants and used:
-z
+
 * Ruby on Rails 3.2.13
 * Foundation 4
 * jQuery & jQuery Mobile
