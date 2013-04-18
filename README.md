@@ -1,6 +1,6 @@
 Snip!
 =====
-Hairstyle discovery app. Featuring an all star cast of characters.  See it live at [bobandbangs.com](http://bobsandbangs.com)
+Hairstyle discovery app. Featuring an all star cast of characters.  See it live at [bobsandbangs.com](http://bobsandbangs.com)
 
 This is our final project for GAs Web Development Immersive.
 
