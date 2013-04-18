@@ -64,9 +64,8 @@
   .row
     .large-12.columns.tiny_spacer
 
-  .row
-    #stylist_gallery
-      = render(:partial => 'media/gallery')
+  #stylist_gallery
+    = render(:partial => 'media/gallery')
 
 
 = js extend_gritter(:position => :top_right, :fade_in_speed => "medium", :fade_out_speed => "slow")
