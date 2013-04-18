@@ -62,7 +62,19 @@
           %h3.black= @stylist.salon.address
 
   .row
+    .large-12.columns.spacer
+
+  .row
     .large-12.columns.tiny_spacer
+      - if @media.present?
+        %h4.white
+          These are the latest styles by
+          = @stylist.user.name
+      - elsif @media.blank? && @auth.is_stylist? && (@auth.stylist == @stylist)
+        %h4.white Hey stylist, you should add some media!
+      - elsif @media.blank? && @auth.is_client?
+        %h4.white This stylist hasn't added any media yet.
+
 
   #stylist_gallery
     = render(:partial => 'media/gallery')
