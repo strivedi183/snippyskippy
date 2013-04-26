@@ -40,12 +40,12 @@ $black:   #4b3b3b; //text color
 }
 
 .display_type {
-  font-size: 4em;
+  font-size: 3em;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-weight: 100;
   color: $white;
-  line-height: -.2em;
+  line-height: -.4em;
   -webkit-font-smoothing: antialiased;
   opacity: .99;
 }
@@ -57,9 +57,6 @@ $black:   #4b3b3b; //text color
 .bold{
   font-weight: 700;
 }
-
-
-
 
 h1 {
   font-family: "brandon-grotesque",sans-serif;
@@ -107,7 +104,7 @@ a.button {
 /* 3. Positioning   **************************************/
 .box{
   // position: fixed;
-  width: 1000px;
+  // width: 1000px;
   height: 50px;
   background-color: rgba($blue,0.8);
   -moz-border-radius: 2px;
@@ -218,6 +215,13 @@ a.button {
   background: url('diamond_upholstery.png') repeat;
 }
 
+.stylist_bg{
+  background: url('illusion.png') repeat;
+  min-height: 1000px;
+}
+
+
+
 .poll_image{
   width: 200px;
   margin-right: auto;
@@ -249,31 +253,39 @@ a.button {
   width: 100%;
   opacity: 1;
 }
+
+
+
+
 /* 6. Foundation Overrides  *********************************/
 
 .top-bar {
-  overflow: hidden;
-  height: 45px;
-  line-height: 45px;
-  position: relative;
-  background: $black;
-}
-.top-bar-section li a:not(.button) {
-padding: 0 15px;
-line-height: 45px;
-background: $black;
-}
-.top-bar-section>ul>.divider {
-border-right: solid 1px $black;
-border-left: solid 1px $black;
+  height: 46px;
 }
 
-.top-bar-section ul {
-background: $black;
+// .top-bar-section li a:not(.button) {
+// padding: 0 15px;
+// line-height: 45px;
+// background: $black;
+// }
+
+// .top-bar-section>ul>.divider {
+// border-right: solid 1px $black;
+// border-left: solid 1px $black;
+// }
+
+// .top-bar-section ul {
+// background: $black;
+// }
+
+// .top-bar-section li a:not(.button) {
+//       background: $black;
+// }
+
+.top-bar .toggle-topbar.menu-icon a {
+  top: 20px;
 }
-.top-bar-section li a:not(.button) {
-      background: $black;
-}
+
 
 .button {
   background-color: $lt_purp;
@@ -328,13 +340,9 @@ background: $black;
   font-weight: 700;
 }
 
-
-
-
-
-
-
-
+.small_fucking_photo {
+  width: 100px;
+}
 
 .screen {
   background-color: rgba($black, .7);
@@ -391,6 +399,11 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(75,59,59,1)), color-stop(1%,rgba(75,59,59,1)), color-stop(100%,rgba(75,59,59,0))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,  rgba(75,59,59,0) 100%); /* Chrome10+,Safari5.1+ */
   background: linear-gradient(to bottom,  rgba(75,59,59,1) 0%,rgba(75,59,59,1) 1%,rgba(75,59,59,0) 100%); /* W3C */
+}
+
+.video_thumb {
+  width: 200px;
+  height: 225px;
 }
 
 #user_photo {
@@ -568,7 +581,9 @@ min-height: 600x;
   color: white;
 }
 
-
+.top-bar-section li a:not(.button) {
+  line-height: 46px;
+}
 
 .stylist_photo{
   border: 10px solid $lt_purp;
@@ -588,7 +603,7 @@ min-height: 600x;
 .bio_container
 {
   width: 100%;
-  height: 414px;
+  height: 400px;
   margin-bottom: 15px;
 }
 /*- END NAV -*/
@@ -597,7 +612,7 @@ min-height: 600x;
 /*- Colorbox show -*/
 
 .colorbox_image {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 
@@ -616,67 +631,67 @@ min-height: 600x;
 
 
 
-/*- STYLIST INDEX CAROUSEL -*/
-#carousel {
-  margin-top: 10%;
-}
-.index_pics {
-  height: 250px;
-  width: 200px;
-  float: center;
-}
+// /*- STYLIST INDEX CAROUSEL -*/
+// #carousel {
+//   margin-top: 10%;
+// }
+// .index_pics {
+//   height: 250px;
+//   width: 200px;
+//   float: center;
+// }
 
-div.carousel {
-  overflow: hidden;
-  pointer-events: none;
-  text-align: center;
-  width: 100%;
-  height: 225px;
-}
+// div.carousel {
+//   overflow: hidden;
+//   pointer-events: none;
+//   text-align: center;
+//   width: 100%;
+//   height: 225px;
+// }
 
-div.carousel-item {
-  float: left;
-  width: 20%;
-  height: 225px;
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  line-height: 200%;
-}
+// div.carousel-item {
+//   float: left;
+//   width: 20%;
+//   height: 225px;
+//   margin: 0px;
+//   padding: 0px;
+//   text-align: center;
+//   color: #fff;
+//   font-weight: bold;
+//   line-height: 200%;
+// }
 
-div.carousel-item div {
-  border: 1px #fff solid;
-  height: 250px;
-}
+// div.carousel-item div {
+//   border: 1px #fff solid;
+//   height: 250px;
+// }
 
-a.jkit-carousel-prev, a.jkit-carousel-next {
-  width: 40px;
-  background: #eee;
-  border: 1px #999 solid;
-  color: #333;
-  padding: 4px;
-  cursor: pointer;
-  cursor: hand;
-  margin-top: 10px;
-  text-align: center;
-  user-select: none;
-}
+// a.jkit-carousel-prev, a.jkit-carousel-next {
+//   width: 40px;
+//   background: #eee;
+//   border: 1px #999 solid;
+//   color: #333;
+//   padding: 4px;
+//   cursor: pointer;
+//   cursor: hand;
+//   margin-top: 10px;
+//   text-align: center;
+//   user-select: none;
+// }
 
-a.jkit-carousel-prev:hover, a.jkit-carousel-next:hover {
-  background: #fff;
-  border: 1px #666 solid;
-  color: #000;
-}
+// a.jkit-carousel-prev:hover, a.jkit-carousel-next:hover {
+//   background: #fff;
+//   border: 1px #666 solid;
+//   color: #000;
+// }
 
-a.jkit-carousel-prev {
-  float: left;
-}
+// a.jkit-carousel-prev {
+//   float: left;
+// }
 
-a.jkit-carousel-next {
-  float: right;
-}
+// a.jkit-carousel-next {
+//   float: right;
+// }
 
 #map_canvas.index {
   top: 50px;

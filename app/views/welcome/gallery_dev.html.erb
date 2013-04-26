@@ -2,7 +2,7 @@
 
   <% if @auth.client.present? %> <!-- not for stylysts show page -->
     <div class="row">
-      <div class="large-12.columns">
+      <div class="large-8.columns">
         <div class='box'>
           <ol id="filters" class="filter_type" >
             <li data-filter='favorite'>favorites</li>
@@ -27,9 +27,9 @@
           <div class="tile">
             <div>
               <% if medium.photo? %>
-                <%= link_to image_tag(medium.photo.thumb, :class => 'video'), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '500px', :colorbox_iframe => true} %>
+                <%= link_to image_tag(medium.photo.thumb, :class => 'video'), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '400px', :colorbox_iframe => true} %>
               <% elsif medium.video? %>
-                <%= link_to (image_tag(medium.video.thumb, :class => 'video video_thumb')), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '500px', :colorbox_iframe => true } %>
+                <%= link_to (video_tag(medium.video, :class => 'video video_thumb')), medium_path(medium.id), :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '400px', :colorbox_iframe => true } %>
               <% end %>
             </div>
             <% if @auth.client.present? %> <!-- not for stylysts show page -->

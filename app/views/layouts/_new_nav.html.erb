@@ -1,0 +1,65 @@
+<!-- Navigation -->
+
+<nav class="top-bar nav">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1 data-position="bottom" data-intro="You can click on this link at any time to be redirected back to the this home page." style="margin-left: 10px;">
+        <a href="/">
+          bobs<span class="orange">and</span>bangs
+        </a>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="left">
+     <% if @auth.blank? %>
+       <li class='name'><h1><%= link_to('Login', '#', :id => 'login-form-btn', :'data-dropdown' => 'drop') %></h1></li>
+       <li class='name' data-position=right data-intro='Click here to Register as either a Client or Stylist.'><h1><%=link_to('Register','#', :'data-reveal-id' => 'register' ) %></h1></li>
+     <% end %>
+
+    <% if @auth.present? %>
+       <% if @auth.client.present? %> <!-- only show the below if logged in -->
+        <li class='has-dropdown'>
+          <%= link_to('Hello, ' +  @auth.name.split(" ")[0] + '!', '#') %>
+        <ul class="dropdown">
+           <li><%= link_to('Edit my Profile', '#', :"data-reveal-id" => "client") %></li>
+           <li><%= link_to('Logout', '/login', :method => :delete ) %></li>
+        </ul>
+        </li>
+       <% else %>
+        <li class='has-dropdown'>
+          <%= link_to('Hello, ' +  @auth.name.split(" ")[0] + '!', '#') %>
+        <ul class="dropdown">
+           <li><%= link_to('Edit my Profile', '#', :"data-reveal-id" => "stylist") %></li>
+           <li><%= link_to('Logout', '/login', :method => :delete ) %></li>
+        </ul>
+        </li>
+    <% end %>
+
+
+        <% if @auth.client.present? %>
+         <li class='name'><%= link_to('Browse Styles', client_path(@auth.client.id) ) %></li>
+       <% end %>
+
+        <% if @auth.stylist.present? %>
+          <li class='name'><%= link_to('Stylist home', stylist_path(@auth.stylist)) %></li>
+        <% end %>
+  <% end %> <!-- only show above if logged in -->
+    </ul>
+
+  <ul class='right'>
+    <li><%= link_to(image_tag("/assets/gear.png", :size => '40x40', :id => 'gear'), "#", :'data-show-form' => true, :'data-toggle-form' => true, "data-toggle" => "chardinjs", id: 'gear-link') %></li>
+  </ul>
+
+
+</section>
+</nav>
+<!-- End Top Bar -->
+<!-- End Navigation -->
+
+<div id='modals'>
+  <%= render(:partial => 'layouts/nav_bar_modals') %>
+</div>
