@@ -19,6 +19,7 @@ gem 'streamio-ffmpeg'
 gem 'carrierwave-video'
 gem 'carrierwave-video-thumbnailer'
 gem 'chardinjs-rails'
+gem 'puma'
 
 group :assets do
   gem 'sass-rails'
